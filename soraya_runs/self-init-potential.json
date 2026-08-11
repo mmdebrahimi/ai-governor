@@ -1,0 +1,63 @@
+{
+  "ceiling": 25,
+  "created_ids": [
+    "aigov",
+    "aigov-foundations",
+    "aigov-constitution",
+    "aigov-dept-contract",
+    "aigov-collective-choice",
+    "aigov-guideline-intake",
+    "aigov-twin",
+    "aigov-kernel"
+  ],
+  "spent": [
+    {
+      "when": null,
+      "mode": "decompose",
+      "project_id": "aigov",
+      "justification": "umbrella"
+    },
+    {
+      "when": null,
+      "mode": "decompose",
+      "project_id": "aigov-foundations",
+      "justification": "Gate A"
+    },
+    {
+      "when": null,
+      "mode": "decompose",
+      "project_id": "aigov-constitution",
+      "justification": "Gate A"
+    },
+    {
+      "when": null,
+      "mode": "decompose",
+      "project_id": "aigov-dept-contract",
+      "justification": "Gate B scaling primitive"
+    },
+    {
+      "when": null,
+      "mode": "advance-spillover",
+      "project_id": "aigov-collective-choice",
+      "justification": "Gate B sovereign channel (D3)"
+    },
+    {
+      "when": null,
+      "mode": "advance",
+      "project_id": "aigov-guideline-intake",
+      "justification": "Gate B legitimacy-critical (crux A2)"
+    },
+    {
+      "when": null,
+      "mode": "advance",
+      "project_id": "aigov-twin",
+      "justification": "Gate C \u2014 last prerequisite before the kernel"
+    },
+    {
+      "when": null,
+      "mode": "advance-spillover",
+      "project_id": "aigov-kernel",
+      "justification": "Gate D \u2014 the runtime"
+    }
+  ]
+}

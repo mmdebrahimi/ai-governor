@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Test / tooling caches
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Windows / shell noise
+*.stackdump
+Thumbs.db
+desktop.ini
+
+# Soraya run-lock (machine-local; the run ARTIFACTS under soraya_runs/ are kept on purpose —
+# intent-contract / audit-trail / result / recommendation are the provenance of how this was built)
+.soraya-run.lock
