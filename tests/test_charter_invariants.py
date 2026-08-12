@@ -108,7 +108,7 @@ def test_checkable_fraction_is_measured_and_recorded():
 
 
 def test_checkable_fraction_matches_the_recorded_number():
-    """Pins the MEASURED value (18/25 = 0.72) so a silent drift in enforcement claims fails.
+    """Pins the MEASURED value (25/32 = 0.78125) so a silent drift in enforcement claims fails.
 
     History (both changes deliberate and recorded, never a silent edit-to-green):
     1. The pin first read 18/24 and FAILED against a measured 0.75. The measurement was right and the
@@ -122,8 +122,22 @@ def test_checkable_fraction_matches_the_recorded_number():
     3. 2026-08-11: family aigov-collective-choice vendored the Mars_Governance organ in-repo
        (aigov/choice/, 193/193), so C15's `fail_safe_gate` became a real IMPLEMENTED invariant and
        flipped PENDING -> ENFORCED. 17 -> 18 enforced of 25, fraction 0.68 -> 0.72.
+    4. 2026-08-11: research V14 (governance history + mechanisms) landed FIVE new contract
+       invariants (I4', I8b, I12, I13, I14) and their clauses C32-C36. All five are enforced and
+       externally sited, so 18 -> 23 enforced of 25 -> 30, fraction 0.72 -> 0.7667. The fraction
+       RISES here only because each clause shipped with an executable, individually-triggerable
+       check and a test proving it can fire — a clause added as prose would have moved it DOWN,
+       as C25 did in (2). That asymmetry is the point of measuring rather than asserting.
+       C26-C31 are RESERVED (see charter_invariants.CLAUSES) for V13's disclosure block, so the
+       denominator counts clauses, not the highest id.
+    5. 2026-08-11: the ratified vocabulary landed (I15), adding clause C37. 23 -> 24 enforced of
+       30 -> 31, fraction 0.7667 -> 0.7742. The clause was added ONLY after the invariant fired
+       mechanically in tests — a review of this work set that as the explicit condition, because a
+       clause added on prose alone moves the fraction DOWN, as C25 did in (2).
+    6. 2026-08-11: the instrument catalogue (I8c) landed, adding clause C38 and closing adversarial
+       residual A9. 24 -> 25 enforced of 31 -> 32, fraction 0.7742 -> 0.78125.
     """
-    assert round(checkable_fraction(), 4) == round(18 / 25, 4)
+    assert round(checkable_fraction(), 4) == round(25 / 32, 4)
 
 
 def test_every_non_negotiable_is_actually_enforced_or_human_sited():

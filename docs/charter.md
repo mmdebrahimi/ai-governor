@@ -20,11 +20,11 @@ repository is an **overclaim** and fails `clause_integrity_errors()`.
 
 | | count | clauses |
 |---|---|---|
-| **Enforced** — implemented invariant, sited outside the Governor | 18 | C01, C02, C03, C04, C05, C06, C07, C08, C11, C12, C13, C14, C15, C16, C17, C19, C20, C24 |
+| **Enforced** — implemented invariant, sited outside the Governor | 25 | C01, C02, C03, C04, C05, C06, C07, C08, C11, C12, C13, C14, C15, C16, C17, C19, C20, C24, C32, C33, C34, C35, C36, C37, C38 |
 | **Pending** — invariant is real but not wired into this repo yet | 0 |  |
 | **Aspirational** — no executable invariant; honestly labelled | 7 | C09, C10, C18, C21, C22, C23, C25 |
 
-**Machine-checkable fraction = 18/25 = 0.7200** (hypothesis H1 of family `aigov-constitution` predicted > 0.5 — **CONFIRMED**, measured by `test_checkable_fraction_is_measured_and_recorded`).
+**Machine-checkable fraction = 25/32 = 0.7812** (hypothesis H1 of family `aigov-constitution` predicted > 0.5 — **CONFIRMED**, measured by `test_checkable_fraction_is_measured_and_recorded`).
 
 ## The clauses
 
@@ -55,6 +55,13 @@ repository is an **overclaim** and fails `clause_integrity_errors()`.
 | C23 | This charter is amendable only by the polity, under a supermajority, with a waiting period. **[NON-NEGOTIABLE]** | `ASPIRATIONAL` | human_only | aspirational |
 | C24 | An irreversible instrument requires supermajority ratification. | `validate_registry:I2` | external_verifier | **ENFORCED** |
 | C25 | The Governor shall record, and shall not obscure, the external legal authorities to which the polity's activities remain subject. | `ASPIRATIONAL` | human_only | aspirational |
+| C32 | A measure the Governor is judged against shall declare how it will be gamed, including whether it ratchets and whether it is uniform across unlike units. | `validate_registry:I4'` | external_verifier | **ENFORCED** |
+| C33 | A body that allocates shall name the tier at which its discretion sits and the check for capture at that tier; devolution is not itself a safeguard. | `validate_registry:I8b` | external_verifier | **ENFORCED** |
+| C34 | No person shall be classified without a named accountable human and a route of appeal that does not require the person to disprove the model; the Governor's output is never itself the justification. **[NON-NEGOTIABLE]** | `validate_registry:I12` | external_verifier | **ENFORCED** |
+| C35 | No person shall be classified by resemblance to a prior adverse case. **[NON-NEGOTIABLE]** | `validate_registry:I13` | external_verifier | **ENFORCED** |
+| C36 | Where incremental action would entrench the condition it addresses, the Governor shall report that no incremental recommendation is safe, rather than issue a lesser one. | `validate_registry:I14` | external_verifier | **ENFORCED** |
+| C37 | The classes a body may act upon are those the polity has ratified and defined; a body may name a ratified class, never invent one. **[NON-NEGOTIABLE]** | `validate_registry:I15` | external_verifier | **ENFORCED** |
+| C38 | The levers a body may pull are those the polity has ratified and defined, and what a lever IS is fixed by that definition, not by the body wielding it. **[NON-NEGOTIABLE]** | `validate_registry:I8c` | external_verifier | **ENFORCED** |
 
 ## The four non-negotiable machine limits
 

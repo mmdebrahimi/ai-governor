@@ -218,3 +218,35 @@ def test_nominal_operation_never_trips_a_bound():
     for _ in range(25):
         r = t.tick(nominal())
         assert r.ok, "nominal run tripped {} at cycle {}".format(r.violations, r.cycle)
+
+
+# ---------------------------------------------------------------- retention (C29, reverse coverage)
+
+def test_no_unclaimed_variables_in_the_live_registry():
+    """Every variable the world serves is claimed by a department today."""
+    from aigov.twin import check_reverse_coverage
+    assert check_reverse_coverage(SPECS, ColonyTwin()) == []
+
+
+def test_reverse_coverage_fires_on_an_unclaimed_variable():
+    """The check must be able to FIRE. A variable the world holds that no ratified decision needs is
+    data with no consumer - the unbounded-retention risk (Seltzer & Anderson; charter C29)."""
+    from aigov.twin import check_reverse_coverage
+    t = ColonyTwin()
+    t.SERVED = dict(ColonyTwin.SERVED)
+    t.SERVED["religious_affiliation"] = Observability.DIRECT
+    errs = check_reverse_coverage(SPECS, t)
+    assert any("religious_affiliation" in e for e in errs)
+    assert all(e.startswith("[RET]") for e in errs)
+    assert any("should not be collected" in e for e in errs)
+
+
+def test_reverse_coverage_is_the_mirror_of_forward_coverage():
+    """Forward catches a department acting on fiction; reverse catches data with no consumer.
+    They are different failures and must not be conflated."""
+    from aigov.twin import check_reverse_coverage
+    t = ColonyTwin()
+    t.SERVED = dict(ColonyTwin.SERVED)
+    t.SERVED["unclaimed_metric"] = Observability.DIRECT
+    assert check_state_coverage(SPECS, t) == []          # forward still clean
+    assert check_reverse_coverage(SPECS, t) != []        # reverse fires

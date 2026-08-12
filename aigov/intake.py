@@ -30,7 +30,9 @@ reproduce the very defect this module exists to prevent, so `ProceduralParameter
 
 from __future__ import annotations
 
+import functools
 import hashlib
+import math
 import random
 from dataclasses import dataclass, field
 from statistics import median
@@ -75,21 +77,35 @@ class ProceduralParameter:
         return self.provenance_kind is not ProvenanceKind.AI_SUPPLIED and bool(self.provenance_ref)
 
 
-#: Default polarization tolerance — a PROCEDURAL constant of the intake mechanism.
+#: Polarization tolerance derived at panel_size=16.
 #:
-#: **DERIVED, not asserted.** `calibrate_polarization()` simulates 400 unimodal panels (normal / uniform /
-#: skewed, widths 0.5–20) and 400 two-camp panels (gaps 8–60, within-spread 0.3–2.0) and picks the
-#: threshold minimising false-escalations + missed-polarizations. Result on 2026-08-11:
-#: unimodal p95 = 0.867, unimodal max = 0.914, bimodal p05 = 0.893, **best threshold = 0.900**,
-#: 26 errors / 800 trials (3.25%). Re-derive any time by calling the function — the number is not a
-#: judgement call, and the residual overlap (a weakly-separated two-camp panel genuinely resembles a
-#: wide unimodal one) is real and reported rather than hidden.
+#: **DERIVED, not asserted** — `calibrate_polarization()` simulates unimodal and two-camp panels and
+#: picks the threshold minimising false-escalations + missed-polarizations. At n=16 on 2026-08-11:
+#: unimodal p95 = 0.867, unimodal max = 0.914, bimodal p05 = 0.893, best threshold = 0.900,
+#: 26 errors / 800 trials (3.25%).
+#:
+#: **SCOPE WARNING (2026-08-12).** This value is correct FOR n=16 ONLY, and applying it as a constant
+#: was a real defect. Re-derivation across panel sizes (600 trials x 4 seeds) showed the separating
+#: threshold falls monotonically with panel size:
+#:
+#:     n=8   unimodal p95 0.920-0.940   best 0.910-0.935
+#:     n=16  unimodal p95 0.845-0.863   best 0.880-0.885
+#:     n=50  unimodal p95 0.794-0.804   best 0.815-0.830
+#:
+#: At n=8 a fixed 0.900 sits BELOW the unimodal p95, so >5% of genuinely unimodal panels false-escalate
+#: (fail-closed — the safe direction). At n=50 the separating threshold is ~0.82, well below 0.900, so a
+#: fixed 0.900 escalates LESS than it should and MISSES real polarization — the UNSAFE direction.
+#:
+#: Kept as the explicit-override shape and for the n=16 record. Live callers should use
+#: `tolerance_for(panel_size)`, which derives at the size actually in use.
 DEFAULT_POLARIZATION = ProceduralParameter(
     name="polarization_tolerance",
     value=0.900,
     provenance_kind=ProvenanceKind.GUIDELINE,
-    provenance_ref="CHARTER-PROC-001 (derived by calibrate_polarization, 2026-08-11)",
+    provenance_ref="CHARTER-PROC-001 (derived by calibrate_polarization at panel_size=16, 2026-08-11)",
 )
+
+#: `tolerance_for(panel_size)` is defined below `calibrate_polarization`, which it calls.
 
 
 # --------------------------------------------------------------------------------------
@@ -279,17 +295,75 @@ def calibrate_polarization(trials: int = 400, panel_size: int = 16, seed: int = 
     }
 
 
+#: The smallest panel on which polarization is even DEFINABLE. DERIVED, not chosen: a camp must hold at
+#: least `MIN_CAMP_SHARE` of the panel AND at least one whole member, so n >= ceil(1 / MIN_CAMP_SHARE).
+#: Below this a two-camp split cannot be represented, so no threshold exists to derive.
+MIN_CALIBRATABLE_PANEL = int(math.ceil(1.0 / MIN_CAMP_SHARE))
+
+#: Seeds the size-aware derivation pools over. A SINGLE seed's `best_threshold` carries ~0.02 of noise
+#: (measured: 0.880-0.900 at n=16), so one seed would bake that noise into the binding path. An odd
+#: number of fixed seeds makes the median deterministic and reproducible.
+_CALIBRATION_SEEDS = (1, 7, 20260811, 99991, 31337)
+
+
+class PanelTooSmallToCalibrate(ValueError):
+    """A panel below `MIN_CALIBRATABLE_PANEL` cannot carry a derived polarization threshold."""
+
+
+@functools.lru_cache(maxsize=None)
+def tolerance_for(panel_size: int, trials: int = 400) -> ProceduralParameter:
+    """Derive the polarization tolerance AT THE PANEL SIZE ACTUALLY IN USE.
+
+    The original mechanism derived one threshold at n=16 and applied it to every panel. That is a scope
+    error rather than a judgement call: the score `1 - WCSS(2)/WCSS(1)` is computed over n points, and
+    with fewer points a 2-means split fits noise more easily, so the unimodal score distribution shifts
+    upward as n falls. A constant threshold is therefore too tight on small panels and too loose on
+    large ones — and too loose is the direction that MISSES real polarization.
+
+    Still no invented number: the value is the median `best_threshold` across a fixed seed set, each
+    obtained by minimising total errors over simulated unimodal and two-camp panels. Re-derivable by
+    anyone running `calibrate_polarization`.
+    """
+    if panel_size < MIN_CALIBRATABLE_PANEL:
+        raise PanelTooSmallToCalibrate(
+            "panel of {} cannot support a two-camp split at min_camp_share={} (needs >= {}); no "
+            "threshold is derivable, so aggregation must escalate rather than guess".format(
+                panel_size, MIN_CAMP_SHARE, MIN_CALIBRATABLE_PANEL))
+    bests = sorted(calibrate_polarization(trials=trials, panel_size=panel_size, seed=s)["best_threshold"]
+                   for s in _CALIBRATION_SEEDS)
+    return ProceduralParameter(
+        name="polarization_tolerance",
+        value=float(median(bests)),
+        provenance_kind=ProvenanceKind.GUIDELINE,
+        provenance_ref="CHARTER-PROC-001 (derived by calibrate_polarization at panel_size={}, "
+                       "median of {} seeds, spread {:.3f}-{:.3f})".format(
+                           panel_size, len(_CALIBRATION_SEEDS), bests[0], bests[-1]),
+    )
+
+
 def elicit_level(topic: str, proposals, panel: Panel,
-                 tolerance: ProceduralParameter = DEFAULT_POLARIZATION) -> LevelElicitation:
+                 tolerance: Optional[ProceduralParameter] = None) -> LevelElicitation:
     """Aggregate panel proposals into ONE level by MEDIAN, or escalate if the panel is two camps.
 
     The median is used rather than the mean because on a single-peaked one-dimensional domain it is the
     Condorcet winner (Black 1948) and is not draggable by a single extreme report.
+
+    `tolerance=None` (the default) DERIVES the threshold at this panel's actual size via
+    `tolerance_for`. Passing one explicitly pins it — used by tests and by any caller that wants the
+    n=16 historical value. The default used to BE that historical value applied to every size, which
+    was a scope error that under-escalated on large panels.
     """
     xs = [float(p) for p in proposals]
     if not xs:
         return LevelElicitation(topic, tuple(), ESCALATE, None, 0.0, panel.id,
                                 "no proposals — nothing was elicited")
+    if tolerance is None:
+        try:
+            tolerance = tolerance_for(len(panel.members))
+        except PanelTooSmallToCalibrate as exc:
+            # Fail-closed: no derivable threshold means no defensible aggregation.
+            return LevelElicitation(topic, tuple(xs), ESCALATE, None, _polarization(xs), panel.id,
+                                    "cannot aggregate: {}".format(exc))
     pol = _polarization(xs)
     if pol > tolerance.value:
         return LevelElicitation(

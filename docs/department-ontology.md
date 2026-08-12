@@ -99,11 +99,21 @@ DepartmentSpec
   sunset_cycles         : int                      # rules expire unless re-ratified (W12)
 
 StateVar    : name, unit, observability ∈ {direct, estimated, latent}, owner_dept
-Instrument  : name, domain, bounds, latency_cycles, reversibility ∈ {reversible, costly, irreversible}, cost
-ObjectiveRef: guideline_id, direction ∈ {raise, lower, hold_within}, priority_source
-Constraint  : predicate, source ∈ {constitution, physics, law}, on_violation = FAIL_CLOSED
+Instrument  : name, iclass ∈ {rule, price, quantity_allocation}, bounds, latency_cycles,
+              reversibility ∈ {reversible, costly, irreversible}, ratification_class,
+              discretion_tier, capture_check                        # iclass drives I8/I8b
+ObjectiveRef: guideline_id, metric, direction ∈ {raise, lower, hold_within}, threshold,
+              threshold_provenance                                  # provenance drives I11
+Constraint  : name, predicate, source ∈ {constitution, physics, law}, on_violation = FAIL_CLOSED,
+              threshold, threshold_provenance, guideline_id
 Coupling    : other_dept, shared_var, direction ∈ {reads, writes, contends}, arbiter = D13
-Metric      : name, formula, gaming_model, rotation_policy          # W9 Goodhart
+Metric      : name, formula, gaming_model, rotation_policy,         # W9 Goodhart
+              ratchet_exposed, threshold_exposed                    # I4′, target metrics only
+Rule        : id, applies_to_class, published, effective_cycle, predicate, enforcement_ref,
+              sunset_cycles          # applies_to_class must be a RATIFIED identifier (I15)
+PersonClassification : name, basis ∈ {declared_rule, measured_attribute,
+              similarity_to_prior_adverse_case}, accountable_human, redress_route,
+              redress_requires_subject_to_disprove, cited_as_justification   # I12 / I13
 FailureMode : name, detector, escalation_target
 ```
 
@@ -122,6 +132,20 @@ FailureMode : name, detector, escalation_target
 | I9 | No department declares itself in ≥2 of {generate, decide, verify}. | Separation-of-powers invariant |
 | I10 | Every rule emitted by a department passes the **Fuller linter** (8 desiderata of legality). | L5 / V4 |
 | **I11** | **No `Constraint` or `ObjectiveRef` may carry a numeric threshold whose provenance is not a ratified guideline or a physical constant.** An AI-supplied threshold is a validation error. | **The threshold gap** — discovered empirically by probe B1 (`probe-B1-guideline-compilation.md`) |
+
+#### Added 2026-08-11 from research V14 (`research_outputs/aigov-v14-governance-history-and-mechanisms.md`)
+
+Five invariants derived from what has actually failed in governance, not from intuition. Each is a
+distinct error code, individually triggerable, with a stated boundary where it correctly does not fire
+(`tests/test_contract_v14_invariants.py`, 30 tests).
+
+| # | Invariant | Failure it closes |
+|---|---|---|
+| **I4′** | A `Metric` named by any `ObjectiveRef` must be **declared** and must answer both gaming shapes — `ratchet_exposed` (is the target incrementally rising?) and `threshold_exposed` (is it uniform across unlike units?). `None` = unassessed = error. | Bevan & Hood, English NHS star ratings. **This one found a live defect on first run: D2 was scored on `volume_per_person_m3`, a metric it had never declared** — the two measures carrying gaming models were the two nobody judged it by. |
+| **I8b** | Every `QUANTITY_ALLOCATION` instrument must name `discretion_tier` and `capture_check`. Applies at **every** legitimacy level, including HIGH. | Bardhan & Mookherjee. Subsidiarity is not monotone: I8 forbids allocation where legitimacy is LOW, it does not *license* it elsewhere. Devolving can swap centre-side rent for capture at the receiving tier while every bribe-shaped proxy improves. |
+| **I12** | A `PersonClassification` must name an accountable human and a redress route, must not put the burden on the subject to disprove the model, and must not be cited **as** the justification. | The Dutch childcare benefits scandal. The transferable mechanism was not the bias — it was that automation moves the decision to a machine nobody can challenge. |
+| **I13** | No classification with `basis = SIMILARITY_TO_PRIOR_ADVERSE_CASE`. | Same case, different half. I12 governs what happens *after* you are classified; I13 governs whether the class should exist. A system with flawless redress that still profiles by resemblance has fixed only the visible half. |
+| **I14** | A department holding instruments must declare `equilibrium`; `UNASSESSED` is the default and is an error. If `SELF_REINFORCING_ADVERSE`, it must carry a `no_safe_increment_escalation` route. | Rothstein's collective-action argument: where dysfunction is self-reinforcing there are no principled principals, so incremental reform entrenches it. A body that can only emit a smaller version of the same advice cannot represent that finding. |
 
 **I8, I10 and I11 are the three invariants that make this project structurally different from a technocratic
 optimizer.** I8 mechanically enforces subsidiarity: a department that cannot centrally know cannot centrally

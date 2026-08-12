@@ -13,8 +13,9 @@ constraint — a shape, not a level — which is why it binds without anyone sup
 from ..guidelines import level_of
 from ..contract import (
     Constraint, ConstraintSource, Coupling, CouplingDirection, DepartmentSpec, Direction,
-    Instrument, InstrumentClass, Legitimacy, Metric, FailureMode, Observability, ObjectiveRef,
-    Provenance, ProvenanceKind, RatificationClass, Reversibility, Role, Rule, StateVar, VSMLayer,
+    EquilibriumKind, Instrument, InstrumentClass, Legitimacy, Metric, FailureMode, Observability,
+    ObjectiveRef, Provenance, ProvenanceKind, RatificationClass, Reversibility, Role, Rule,
+    StateVar, VSMLayer,
 )
 
 
@@ -89,6 +90,26 @@ SPEC = DepartmentSpec(
         Coupling("D1", "power_kw", CouplingDirection.CONTENDS),
     ],
     metrics=[
+        # I4' caught a real gap here: this is the metric D2 is JUDGED on (objective G-F-003) and
+        # it was never declared as a Metric at all — so the two measures that DID carry gaming
+        # models were the two nobody was scored against. The target was the unmodelled one.
+        Metric(
+            name="volume_per_person_m3",
+            formula="pressurized_volume_m3 / persons_in_holding",
+            gaming_model="Splitting or merging nominal holdings moves the per-person figure "
+                         "without moving anyone; the same evasion the self-assessed valuation "
+                         "rule (R-D2-02) exists to price, audited against the household-linked "
+                         "register rather than the declared one.",
+            rotation_policy="re-derive the person-attribution basis every 6 cycles",
+            # Ratchet: NO — the objective is HOLD_WITHIN a ratified floor from G-F-003, a fixed
+            # level, not an incrementally rising one, so there is nothing to bank against.
+            # Threshold: YES — it is a UNIFORM floor across heterogeneous holders. It elicits
+            # nothing above the line and gives every holder above it a reason to converge down
+            # to it. This is the exact shape Hood named, and it is a property of the guideline,
+            # not of anything the department chose.
+            ratchet_exposed=False,
+            threshold_exposed=True,
+        ),
         Metric(
             name="revenue_coverage",
             formula="tax_revenue_credits / public_goods_bill_credits",
@@ -132,4 +153,11 @@ SPEC = DepartmentSpec(
         ),
     ],
     falsification_test=_falsification_test,
+    # I14: ORDINARY, and the reasoning is load-bearing rather than default. A fiscal department is
+    # exactly where Rothstein's trap bites — but the tax base here is PHYSICALLY ENUMERABLE
+    # (pressurized volume and radiator area cannot be hidden), and the polity is new, so there is
+    # no incumbent rent-extraction equilibrium for incremental reform to legitimise. If either
+    # premise fails — an unenumerable base, or an established state-business nexus — this must be
+    # re-declared SELF_REINFORCING_ADVERSE and the escalation route below becomes mandatory.
+    equilibrium=EquilibriumKind.ORDINARY,
 )

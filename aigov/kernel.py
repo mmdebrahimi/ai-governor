@@ -24,11 +24,12 @@ kernel EXECUTES — which is none of the three — so it holds no decision power
 from __future__ import annotations
 
 import copy
+import re
 from dataclasses import dataclass, field
 from typing import Optional
 
 from .choice.models.resource_sim import PLANT_O2_OVERPRODUCTION_FACTOR
-from .contract import Legitimacy
+from .contract import Legitimacy, validate_registry
 from .twin import ColonyTwin, InstrumentSettings
 
 # The vendored collective-choice organ (family aigov-collective-choice).
@@ -38,8 +39,25 @@ from .choice.governance.panel_agnostic import complete_menu
 
 NOT_CERTIFIABLE = "not-certifiable-out-of-domain"
 
+#: Tokens that mark a ratifying "body" as the machine itself. Matched as WHOLE TOKENS against the
+#: name, so `the governor` and `governor-office` are caught — an exact-string blocklist was not.
+_SELF_REFERRING = frozenset({"governor", "ai", "kernel", "self", "machine", "system"})
+
 #: The ONLY instrument for which a real anti-steering certifier exists today.
 CERTIFIABLE_INSTRUMENTS = {"crop_area_allocation"}
+
+
+class InvalidRegistryError(ValueError):
+    """A department registry that violates the Department Contract may not be admitted at all.
+
+    Distinct from `UngatedActionError`: that one refuses a single ACTION at apply time; this one
+    refuses the whole REGISTRY at construction, before any proposal is generated. A department
+    whose contract is broken should never get as far as proposing.
+    """
+
+
+class InvalidStatusQuoError(ValueError):
+    """The operating point a failed vote falls back to must itself be survivable."""
 
 
 class UngatedActionError(RuntimeError):
@@ -77,8 +95,18 @@ class RatificationRecord:
     action_key: str
 
     def is_genuine(self) -> bool:
-        body = (self.ratified_by or "").strip().lower()
-        return body not in ("", "governor", "ai", "kernel", "self")
+        """A self-issued ratification does not count.
+
+        This was an EXACT-MATCH check against five strings, and the adversarial suite walked
+        straight past it: `"the governor"` and `"governor-office"` both passed as genuine bodies.
+        Now the check is TOKEN-based, so any name containing a self-referring token is refused.
+
+        Deliberately over-inclusive: a legitimate assembly whose name happens to contain "self"
+        is refused and must rename. Over-refusing a ratification is recoverable; accepting a
+        self-issued one is the whole failure this guards against, so the bias runs that way.
+        """
+        tokens = {t for t in re.split(r"[^a-z0-9]+", (self.ratified_by or "").lower()) if t}
+        return bool(tokens) and not (tokens & _SELF_REFERRING)
 
 
 @dataclass(frozen=True)
@@ -120,13 +148,59 @@ class Governor:
     """The runtime. Holds no decision power: it orchestrates and executes ratified, certified actions."""
 
     def __init__(self, specs, guidelines, twin: ColonyTwin, scenario: str = "nominal",
-                 status_quo: Optional[InstrumentSettings] = None):
-        self.specs = {s.id: s for s in specs}
+                 status_quo: Optional[InstrumentSettings] = None, vocabulary=None):
+        # The vocabulary is MANDATORY at runtime and optional at authoring time. A kernel with no
+        # ratified vocabulary would accept any free-string rule target, which is the surface I15
+        # exists to close, so the default is the live ratified artifact rather than None.
+        if vocabulary is None:
+            from .vocabulary import RATIFIED_VOCABULARY
+            vocabulary = RATIFIED_VOCABULARY
+        self.vocabulary = vocabulary
+        # ADMISSION GATE (added 2026-08-11). Before this, the contract invariants bound only at
+        # AUTHORING time: `validate` existed and fired, but nothing at the runtime boundary called
+        # it, so a registry carrying validation errors could be admitted and proposed from. That
+        # was found by running the kernel against a deliberately-invalid spec, not by the suite —
+        # it constructed happily with 6 errors outstanding, including a person classification that
+        # profiled by resemblance with no accountable human and no redress route.
+        #
+        # An invariant nothing enforces at the boundary is documentation. The kernel refuses.
+        registry_errors = validate_registry(specs, guidelines, vocabulary=vocabulary)
+        if registry_errors:
+            raise InvalidRegistryError(
+                "refusing to admit {} department(s) carrying {} contract violation(s):\n  {}".format(
+                    len(list(specs)), len(registry_errors),
+                    "\n  ".join(str(e) for e in registry_errors)))
+        # A8 CLOSED (2026-08-11). Two distinct vectors, both real:
+        #   (a) ALIASING - the kernel used to store the caller's spec objects by reference, so the
+        #       caller kept a live handle on an admitted registry. Proven accidentally when one
+        #       adversarial test's mutation leaked into another through the shared module-level
+        #       spec. Closed by deep-copying at admission.
+        #   (b) ONE-SHOT VALIDATION - even without aliasing, nothing re-checked the registry after
+        #       construction, so anything holding a reference could relax a hard constraint later.
+        #       Closed by re-validating at the top of every cycle (see `run_cycle`).
+        # Deep-copy alone would have closed only half of it, which is why both are here.
+        self.specs = {s.id: copy.deepcopy(s) for s in specs}
         self.guidelines = guidelines
         self.twin = twin
         self.scenario = scenario
         # What persists when nothing is ratified. NOT zeros — see `status_quo_settings`.
         self.settings = copy.deepcopy(status_quo) if status_quo is not None else status_quo_settings()
+        # A SUPPLIED status quo is checked the same way a proposed action is. The D16 vacuous pass
+        # was fixed by deriving a survivable DEFAULT — but nothing validated a status quo handed in
+        # from outside, so the identical failure walked back in through the constructor: a kernel
+        # given `crop_area_allocation=0.0` refuses every action correctly, reports a clean gated
+        # run, and loses the atmosphere at cycle 1. Found by the adversarial suite (attack A11).
+        if status_quo is not None:
+            probe = copy.deepcopy(twin)
+            try:
+                report = probe.tick(copy.deepcopy(self.settings))
+                lethal = list(report.violations)
+            except Exception as exc:
+                lethal = ["twin refused the status quo: {}".format(exc)]
+            if lethal:
+                raise InvalidStatusQuoError(
+                    "refusing a status quo the colony cannot survive: {}. A failed vote must leave "
+                    "a LIVING colony standing, not a lethal default.".format("; ".join(lethal)))
         self.history = []
 
     # ---------------------------------------------------------------- generate
@@ -215,6 +289,16 @@ class Governor:
     def run_cycle(self, panel, ratifier) -> CycleRecord:
         """One full decision cycle. `ratifier(action) -> RatificationRecord | None` is the DECIDE seam;
         the kernel never supplies it itself."""
+        # A8(b): the contract is a PER-CYCLE precondition, not a one-time admission formality.
+        # A registry that was valid at construction can be relaxed afterwards by anything holding
+        # a reference; re-checking is cheap (pure Python over small lists) and makes "valid" a
+        # standing property rather than a historical claim.
+        drift = validate_registry(list(self.specs.values()), self.guidelines,
+                                  vocabulary=self.vocabulary)
+        if drift:
+            raise InvalidRegistryError(
+                "registry no longer satisfies the contract at cycle {}: {} violation(s):\n  {}".format(
+                    self.twin.cycle + 1, len(drift), "\n  ".join(str(e) for e in drift)))
         rec = CycleRecord(cycle=self.twin.cycle + 1)
         for action in self.propose():
             rec.proposed.append(action)

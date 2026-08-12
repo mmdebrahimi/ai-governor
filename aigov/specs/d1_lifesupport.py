@@ -12,8 +12,9 @@ Because legitimacy is HIGH, I8 permits QUANTITY_ALLOCATION instruments here. Com
 from ..guidelines import level_of
 from ..contract import (
     Constraint, ConstraintSource, Coupling, CouplingDirection, DepartmentSpec, Direction,
-    Instrument, InstrumentClass, Legitimacy, Metric, FailureMode, Observability, ObjectiveRef,
-    Provenance, ProvenanceKind, RatificationClass, Reversibility, Role, StateVar, VSMLayer,
+    EquilibriumKind, Instrument, InstrumentClass, Legitimacy, Metric, FailureMode, Observability,
+    ObjectiveRef, Provenance, ProvenanceKind, RatificationClass, Reversibility, Role, StateVar,
+    VSMLayer,
 )
 
 
@@ -49,16 +50,33 @@ SPEC = DepartmentSpec(
         StateVar("closure_fraction", "ratio", Observability.ESTIMATED, "D1"),
     ],
     instruments=[
-        # Legitimate here precisely BECAUSE legitimacy is HIGH (I8).
+        # Legitimate here precisely BECAUSE legitimacy is HIGH (I8). I8b still applies: HIGH
+        # legitimacy licenses allocation, it does not excuse the department from naming WHERE the
+        # discretion sits or how capture at that tier would be caught.
         Instrument("o2_generation_setpoint", InstrumentClass.QUANTITY_ALLOCATION,
-                   (0.0, 1.0), 1, Reversibility.REVERSIBLE, RatificationClass.SIMPLE),
+                   (0.0, 1.0), 1, Reversibility.REVERSIBLE, RatificationClass.SIMPLE,
+                   discretion_tier="central ECLSS controller; no lower tier exists - the loop is "
+                                   "physically single-tier and shared by every colonist",
+                   capture_check="setpoint history reconciled by D15 against MEASURED o2 partial "
+                                 "pressure; a setpoint persistently above demand is a claim on "
+                                 "power that the twin's mass balance exposes"),
         Instrument("crop_area_allocation", InstrumentClass.QUANTITY_ALLOCATION,
-                   (0.0, 1.0), 3, Reversibility.REVERSIBLE, RatificationClass.SIMPLE),
+                   (0.0, 1.0), 3, Reversibility.REVERSIBLE, RatificationClass.SIMPLE,
+                   discretion_tier="central allocator sets the aggregate fraction; the sub-tier is "
+                                   "per-module crop bays, which is where allocation is actually "
+                                   "exercised and therefore where capture would sit",
+                   capture_check="per-bay yield against allocated area; flagged when area "
+                                 "concentrates in a bay without a matching yield improvement"),
         Instrument("reserve_buffer_target", InstrumentClass.RULE,
                    (0.0, 90.0), 1, Reversibility.REVERSIBLE, RatificationClass.SIMPLE),
         # Irreversible => supermajority (I2): you cannot un-vent an atmosphere.
         Instrument("emergency_atmosphere_vent", InstrumentClass.QUANTITY_ALLOCATION,
-                   (0.0, 1.0), 0, Reversibility.IRREVERSIBLE, RatificationClass.SUPERMAJORITY),
+                   (0.0, 1.0), 0, Reversibility.IRREVERSIBLE, RatificationClass.SUPERMAJORITY,
+                   discretion_tier="the SPLIT emergency authority (charter C03): declare, exercise, "
+                                   "terminate and audit are four distinct actors, never one",
+                   capture_check="auto-expiry plus a post-hoc D15 audit naming who declared, who "
+                                 "exercised and who terminated; a vent with fewer than four "
+                                 "distinct actors in the record is a capture finding"),
     ],
     objectives_received=[
         ObjectiveRef(
@@ -96,6 +114,13 @@ SPEC = DepartmentSpec(
                          "without improving closure; audited by mass-balance reconciliation against "
                          "the twin's total inventory.",
             rotation_policy="re-derive the denominator definition every 8 cycles",
+            # I4': this IS a target (objective G-D-005, direction RAISE).
+            # Ratchet: YES - a RAISE objective with no ceiling ratchets by construction, so the
+            # department has a standing incentive to bank closure gains rather than book them.
+            # Threshold: NO - D1 is a single unit against a single physical loop, so there is no
+            # population of heterogeneous units to bunch at a uniform line.
+            ratchet_exposed=True,
+            threshold_exposed=False,
         ),
         Metric(
             name="o2_margin_days",
@@ -112,4 +137,9 @@ SPEC = DepartmentSpec(
     ],
     rules=[],
     falsification_test=_falsification_test,
+    # I14: ORDINARY. The argument is physical, not optimistic — dysfunction in a closed
+    # life-support loop is detected by mass balance and partial pressure, not by an oversight body
+    # that could itself be captured. There is no self-reinforcing rent to be trapped in when the
+    # failure mode is asphyxiation. This is the honest exception; it does NOT generalize to D2.
+    equilibrium=EquilibriumKind.ORDINARY,
 )

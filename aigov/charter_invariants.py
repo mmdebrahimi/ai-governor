@@ -47,6 +47,18 @@ IMPLEMENTED_INVARIANTS = frozenset({
     # Landed 2026-08-11 by family aigov-collective-choice: the Mars_Governance organ is now vendored
     # in-repo at aigov/choice/ and its suite runs here (193/193). C15 flips PENDING -> ENFORCED.
     "aigov.choice.governance.fail_safe_gate",
+    # Landed 2026-08-11 from research V14 (governance history + mechanisms). Each is a distinct,
+    # individually-triggerable code in `contract.validate`, tested in
+    # tests/test_contract_v14_invariants.py.
+    "validate_registry:I4'",   # a TARGET metric's gaming exposure (Bevan & Hood ratchet/threshold)
+    "validate_registry:I8b",   # allocative discretion tier + capture check (Bardhan & Mookherjee)
+    "validate_registry:I12",   # redress (Dutch childcare benefits scandal)
+    "validate_registry:I13",   # no classification by resemblance to a prior adverse case
+    "validate_registry:I14",   # equilibrium assessment (Rothstein collective-action)
+    # Landed 2026-08-11: the ratified vocabulary. Closes the author-declaration laundering shape for
+    # ONE surface (rule target classes); the instrument catalogue is the next increment.
+    "validate_registry:I15",
+    "validate_registry:I8c",   # the instrument catalogue fixes the class; the author does not
 })
 
 #: `PENDING:<family>` marks a clause whose invariant is real but lives in code not yet wired into
@@ -248,9 +260,43 @@ CLAUSES = [
     # predicate — hence ASPIRATIONAL, sited human_only.
     Clause("C25", "The Governor shall record, and shall not obscure, the external legal authorities to "
                   "which the polity's activities remain subject.", ASPIRATIONAL, Site.HUMAN_ONLY),
+
+    # --- IDS C26-C31 ARE DELIBERATELY RESERVED, NOT MISSING ---------------------------------
+    # Research V13 drafted a disclosure-control block and labelled it C29-C31 in the memo; the
+    # umbrella ledger and the v2 anchor already cite "C29" for the retention rule backed by
+    # twin.check_reverse_coverage. Renumbering those now would silently break every existing
+    # reference, so V14's clauses start at C32 and C26-C31 stay reserved for that block when it
+    # lands. Contiguity is worth less than a citation that still resolves.
+
+    # --- Governance-history findings (research V14, 2026-08-11) ------------------------------
+    Clause("C32", "A measure the Governor is judged against shall declare how it will be gamed, "
+                  "including whether it ratchets and whether it is uniform across unlike units.",
+           "validate_registry:I4'", Site.EXTERNAL_VERIFIER),
+    Clause("C33", "A body that allocates shall name the tier at which its discretion sits and the "
+                  "check for capture at that tier; devolution is not itself a safeguard.",
+           "validate_registry:I8b", Site.EXTERNAL_VERIFIER),
+    Clause("C34", "No person shall be classified without a named accountable human and a route of "
+                  "appeal that does not require the person to disprove the model; the Governor's "
+                  "output is never itself the justification.",
+           "validate_registry:I12", Site.EXTERNAL_VERIFIER, non_negotiable=True),
+    Clause("C35", "No person shall be classified by resemblance to a prior adverse case.",
+           "validate_registry:I13", Site.EXTERNAL_VERIFIER, non_negotiable=True),
+    Clause("C36", "Where incremental action would entrench the condition it addresses, the Governor "
+                  "shall report that no incremental recommendation is safe, rather than issue a "
+                  "lesser one.", "validate_registry:I14", Site.EXTERNAL_VERIFIER),
+
+    # --- Controlled vocabulary (2026-08-11) -------------------------------------------------
+    # A department may NAME a ratified class; it may not invent one. The entry, not the department,
+    # fixes what the identifier means and who may use it — which is why relabelling gains nothing.
+    Clause("C37", "The classes a body may act upon are those the polity has ratified and defined; a "
+                  "body may name a ratified class, never invent one.",
+           "validate_registry:I15", Site.EXTERNAL_VERIFIER, non_negotiable=True),
+    Clause("C38", "The levers a body may pull are those the polity has ratified and defined, and "
+                  "what a lever IS is fixed by that definition, not by the body wielding it.",
+           "validate_registry:I8c", Site.EXTERNAL_VERIFIER, non_negotiable=True),
 ]
 
-NON_NEGOTIABLES = ("C01", "C02", "C03", "C04", "C19", "C23")
+NON_NEGOTIABLES = ("C01", "C02", "C03", "C04", "C19", "C23", "C34", "C35", "C37", "C38")
 
 
 def checkable_fraction(clauses=None) -> float:

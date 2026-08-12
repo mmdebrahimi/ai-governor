@@ -302,6 +302,34 @@ class ColonyTwin:
 # --------------------------------------------------------------------------------------
 
 
+def check_reverse_coverage(specs, twin: ColonyTwin) -> list:
+    """The RETENTION check: every variable the world SERVES must be claimed by some department.
+
+    `check_state_coverage` asks "is every declared variable served?" — it catches a department acting on
+    fiction. This asks the opposite and catches something worse: **a variable the world holds that no
+    ratified decision needs**. That is data with no consumer, and data with no consumer is the
+    unbounded-retention risk.
+
+    The empirical warrant is not squeamishness. Seltzer & Anderson (*Social Research* 68(2), 2001)
+    document that the harm from population data systems arose **not from malicious intent at collection
+    but from data persistence under changed political circumstances** — the Dutch civil registry recorded
+    religion partly to administer burials, and was captured in 1940 to identify Jews and Roma. An access
+    control is enforced by the regime that holds the data; it does not bind that regime's successor.
+    Only non-existence does.
+
+    So: an unclaimed variable is not untidy, it is a standing offer to a government the polity has not
+    met. Drafted charter clause C29 ("retention is the control") is the constitutional form; this is the
+    mechanical one.
+    """
+    declared = {sv.name for spec in specs for sv in spec.state_vars}
+    return [
+        "[RET] the twin serves {!r} but NO department declares it — data with no ratified consumer. "
+        "Either a department must claim it, or it should not be collected (C29).".format(name)
+        for name in sorted(twin.SERVED)
+        if name not in declared
+    ]
+
+
 def check_state_coverage(specs, twin: ColonyTwin) -> list:
     """Every StateVar a department declares must be SERVED, at the SAME observability.
 
