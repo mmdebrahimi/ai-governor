@@ -18,3 +18,6 @@ desktop.ini
 # Soraya run-lock (machine-local; the run ARTIFACTS under soraya_runs/ are kept on purpose —
 # intent-contract / audit-trail / result / recommendation are the provenance of how this was built)
 .soraya-run.lock
+
+# ba-beautify build outputs (regenerate with the skill; not source)
+docs/*_Bombardier.docx

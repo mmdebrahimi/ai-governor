@@ -1,5 +1,7 @@
 # Comparative government policy library — 40 largest economies + an instructive tail
 
+## Status and scope
+
 > **TIER: DISCOVERY. NOT CITED. NOT AN INPUT TO ANY INSTRUMENT.**
 >
 > Compiled 2026-08-12 from model knowledge, **not** from named primary sources with dates. Nothing
