@@ -102,6 +102,11 @@ SPEC = DepartmentSpec(
             source=ConstraintSource.PHYSICS,
         ),
     ],
+    # NOTE: these are the couplings for the TWO-department colony. Couplings are relative to a
+    # registry composition — D1 cannot declare contention with a department that is not present
+    # (I3 rejects a reference to an unknown department), and must declare it when one is. The
+    # three-department phase-1 registry composes a D3-aware D1 explicitly; see
+    # `aigov.registry.phase1_registry`.
     couplings=[
         Coupling("D2", "pressurized_volume_m3", CouplingDirection.CONTENDS),
         Coupling("D2", "power_kw", CouplingDirection.CONTENDS),

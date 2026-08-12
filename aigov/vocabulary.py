@@ -234,5 +234,49 @@ RATIFIED_VOCABULARY = RatifiedVocabulary(
             definition="The requirement that a holder's self-declared value binds them to sell at "
                        "it. A rule: it constrains conduct and creates no allocation.",
         ),
+
+        # --- D3 Research & Fabrication Capacity, the MEDIUM-legitimacy reference department.
+        # MEDIUM is "procedure central, judgment distributed", and the catalogue is where that
+        # distinction is made real: the colony may centrally schedule a scarce machine, and may
+        # NOT centrally decide which project deserves it. G-P-001 is the ratified sentence that
+        # forbids the second, so every D3 entry cites it.
+        VocabularyEntry(
+            identifier="all qualified fabrication applicants",
+            kind=VocabularyKind.RULE_TARGET_CLASS,
+            guideline_id="G-P-001",
+            allowed_depts=frozenset({"D3"}),
+            definition="Every colonist who holds the published SAFETY qualification for the "
+                       "machine in question. Membership turns on that qualification alone and on "
+                       "nothing about the proposed work - not its subject, not its promise, not "
+                       "the applicant's record. A class that could be narrowed by merit would be "
+                       "the committee G-P-001 forbids, wearing a different name.",
+        ),
+        VocabularyEntry(
+            identifier="fab_slot_allocation", kind=VocabularyKind.INSTRUMENT,
+            guideline_id="G-P-001", instrument_class="quantity_allocation",
+            allowed_depts=frozenset({"D3"}),
+            definition="Assignment of fabrication machine-hours to applicants. Unambiguously "
+                       "allocative - an hour given to one applicant is unavailable to another - "
+                       "and catalogued as such so it cannot be re-described as a price. MEDIUM "
+                       "legitimacy permits it; I8b still requires the discretion tier and the "
+                       "capture check, and here discretion sits with a published-seed lottery "
+                       "rather than with any officer.",
+        ),
+        VocabularyEntry(
+            identifier="fab_queue_discipline_rule", kind=VocabularyKind.INSTRUMENT,
+            guideline_id="G-P-001", instrument_class="rule",
+            allowed_depts=frozenset({"D3"}),
+            definition="The standing conditions on holding a slot - qualification, forfeiture of "
+                       "an unused slot, re-entry to the pool. A rule: it constrains conduct and "
+                       "hands nothing out.",
+        ),
+        VocabularyEntry(
+            identifier="fab_overrun_price", kind=VocabularyKind.INSTRUMENT,
+            guideline_id="G-O-002", instrument_class="price",
+            allowed_depts=frozenset({"D3"}),
+            definition="Credits charged per machine-hour consumed beyond an allocated slot. A "
+                       "price on overrun, not a ration of access: it changes what running long "
+                       "costs and decides nobody's place in the queue.",
+        ),
     ),
 )
