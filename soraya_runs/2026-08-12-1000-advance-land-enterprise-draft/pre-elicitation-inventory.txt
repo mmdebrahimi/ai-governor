@@ -1,0 +1,489 @@
+DECISION SOURCING
+  L01        undecidable  cannot be sourced yet - still unanswered: frequency_per_year, external_engagement_cost, internal_annual_cost, external_market_exists. No default is applied; supplying one would be the instrument inventing the answer it exists to elicit.
+  L02        undecidable  cannot be sourced yet - still unanswered: frequency_per_year, external_engagement_cost, internal_annual_cost, external_market_exists. No default is applied; supplying one would be the instrument inventing the answer it exists to elicit.
+  L03        undecidable  cannot be sourced yet - still unanswered: frequency_per_year, external_engagement_cost, internal_annual_cost, external_market_exists. No default is applied; supplying one would be the instrument inventing the answer it exists to elicit.
+  L04        undecidable  cannot be sourced yet - still unanswered: frequency_per_year, external_engagement_cost, internal_annual_cost, external_market_exists. No default is applied; supplying one would be the instrument inventing the answer it exists to elicit.
+  L05        undecidable  cannot be sourced yet - still unanswered: frequency_per_year, external_engagement_cost, internal_annual_cost, external_market_exists. No default is applied; supplying one would be the instrument inventing the answer it exists to elicit.
+  L06        undecidable  cannot be sourced yet - still unanswered: frequency_per_year, external_engagement_cost, internal_annual_cost, external_market_exists. No default is applied; supplying one would be the instrument inventing the answer it exists to elicit.
+  L07        undecidable  cannot be sourced yet - still unanswered: frequency_per_year, external_engagement_cost, internal_annual_cost, external_market_exists. No default is applied; supplying one would be the instrument inventing the answer it exists to elicit.
+  L08        undecidable  cannot be sourced yet - still unanswered: frequency_per_year, external_engagement_cost, internal_annual_cost, external_market_exists. No default is applied; supplying one would be the instrument inventing the answer it exists to elicit.
+  L09        undecidable  cannot be sourced yet - still unanswered: frequency_per_year, external_engagement_cost, internal_annual_cost, external_market_exists. No default is applied; supplying one would be the instrument inventing the answer it exists to elicit.
+  L10        undecidable  cannot be sourced yet - still unanswered: frequency_per_year, external_engagement_cost, internal_annual_cost, external_market_exists. No default is applied; supplying one would be the instrument inventing the answer it exists to elicit.
+  L11        undecidable  cannot be sourced yet - still unanswered: frequency_per_year, external_engagement_cost, internal_annual_cost, external_market_exists. No default is applied; supplying one would be the instrument inventing the answer it exists to elicit.
+  L12        undecidable  cannot be sourced yet - still unanswered: frequency_per_year, external_engagement_cost, internal_annual_cost, external_market_exists. No default is applied; supplying one would be the instrument inventing the answer it exists to elicit.
+  L13        undecidable  cannot be sourced yet - still unanswered: frequency_per_year, external_engagement_cost, internal_annual_cost, external_market_exists. No default is applied; supplying one would be the instrument inventing the answer it exists to elicit.
+  L14        undecidable  cannot be sourced yet - still unanswered: frequency_per_year, external_engagement_cost, internal_annual_cost, external_market_exists. No default is applied; supplying one would be the instrument inventing the answer it exists to elicit.
+  L15        undecidable  cannot be sourced yet - still unanswered: frequency_per_year, external_engagement_cost, internal_annual_cost, external_market_exists. No default is applied; supplying one would be the instrument inventing the answer it exists to elicit.
+  L16        undecidable  cannot be sourced yet - still unanswered: frequency_per_year, external_engagement_cost, internal_annual_cost, external_market_exists. No default is applied; supplying one would be the instrument inventing the answer it exists to elicit.
+  L17        undecidable  cannot be sourced yet - still unanswered: frequency_per_year, external_engagement_cost, internal_annual_cost, external_market_exists. No default is applied; supplying one would be the instrument inventing the answer it exists to elicit.
+  L18        undecidable  cannot be sourced yet - still unanswered: frequency_per_year, external_engagement_cost, internal_annual_cost, external_market_exists. No default is applied; supplying one would be the instrument inventing the answer it exists to elicit.
+  L19        undecidable  cannot be sourced yet - still unanswered: frequency_per_year, external_engagement_cost, internal_annual_cost, external_market_exists. No default is applied; supplying one would be the instrument inventing the answer it exists to elicit.
+  L20        undecidable  cannot be sourced yet - still unanswered: frequency_per_year, external_engagement_cost, internal_annual_cost, external_market_exists. No default is applied; supplying one would be the instrument inventing the answer it exists to elicit.
+  L21        undecidable  cannot be sourced yet - still unanswered: frequency_per_year, external_engagement_cost, internal_annual_cost, external_market_exists. No default is applied; supplying one would be the instrument inventing the answer it exists to elicit.
+  L22        undecidable  cannot be sourced yet - still unanswered: frequency_per_year, external_engagement_cost, internal_annual_cost, external_market_exists. No default is applied; supplying one would be the instrument inventing the answer it exists to elicit.
+  L23        undecidable  cannot be sourced yet - still unanswered: frequency_per_year, external_engagement_cost, internal_annual_cost, external_market_exists. No default is applied; supplying one would be the instrument inventing the answer it exists to elicit.
+  L24        undecidable  cannot be sourced yet - still unanswered: frequency_per_year, external_engagement_cost, internal_annual_cost, external_market_exists. No default is applied; supplying one would be the instrument inventing the answer it exists to elicit.
+  L25        undecidable  cannot be sourced yet - still unanswered: frequency_per_year, external_engagement_cost, internal_annual_cost, external_market_exists. No default is applied; supplying one would be the instrument inventing the answer it exists to elicit.
+  L26        undecidable  cannot be sourced yet - still unanswered: frequency_per_year, external_engagement_cost, internal_annual_cost, external_market_exists. No default is applied; supplying one would be the instrument inventing the answer it exists to elicit.
+  L27        undecidable  cannot be sourced yet - still unanswered: frequency_per_year, external_engagement_cost, internal_annual_cost, external_market_exists. No default is applied; supplying one would be the instrument inventing the answer it exists to elicit.
+  L28        undecidable  cannot be sourced yet - still unanswered: frequency_per_year, external_engagement_cost, internal_annual_cost, external_market_exists. No default is applied; supplying one would be the instrument inventing the answer it exists to elicit.
+  L29        undecidable  cannot be sourced yet - still unanswered: frequency_per_year, external_engagement_cost, internal_annual_cost, external_market_exists. No default is applied; supplying one would be the instrument inventing the answer it exists to elicit.
+  L30        undecidable  cannot be sourced yet - still unanswered: frequency_per_year, external_engagement_cost, internal_annual_cost, external_market_exists. No default is applied; supplying one would be the instrument inventing the answer it exists to elicit.
+  L31        undecidable  cannot be sourced yet - still unanswered: frequency_per_year, external_engagement_cost, internal_annual_cost, external_market_exists. No default is applied; supplying one would be the instrument inventing the answer it exists to elicit.
+
+ASSURANCE (how hard to check - a SEPARATE question from who holds it)
+  L01        undecidable          cannot set a checking requirement yet - 'what happens if you get it wrong once?' is unanswered. No default is applied.
+  L02        undecidable          cannot set a checking requirement yet - 'what happens if you get it wrong once?' is unanswered. No default is applied.
+  L03        undecidable          cannot set a checking requirement yet - 'what happens if you get it wrong once?' is unanswered. No default is applied.
+  L04        undecidable          cannot set a checking requirement yet - 'what happens if you get it wrong once?' is unanswered. No default is applied.
+  L05        undecidable          cannot set a checking requirement yet - 'what happens if you get it wrong once?' is unanswered. No default is applied.
+  L06        undecidable          cannot set a checking requirement yet - 'what happens if you get it wrong once?' is unanswered. No default is applied.
+  L07        undecidable          cannot set a checking requirement yet - 'what happens if you get it wrong once?' is unanswered. No default is applied.
+  L08        undecidable          cannot set a checking requirement yet - 'what happens if you get it wrong once?' is unanswered. No default is applied.
+  L09        undecidable          cannot set a checking requirement yet - 'what happens if you get it wrong once?' is unanswered. No default is applied.
+  L10        undecidable          cannot set a checking requirement yet - 'what happens if you get it wrong once?' is unanswered. No default is applied.
+  L11        undecidable          cannot set a checking requirement yet - 'what happens if you get it wrong once?' is unanswered. No default is applied.
+  L12        undecidable          cannot set a checking requirement yet - 'what happens if you get it wrong once?' is unanswered. No default is applied.
+  L13        undecidable          cannot set a checking requirement yet - 'what happens if you get it wrong once?' is unanswered. No default is applied.
+  L14        undecidable          cannot set a checking requirement yet - 'what happens if you get it wrong once?' is unanswered. No default is applied.
+  L15        undecidable          cannot set a checking requirement yet - 'what happens if you get it wrong once?' is unanswered. No default is applied.
+  L16        undecidable          cannot set a checking requirement yet - 'what happens if you get it wrong once?' is unanswered. No default is applied.
+  L17        undecidable          cannot set a checking requirement yet - 'what happens if you get it wrong once?' is unanswered. No default is applied.
+  L18        undecidable          cannot set a checking requirement yet - 'what happens if you get it wrong once?' is unanswered. No default is applied.
+  L19        undecidable          cannot set a checking requirement yet - 'what happens if you get it wrong once?' is unanswered. No default is applied.
+  L20        undecidable          cannot set a checking requirement yet - 'what happens if you get it wrong once?' is unanswered. No default is applied.
+  L21        undecidable          cannot set a checking requirement yet - 'what happens if you get it wrong once?' is unanswered. No default is applied.
+  L22        undecidable          cannot set a checking requirement yet - 'what happens if you get it wrong once?' is unanswered. No default is applied.
+  L23        undecidable          cannot set a checking requirement yet - 'what happens if you get it wrong once?' is unanswered. No default is applied.
+  L24        undecidable          cannot set a checking requirement yet - 'what happens if you get it wrong once?' is unanswered. No default is applied.
+  L25        undecidable          cannot set a checking requirement yet - 'what happens if you get it wrong once?' is unanswered. No default is applied.
+  L26        undecidable          cannot set a checking requirement yet - 'what happens if you get it wrong once?' is unanswered. No default is applied.
+  L27        undecidable          cannot set a checking requirement yet - 'what happens if you get it wrong once?' is unanswered. No default is applied.
+  L28        undecidable          cannot set a checking requirement yet - 'what happens if you get it wrong once?' is unanswered. No default is applied.
+  L29        undecidable          cannot set a checking requirement yet - 'what happens if you get it wrong once?' is unanswered. No default is applied.
+  L30        undecidable          cannot set a checking requirement yet - 'what happens if you get it wrong once?' is unanswered. No default is applied.
+  L31        undecidable          cannot set a checking requirement yet - 'what happens if you get it wrong once?' is unanswered. No default is applied.
+
+RETAINED CAPABILITIES (0 - every internal pair affirmed by you; the organisational form is still yours to choose)
+
+UNANSWERED (31) - these join no capability until answered
+  L01
+  L02
+  L03
+  L04
+  L05
+  L06
+  L07
+  L08
+  L09
+  L10
+  L11
+  L12
+  L13
+  L14
+  L15
+  L16
+  L17
+  L18
+  L19
+  L20
+  L21
+  L22
+  L23
+  L24
+  L25
+  L26
+  L27
+  L28
+  L29
+  L30
+  L31
+
+NO ACCOUNTABLE ROLE (31) - including any bought-in decision, which still needs someone internal to own the supplier
+  L01
+  L02
+  L03
+  L04
+  L05
+  L06
+  L07
+  L08
+  L09
+  L10
+  L11
+  L12
+  L13
+  L14
+  L15
+  L16
+  L17
+  L18
+  L19
+  L20
+  L21
+  L22
+  L23
+  L24
+  L25
+  L26
+  L27
+  L28
+  L29
+  L30
+  L31
+
+NO CHECKING REQUIREMENT (31) - consequence unanswered
+  L01
+  L02
+  L03
+  L04
+  L05
+  L06
+  L07
+  L08
+  L09
+  L10
+  L11
+  L12
+  L13
+  L14
+  L15
+  L16
+  L17
+  L18
+  L19
+  L20
+  L21
+  L22
+  L23
+  L24
+  L25
+  L26
+  L27
+  L28
+  L29
+  L30
+  L31
+
+QUESTIONS TO ASK
+  [L01] Whether to acquire a specific parcel that has been offered to us in a jurisdiction where we already operate.
+    - How many times a year does this actually come up? A rough count of the last two years is fine - it does not need to be exact, it needs to be yours.
+    - If you handed this to an outside specialist ONCE, what would it cost you all-in - their fee, plus the time to find them, brief them, and check their work?
+    - What would it cost per year to keep this capability in-house - the person's time, the tools, and the attention it takes off other things?
+    - Is there anyone you could actually buy this judgement from? If nobody sells it, that settles it on its own.
+    - What do you know about this that an outside expert could not find out? That is the thing that makes buying it worse than it looks on price.
+    - What has to be KNOWN before you can make this call? List the facts, not the sources.
+    - Who ANSWERS for this decision - the role, not the person? If nobody does yet, say so.
+    - What happens if you get it wrong once? Say whether it is recoverable, expensive, or permanent.
+    - Is this ONE decision, or several? Could two reasonable people answer different PARTS of this question differently? If so it needs splitting before anything here means much.
+  [L02] Whether to begin operating in a jurisdiction we are not currently in.
+    - How many times a year does this actually come up? A rough count of the last two years is fine - it does not need to be exact, it needs to be yours.
+    - If you handed this to an outside specialist ONCE, what would it cost you all-in - their fee, plus the time to find them, brief them, and check their work?
+    - What would it cost per year to keep this capability in-house - the person's time, the tools, and the attention it takes off other things?
+    - Is there anyone you could actually buy this judgement from? If nobody sells it, that settles it on its own.
+    - What do you know about this that an outside expert could not find out? That is the thing that makes buying it worse than it looks on price.
+    - What has to be KNOWN before you can make this call? List the facts, not the sources.
+    - Who ANSWERS for this decision - the role, not the person? If nobody does yet, say so.
+    - What happens if you get it wrong once? Say whether it is recoverable, expensive, or permanent.
+    - Is this ONE decision, or several? Could two reasonable people answer different PARTS of this question differently? If so it needs splitting before anything here means much.
+  [L03] Whether to sell a parcel we currently hold.
+    - How many times a year does this actually come up? A rough count of the last two years is fine - it does not need to be exact, it needs to be yours.
+    - If you handed this to an outside specialist ONCE, what would it cost you all-in - their fee, plus the time to find them, brief them, and check their work?
+    - What would it cost per year to keep this capability in-house - the person's time, the tools, and the attention it takes off other things?
+    - Is there anyone you could actually buy this judgement from? If nobody sells it, that settles it on its own.
+    - What do you know about this that an outside expert could not find out? That is the thing that makes buying it worse than it looks on price.
+    - What has to be KNOWN before you can make this call? List the facts, not the sources.
+    - Who ANSWERS for this decision - the role, not the person? If nobody does yet, say so.
+    - What happens if you get it wrong once? Say whether it is recoverable, expensive, or permanent.
+    - Is this ONE decision, or several? Could two reasonable people answer different PARTS of this question differently? If so it needs splitting before anything here means much.
+  [L04] For a given parcel, whether to farm it ourselves or lease it out to an operator.
+    - How many times a year does this actually come up? A rough count of the last two years is fine - it does not need to be exact, it needs to be yours.
+    - If you handed this to an outside specialist ONCE, what would it cost you all-in - their fee, plus the time to find them, brief them, and check their work?
+    - What would it cost per year to keep this capability in-house - the person's time, the tools, and the attention it takes off other things?
+    - Is there anyone you could actually buy this judgement from? If nobody sells it, that settles it on its own.
+    - What do you know about this that an outside expert could not find out? That is the thing that makes buying it worse than it looks on price.
+    - What has to be KNOWN before you can make this call? List the facts, not the sources.
+    - Who ANSWERS for this decision - the role, not the person? If nobody does yet, say so.
+    - What happens if you get it wrong once? Say whether it is recoverable, expensive, or permanent.
+    - Is this ONE decision, or several? Could two reasonable people answer different PARTS of this question differently? If so it needs splitting before anything here means much.
+  [L05] Whether to renew, renegotiate or end a tenancy or share arrangement as it comes up for term.
+    - How many times a year does this actually come up? A rough count of the last two years is fine - it does not need to be exact, it needs to be yours.
+    - If you handed this to an outside specialist ONCE, what would it cost you all-in - their fee, plus the time to find them, brief them, and check their work?
+    - What would it cost per year to keep this capability in-house - the person's time, the tools, and the attention it takes off other things?
+    - Is there anyone you could actually buy this judgement from? If nobody sells it, that settles it on its own.
+    - What do you know about this that an outside expert could not find out? That is the thing that makes buying it worse than it looks on price.
+    - What has to be KNOWN before you can make this call? List the facts, not the sources.
+    - Who ANSWERS for this decision - the role, not the person? If nobody does yet, say so.
+    - What happens if you get it wrong once? Say whether it is recoverable, expensive, or permanent.
+    - Is this ONE decision, or several? Could two reasonable people answer different PARTS of this question differently? If so it needs splitting before anything here means much.
+  [L06] What to plant on a given parcel for the coming season.
+    - How many times a year does this actually come up? A rough count of the last two years is fine - it does not need to be exact, it needs to be yours.
+    - If you handed this to an outside specialist ONCE, what would it cost you all-in - their fee, plus the time to find them, brief them, and check their work?
+    - What would it cost per year to keep this capability in-house - the person's time, the tools, and the attention it takes off other things?
+    - Is there anyone you could actually buy this judgement from? If nobody sells it, that settles it on its own.
+    - What do you know about this that an outside expert could not find out? That is the thing that makes buying it worse than it looks on price.
+    - What has to be KNOWN before you can make this call? List the facts, not the sources.
+    - Who ANSWERS for this decision - the role, not the person? If nobody does yet, say so.
+    - What happens if you get it wrong once? Say whether it is recoverable, expensive, or permanent.
+    - Is this ONE decision, or several? Could two reasonable people answer different PARTS of this question differently? If so it needs splitting before anything here means much.
+  [L07] Whether to change the established rotation on a given parcel.
+    - How many times a year does this actually come up? A rough count of the last two years is fine - it does not need to be exact, it needs to be yours.
+    - If you handed this to an outside specialist ONCE, what would it cost you all-in - their fee, plus the time to find them, brief them, and check their work?
+    - What would it cost per year to keep this capability in-house - the person's time, the tools, and the attention it takes off other things?
+    - Is there anyone you could actually buy this judgement from? If nobody sells it, that settles it on its own.
+    - What do you know about this that an outside expert could not find out? That is the thing that makes buying it worse than it looks on price.
+    - What has to be KNOWN before you can make this call? List the facts, not the sources.
+    - Who ANSWERS for this decision - the role, not the person? If nobody does yet, say so.
+    - What happens if you get it wrong once? Say whether it is recoverable, expensive, or permanent.
+    - Is this ONE decision, or several? Could two reasonable people answer different PARTS of this question differently? If so it needs splitting before anything here means much.
+  [L08] Whether to fund an irrigation or drainage improvement on a given parcel.
+    - How many times a year does this actually come up? A rough count of the last two years is fine - it does not need to be exact, it needs to be yours.
+    - If you handed this to an outside specialist ONCE, what would it cost you all-in - their fee, plus the time to find them, brief them, and check their work?
+    - What would it cost per year to keep this capability in-house - the person's time, the tools, and the attention it takes off other things?
+    - Is there anyone you could actually buy this judgement from? If nobody sells it, that settles it on its own.
+    - What do you know about this that an outside expert could not find out? That is the thing that makes buying it worse than it looks on price.
+    - What has to be KNOWN before you can make this call? List the facts, not the sources.
+    - Who ANSWERS for this decision - the role, not the person? If nobody does yet, say so.
+    - What happens if you get it wrong once? Say whether it is recoverable, expensive, or permanent.
+    - Is this ONE decision, or several? Could two reasonable people answer different PARTS of this question differently? If so it needs splitting before anything here means much.
+  [L09] Whether to convert a parcel from one land use to another (a change measured in years, not seasons).
+    - How many times a year does this actually come up? A rough count of the last two years is fine - it does not need to be exact, it needs to be yours.
+    - If you handed this to an outside specialist ONCE, what would it cost you all-in - their fee, plus the time to find them, brief them, and check their work?
+    - What would it cost per year to keep this capability in-house - the person's time, the tools, and the attention it takes off other things?
+    - Is there anyone you could actually buy this judgement from? If nobody sells it, that settles it on its own.
+    - What do you know about this that an outside expert could not find out? That is the thing that makes buying it worse than it looks on price.
+    - What has to be KNOWN before you can make this call? List the facts, not the sources.
+    - Who ANSWERS for this decision - the role, not the person? If nobody does yet, say so.
+    - What happens if you get it wrong once? Say whether it is recoverable, expensive, or permanent.
+    - Is this ONE decision, or several? Could two reasonable people answer different PARTS of this question differently? If so it needs splitting before anything here means much.
+  [L10] When to harvest a given block once it is within its window.
+    - How many times a year does this actually come up? A rough count of the last two years is fine - it does not need to be exact, it needs to be yours.
+    - If you handed this to an outside specialist ONCE, what would it cost you all-in - their fee, plus the time to find them, brief them, and check their work?
+    - What would it cost per year to keep this capability in-house - the person's time, the tools, and the attention it takes off other things?
+    - Is there anyone you could actually buy this judgement from? If nobody sells it, that settles it on its own.
+    - What do you know about this that an outside expert could not find out? That is the thing that makes buying it worse than it looks on price.
+    - What has to be KNOWN before you can make this call? List the facts, not the sources.
+    - Who ANSWERS for this decision - the role, not the person? If nobody does yet, say so.
+    - What happens if you get it wrong once? Say whether it is recoverable, expensive, or permanent.
+    - Is this ONE decision, or several? Could two reasonable people answer different PARTS of this question differently? If so it needs splitting before anything here means much.
+  [L11] How much of a major input to commit to in advance of a season, and when to commit.
+    - How many times a year does this actually come up? A rough count of the last two years is fine - it does not need to be exact, it needs to be yours.
+    - If you handed this to an outside specialist ONCE, what would it cost you all-in - their fee, plus the time to find them, brief them, and check their work?
+    - What would it cost per year to keep this capability in-house - the person's time, the tools, and the attention it takes off other things?
+    - Is there anyone you could actually buy this judgement from? If nobody sells it, that settles it on its own.
+    - What do you know about this that an outside expert could not find out? That is the thing that makes buying it worse than it looks on price.
+    - What has to be KNOWN before you can make this call? List the facts, not the sources.
+    - Who ANSWERS for this decision - the role, not the person? If nobody does yet, say so.
+    - What happens if you get it wrong once? Say whether it is recoverable, expensive, or permanent.
+    - Is this ONE decision, or several? Could two reasonable people answer different PARTS of this question differently? If so it needs splitting before anything here means much.
+  [L12] Whether to move a category of purchasing from our current supplier to another.
+    - How many times a year does this actually come up? A rough count of the last two years is fine - it does not need to be exact, it needs to be yours.
+    - If you handed this to an outside specialist ONCE, what would it cost you all-in - their fee, plus the time to find them, brief them, and check their work?
+    - What would it cost per year to keep this capability in-house - the person's time, the tools, and the attention it takes off other things?
+    - Is there anyone you could actually buy this judgement from? If nobody sells it, that settles it on its own.
+    - What do you know about this that an outside expert could not find out? That is the thing that makes buying it worse than it looks on price.
+    - What has to be KNOWN before you can make this call? List the facts, not the sources.
+    - Who ANSWERS for this decision - the role, not the person? If nobody does yet, say so.
+    - What happens if you get it wrong once? Say whether it is recoverable, expensive, or permanent.
+    - Is this ONE decision, or several? Could two reasonable people answer different PARTS of this question differently? If so it needs splitting before anything here means much.
+  [L13] For a given machine requirement, whether to buy, lease, or hire it in with an operator.
+    - How many times a year does this actually come up? A rough count of the last two years is fine - it does not need to be exact, it needs to be yours.
+    - If you handed this to an outside specialist ONCE, what would it cost you all-in - their fee, plus the time to find them, brief them, and check their work?
+    - What would it cost per year to keep this capability in-house - the person's time, the tools, and the attention it takes off other things?
+    - Is there anyone you could actually buy this judgement from? If nobody sells it, that settles it on its own.
+    - What do you know about this that an outside expert could not find out? That is the thing that makes buying it worse than it looks on price.
+    - What has to be KNOWN before you can make this call? List the facts, not the sources.
+    - Who ANSWERS for this decision - the role, not the person? If nobody does yet, say so.
+    - What happens if you get it wrong once? Say whether it is recoverable, expensive, or permanent.
+    - Is this ONE decision, or several? Could two reasonable people answer different PARTS of this question differently? If so it needs splitting before anything here means much.
+  [L14] Whether to repair or replace a major machine at the point it fails or comes due.
+    - How many times a year does this actually come up? A rough count of the last two years is fine - it does not need to be exact, it needs to be yours.
+    - If you handed this to an outside specialist ONCE, what would it cost you all-in - their fee, plus the time to find them, brief them, and check their work?
+    - What would it cost per year to keep this capability in-house - the person's time, the tools, and the attention it takes off other things?
+    - Is there anyone you could actually buy this judgement from? If nobody sells it, that settles it on its own.
+    - What do you know about this that an outside expert could not find out? That is the thing that makes buying it worse than it looks on price.
+    - What has to be KNOWN before you can make this call? List the facts, not the sources.
+    - Who ANSWERS for this decision - the role, not the person? If nobody does yet, say so.
+    - What happens if you get it wrong once? Say whether it is recoverable, expensive, or permanent.
+    - Is this ONE decision, or several? Could two reasonable people answer different PARTS of this question differently? If so it needs splitting before anything here means much.
+  [L15] Whether to sell stored output now or continue holding it.
+    - How many times a year does this actually come up? A rough count of the last two years is fine - it does not need to be exact, it needs to be yours.
+    - If you handed this to an outside specialist ONCE, what would it cost you all-in - their fee, plus the time to find them, brief them, and check their work?
+    - What would it cost per year to keep this capability in-house - the person's time, the tools, and the attention it takes off other things?
+    - Is there anyone you could actually buy this judgement from? If nobody sells it, that settles it on its own.
+    - What do you know about this that an outside expert could not find out? That is the thing that makes buying it worse than it looks on price.
+    - What has to be KNOWN before you can make this call? List the facts, not the sources.
+    - Who ANSWERS for this decision - the role, not the person? If nobody does yet, say so.
+    - What happens if you get it wrong once? Say whether it is recoverable, expensive, or permanent.
+    - Is this ONE decision, or several? Could two reasonable people answer different PARTS of this question differently? If so it needs splitting before anything here means much.
+  [L16] Whether to commit a share of an expected harvest to a forward price before it is in hand.
+    - How many times a year does this actually come up? A rough count of the last two years is fine - it does not need to be exact, it needs to be yours.
+    - If you handed this to an outside specialist ONCE, what would it cost you all-in - their fee, plus the time to find them, brief them, and check their work?
+    - What would it cost per year to keep this capability in-house - the person's time, the tools, and the attention it takes off other things?
+    - Is there anyone you could actually buy this judgement from? If nobody sells it, that settles it on its own.
+    - What do you know about this that an outside expert could not find out? That is the thing that makes buying it worse than it looks on price.
+    - What has to be KNOWN before you can make this call? List the facts, not the sources.
+    - Who ANSWERS for this decision - the role, not the person? If nobody does yet, say so.
+    - What happens if you get it wrong once? Say whether it is recoverable, expensive, or permanent.
+    - Is this ONE decision, or several? Could two reasonable people answer different PARTS of this question differently? If so it needs splitting before anything here means much.
+  [L17] Which buyer or channel to direct a given lot to.
+    - How many times a year does this actually come up? A rough count of the last two years is fine - it does not need to be exact, it needs to be yours.
+    - If you handed this to an outside specialist ONCE, what would it cost you all-in - their fee, plus the time to find them, brief them, and check their work?
+    - What would it cost per year to keep this capability in-house - the person's time, the tools, and the attention it takes off other things?
+    - Is there anyone you could actually buy this judgement from? If nobody sells it, that settles it on its own.
+    - What do you know about this that an outside expert could not find out? That is the thing that makes buying it worse than it looks on price.
+    - What has to be KNOWN before you can make this call? List the facts, not the sources.
+    - Who ANSWERS for this decision - the role, not the person? If nobody does yet, say so.
+    - What happens if you get it wrong once? Say whether it is recoverable, expensive, or permanent.
+    - Is this ONE decision, or several? Could two reasonable people answer different PARTS of this question differently? If so it needs splitting before anything here means much.
+  [L18] For a given recurring work need, whether to fill it with a permanent hire, seasonal labour, or a contractor.
+    - How many times a year does this actually come up? A rough count of the last two years is fine - it does not need to be exact, it needs to be yours.
+    - If you handed this to an outside specialist ONCE, what would it cost you all-in - their fee, plus the time to find them, brief them, and check their work?
+    - What would it cost per year to keep this capability in-house - the person's time, the tools, and the attention it takes off other things?
+    - Is there anyone you could actually buy this judgement from? If nobody sells it, that settles it on its own.
+    - What do you know about this that an outside expert could not find out? That is the thing that makes buying it worse than it looks on price.
+    - What has to be KNOWN before you can make this call? List the facts, not the sources.
+    - Who ANSWERS for this decision - the role, not the person? If nobody does yet, say so.
+    - What happens if you get it wrong once? Say whether it is recoverable, expensive, or permanent.
+    - Is this ONE decision, or several? Could two reasonable people answer different PARTS of this question differently? If so it needs splitting before anything here means much.
+  [L19] When a site-level manager leaves, whether to promote from inside or recruit from outside.
+    - How many times a year does this actually come up? A rough count of the last two years is fine - it does not need to be exact, it needs to be yours.
+    - If you handed this to an outside specialist ONCE, what would it cost you all-in - their fee, plus the time to find them, brief them, and check their work?
+    - What would it cost per year to keep this capability in-house - the person's time, the tools, and the attention it takes off other things?
+    - Is there anyone you could actually buy this judgement from? If nobody sells it, that settles it on its own.
+    - What do you know about this that an outside expert could not find out? That is the thing that makes buying it worse than it looks on price.
+    - What has to be KNOWN before you can make this call? List the facts, not the sources.
+    - Who ANSWERS for this decision - the role, not the person? If nobody does yet, say so.
+    - What happens if you get it wrong once? Say whether it is recoverable, expensive, or permanent.
+    - Is this ONE decision, or several? Could two reasonable people answer different PARTS of this question differently? If so it needs splitting before anything here means much.
+  [L20] Whether to change the terms on which a site-level manager is rewarded.
+    - How many times a year does this actually come up? A rough count of the last two years is fine - it does not need to be exact, it needs to be yours.
+    - If you handed this to an outside specialist ONCE, what would it cost you all-in - their fee, plus the time to find them, brief them, and check their work?
+    - What would it cost per year to keep this capability in-house - the person's time, the tools, and the attention it takes off other things?
+    - Is there anyone you could actually buy this judgement from? If nobody sells it, that settles it on its own.
+    - What do you know about this that an outside expert could not find out? That is the thing that makes buying it worse than it looks on price.
+    - What has to be KNOWN before you can make this call? List the facts, not the sources.
+    - Who ANSWERS for this decision - the role, not the person? If nobody does yet, say so.
+    - What happens if you get it wrong once? Say whether it is recoverable, expensive, or permanent.
+    - Is this ONE decision, or several? Could two reasonable people answer different PARTS of this question differently? If so it needs splitting before anything here means much.
+  [L21] Whether to fund a given investment with borrowing rather than from our own cash.
+    - How many times a year does this actually come up? A rough count of the last two years is fine - it does not need to be exact, it needs to be yours.
+    - If you handed this to an outside specialist ONCE, what would it cost you all-in - their fee, plus the time to find them, brief them, and check their work?
+    - What would it cost per year to keep this capability in-house - the person's time, the tools, and the attention it takes off other things?
+    - Is there anyone you could actually buy this judgement from? If nobody sells it, that settles it on its own.
+    - What do you know about this that an outside expert could not find out? That is the thing that makes buying it worse than it looks on price.
+    - What has to be KNOWN before you can make this call? List the facts, not the sources.
+    - Who ANSWERS for this decision - the role, not the person? If nobody does yet, say so.
+    - What happens if you get it wrong once? Say whether it is recoverable, expensive, or permanent.
+    - Is this ONE decision, or several? Could two reasonable people answer different PARTS of this question differently? If so it needs splitting before anything here means much.
+  [L22] Which of the competing parcel-level investments in front of us to fund this cycle, given we cannot fund all of them.
+    - How many times a year does this actually come up? A rough count of the last two years is fine - it does not need to be exact, it needs to be yours.
+    - If you handed this to an outside specialist ONCE, what would it cost you all-in - their fee, plus the time to find them, brief them, and check their work?
+    - What would it cost per year to keep this capability in-house - the person's time, the tools, and the attention it takes off other things?
+    - Is there anyone you could actually buy this judgement from? If nobody sells it, that settles it on its own.
+    - What do you know about this that an outside expert could not find out? That is the thing that makes buying it worse than it looks on price.
+    - What has to be KNOWN before you can make this call? List the facts, not the sources.
+    - Who ANSWERS for this decision - the role, not the person? If nobody does yet, say so.
+    - What happens if you get it wrong once? Say whether it is recoverable, expensive, or permanent.
+    - Is this ONE decision, or several? Could two reasonable people answer different PARTS of this question differently? If so it needs splitting before anything here means much.
+  [L23] Whether to move cash out of the jurisdiction that generated it.
+    - How many times a year does this actually come up? A rough count of the last two years is fine - it does not need to be exact, it needs to be yours.
+    - If you handed this to an outside specialist ONCE, what would it cost you all-in - their fee, plus the time to find them, brief them, and check their work?
+    - What would it cost per year to keep this capability in-house - the person's time, the tools, and the attention it takes off other things?
+    - Is there anyone you could actually buy this judgement from? If nobody sells it, that settles it on its own.
+    - What do you know about this that an outside expert could not find out? That is the thing that makes buying it worse than it looks on price.
+    - What has to be KNOWN before you can make this call? List the facts, not the sources.
+    - Who ANSWERS for this decision - the role, not the person? If nobody does yet, say so.
+    - What happens if you get it wrong once? Say whether it is recoverable, expensive, or permanent.
+    - Is this ONE decision, or several? Could two reasonable people answer different PARTS of this question differently? If so it needs splitting before anything here means much.
+  [L24] Which currency to hold working capital in for a given operating unit.
+    - How many times a year does this actually come up? A rough count of the last two years is fine - it does not need to be exact, it needs to be yours.
+    - If you handed this to an outside specialist ONCE, what would it cost you all-in - their fee, plus the time to find them, brief them, and check their work?
+    - What would it cost per year to keep this capability in-house - the person's time, the tools, and the attention it takes off other things?
+    - Is there anyone you could actually buy this judgement from? If nobody sells it, that settles it on its own.
+    - What do you know about this that an outside expert could not find out? That is the thing that makes buying it worse than it looks on price.
+    - What has to be KNOWN before you can make this call? List the facts, not the sources.
+    - Who ANSWERS for this decision - the role, not the person? If nobody does yet, say so.
+    - What happens if you get it wrong once? Say whether it is recoverable, expensive, or permanent.
+    - Is this ONE decision, or several? Could two reasonable people answer different PARTS of this question differently? If so it needs splitting before anything here means much.
+  [L25] Whether to insure a given exposure or carry it ourselves.
+    - How many times a year does this actually come up? A rough count of the last two years is fine - it does not need to be exact, it needs to be yours.
+    - If you handed this to an outside specialist ONCE, what would it cost you all-in - their fee, plus the time to find them, brief them, and check their work?
+    - What would it cost per year to keep this capability in-house - the person's time, the tools, and the attention it takes off other things?
+    - Is there anyone you could actually buy this judgement from? If nobody sells it, that settles it on its own.
+    - What do you know about this that an outside expert could not find out? That is the thing that makes buying it worse than it looks on price.
+    - What has to be KNOWN before you can make this call? List the facts, not the sources.
+    - Who ANSWERS for this decision - the role, not the person? If nobody does yet, say so.
+    - What happens if you get it wrong once? Say whether it is recoverable, expensive, or permanent.
+    - Is this ONE decision, or several? Could two reasonable people answer different PARTS of this question differently? If so it needs splitting before anything here means much.
+  [L26] How to respond when a jurisdiction changes a rule that binds one of our operations.
+    - How many times a year does this actually come up? A rough count of the last two years is fine - it does not need to be exact, it needs to be yours.
+    - If you handed this to an outside specialist ONCE, what would it cost you all-in - their fee, plus the time to find them, brief them, and check their work?
+    - What would it cost per year to keep this capability in-house - the person's time, the tools, and the attention it takes off other things?
+    - Is there anyone you could actually buy this judgement from? If nobody sells it, that settles it on its own.
+    - What do you know about this that an outside expert could not find out? That is the thing that makes buying it worse than it looks on price.
+    - What has to be KNOWN before you can make this call? List the facts, not the sources.
+    - Who ANSWERS for this decision - the role, not the person? If nobody does yet, say so.
+    - What happens if you get it wrong once? Say whether it is recoverable, expensive, or permanent.
+    - Is this ONE decision, or several? Could two reasonable people answer different PARTS of this question differently? If so it needs splitting before anything here means much.
+  [L27] Whether to contest an assessment or ruling rather than pay it.
+    - How many times a year does this actually come up? A rough count of the last two years is fine - it does not need to be exact, it needs to be yours.
+    - If you handed this to an outside specialist ONCE, what would it cost you all-in - their fee, plus the time to find them, brief them, and check their work?
+    - What would it cost per year to keep this capability in-house - the person's time, the tools, and the attention it takes off other things?
+    - Is there anyone you could actually buy this judgement from? If nobody sells it, that settles it on its own.
+    - What do you know about this that an outside expert could not find out? That is the thing that makes buying it worse than it looks on price.
+    - What has to be KNOWN before you can make this call? List the facts, not the sources.
+    - Who ANSWERS for this decision - the role, not the person? If nobody does yet, say so.
+    - What happens if you get it wrong once? Say whether it is recoverable, expensive, or permanent.
+    - Is this ONE decision, or several? Could two reasonable people answer different PARTS of this question differently? If so it needs splitting before anything here means much.
+  [L28] Whether to obtain or renew a certification that a buyer or market asks for.
+    - How many times a year does this actually come up? A rough count of the last two years is fine - it does not need to be exact, it needs to be yours.
+    - If you handed this to an outside specialist ONCE, what would it cost you all-in - their fee, plus the time to find them, brief them, and check their work?
+    - What would it cost per year to keep this capability in-house - the person's time, the tools, and the attention it takes off other things?
+    - Is there anyone you could actually buy this judgement from? If nobody sells it, that settles it on its own.
+    - What do you know about this that an outside expert could not find out? That is the thing that makes buying it worse than it looks on price.
+    - What has to be KNOWN before you can make this call? List the facts, not the sources.
+    - Who ANSWERS for this decision - the role, not the person? If nobody does yet, say so.
+    - What happens if you get it wrong once? Say whether it is recoverable, expensive, or permanent.
+    - Is this ONE decision, or several? Could two reasonable people answer different PARTS of this question differently? If so it needs splitting before anything here means much.
+  [L29] Whether to place a family member into an operating role.
+    - How many times a year does this actually come up? A rough count of the last two years is fine - it does not need to be exact, it needs to be yours.
+    - If you handed this to an outside specialist ONCE, what would it cost you all-in - their fee, plus the time to find them, brief them, and check their work?
+    - What would it cost per year to keep this capability in-house - the person's time, the tools, and the attention it takes off other things?
+    - Is there anyone you could actually buy this judgement from? If nobody sells it, that settles it on its own.
+    - What do you know about this that an outside expert could not find out? That is the thing that makes buying it worse than it looks on price.
+    - What has to be KNOWN before you can make this call? List the facts, not the sources.
+    - Who ANSWERS for this decision - the role, not the person? If nobody does yet, say so.
+    - What happens if you get it wrong once? Say whether it is recoverable, expensive, or permanent.
+    - Is this ONE decision, or several? Could two reasonable people answer different PARTS of this question differently? If so it needs splitting before anything here means much.
+  [L30] For a given period, whether to distribute earnings or retain them in the business.
+    - How many times a year does this actually come up? A rough count of the last two years is fine - it does not need to be exact, it needs to be yours.
+    - If you handed this to an outside specialist ONCE, what would it cost you all-in - their fee, plus the time to find them, brief them, and check their work?
+    - What would it cost per year to keep this capability in-house - the person's time, the tools, and the attention it takes off other things?
+    - Is there anyone you could actually buy this judgement from? If nobody sells it, that settles it on its own.
+    - What do you know about this that an outside expert could not find out? That is the thing that makes buying it worse than it looks on price.
+    - What has to be KNOWN before you can make this call? List the facts, not the sources.
+    - Who ANSWERS for this decision - the role, not the person? If nobody does yet, say so.
+    - What happens if you get it wrong once? Say whether it is recoverable, expensive, or permanent.
+    - Is this ONE decision, or several? Could two reasonable people answer different PARTS of this question differently? If so it needs splitting before anything here means much.
+  [L31] Whether to change how the holding entities are arranged across jurisdictions.
+    - How many times a year does this actually come up? A rough count of the last two years is fine - it does not need to be exact, it needs to be yours.
+    - If you handed this to an outside specialist ONCE, what would it cost you all-in - their fee, plus the time to find them, brief them, and check their work?
+    - What would it cost per year to keep this capability in-house - the person's time, the tools, and the attention it takes off other things?
+    - Is there anyone you could actually buy this judgement from? If nobody sells it, that settles it on its own.
+    - What do you know about this that an outside expert could not find out? That is the thing that makes buying it worse than it looks on price.
+    - What has to be KNOWN before you can make this call? List the facts, not the sources.
+    - Who ANSWERS for this decision - the role, not the person? If nobody does yet, say so.
+    - What happens if you get it wrong once? Say whether it is recoverable, expensive, or permanent.
+    - Is this ONE decision, or several? Could two reasonable people answer different PARTS of this question differently? If so it needs splitting before anything here means much.
+
+SUMMARY
+  decisions drafted        31
+  first-pass subset        16
+  sourcing verdicts        31
+  confirmed capabilities   0
+  undecided (named gaps)   31
+  no accountable role      31
+  no checking requirement  31
+  inventory complete       False
+
