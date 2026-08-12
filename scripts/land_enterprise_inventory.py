@@ -21,7 +21,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from aigov.decisions import build_inventory, interview_questions, render_report  # noqa: E402
 from aigov.instances.land_enterprise import (                                    # noqa: E402
-    CANDIDATES, FIRST_PASS, FIRST_PASS_IDS, SUSPECTED_COMPOUND_IDS,
+    CANDIDATES, FIRST_PASS, FIRST_PASS_IDS, SUSPECTED_COMPOUND_IDS, phase_of,
 )
 
 
@@ -48,15 +48,19 @@ def candidate_list(decisions) -> str:
         "**The order carries no structure.** Groups are computed from couplings you affirm, never",
         "proposed here — proposing them would import the template this whole family exists to avoid.",
         "",
-        f"`*` = recommended first pass ({len(first)} of {len(decisions)}) · "
-        f"`!` = suspected compound, consider splitting",
+        "**SCREENING** decisions recur across candidates, so a real frequency exists and a genuine",
+        "INTERNALIZE verdict is reachable. **COMMITMENT** decisions are taken once, so expect",
+        "MARKET or HYBRID unless private information or a missing market carries them — that is the",
+        "arithmetic working, not a defect.",
         "",
-        "| | id | decision |",
-        "|---|---|---|",
+        f"`!` = suspected compound, consider splitting ({', '.join(SUSPECTED_COMPOUND_IDS)})",
+        "",
+        "| | id | phase | decision |",
+        "|---|---|---|---|",
     ]
     for d in decisions:
-        mark = "".join(("*" if d.id in first else "", "!" if d.id in compound else "")) or "&nbsp;"
-        lines.append(f"| {mark} | {d.id} | {d.question} |")
+        mark = "!" if d.id in compound else "&nbsp;"
+        lines.append(f"| {mark} | {d.id} | {phase_of(d.id)} | {d.question} |")
     lines += [
         "",
         f"Drafted: {len(decisions)} · first pass: {len(first)} · family bar: >=15 with all four",
@@ -88,6 +92,10 @@ def interview_sheet(decisions) -> str:
     for d in decisions:
         qs = interview_questions(d)
         lines.append(f"## {qs[0]}")
+        lines.append("")
+        lines.append(f"*{phase_of(d.id)}*"
+                     + ("  ·  **suspected compound — split before answering**"
+                        if d.id in SUSPECTED_COMPOUND_IDS else ""))
         lines.append("")
         lines.extend(q.strip() and f"- {q.strip().lstrip('- ')}" or "" for q in qs[1:])
         lines.append("")

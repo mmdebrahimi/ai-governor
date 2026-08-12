@@ -11,21 +11,11 @@ answering. A decision drafted wrong and answered carefully is worse than one del
 
 **Roles, never names** — 'who answers for this' takes a role or an unfilled slot.
 
-Suspected compound (consider splitting before answering): L22, L26, L31
+Suspected compound (consider splitting before answering): E02, E15
 
-## [L01] Whether to acquire a specific parcel that has been offered to us in a jurisdiction where we already operate.
+## [E01] Whether a candidate jurisdiction passes our political-stability and personal-safety screen well enough to put capital into at all.
 
-- How many times a year does this actually come up? A rough count of the last two years is fine - it does not need to be exact, it needs to be yours.
-- If you handed this to an outside specialist ONCE, what would it cost you all-in - their fee, plus the time to find them, brief them, and check their work?
-- What would it cost per year to keep this capability in-house - the person's time, the tools, and the attention it takes off other things?
-- Is there anyone you could actually buy this judgement from? If nobody sells it, that settles it on its own.
-- What do you know about this that an outside expert could not find out? That is the thing that makes buying it worse than it looks on price.
-- What has to be KNOWN before you can make this call? List the facts, not the sources.
-- Who ANSWERS for this decision - the role, not the person? If nobody does yet, say so.
-- What happens if you get it wrong once? Say whether it is recoverable, expensive, or permanent.
-- Is this ONE decision, or several? Could two reasonable people answer different PARTS of this question differently? If so it needs splitting before anything here means much.
-
-## [L02] Whether to begin operating in a jurisdiction we are not currently in.
+*SCREENING*
 
 - How many times a year does this actually come up? A rough count of the last two years is fine - it does not need to be exact, it needs to be yours.
 - If you handed this to an outside specialist ONCE, what would it cost you all-in - their fee, plus the time to find them, brief them, and check their work?
@@ -37,7 +27,9 @@ Suspected compound (consider splitting before answering): L22, L26, L31
 - What happens if you get it wrong once? Say whether it is recoverable, expensive, or permanent.
 - Is this ONE decision, or several? Could two reasonable people answer different PARTS of this question differently? If so it needs splitting before anything here means much.
 
-## [L04] For a given parcel, whether to farm it ourselves or lease it out to an operator.
+## [E02] Whether a candidate jurisdiction's foreign-ownership regime permits a structure we would actually accept — and if direct ownership is barred, whether the available workaround is one we are willing to rely on.
+
+*SCREENING*  ·  **suspected compound — split before answering**
 
 - How many times a year does this actually come up? A rough count of the last two years is fine - it does not need to be exact, it needs to be yours.
 - If you handed this to an outside specialist ONCE, what would it cost you all-in - their fee, plus the time to find them, brief them, and check their work?
@@ -49,7 +41,9 @@ Suspected compound (consider splitting before answering): L22, L26, L31
 - What happens if you get it wrong once? Say whether it is recoverable, expensive, or permanent.
 - Is this ONE decision, or several? Could two reasonable people answer different PARTS of this question differently? If so it needs splitting before anything here means much.
 
-## [L06] What to plant on a given parcel for the coming season.
+## [E03] Which jurisdiction to commit the first venture to, given we cannot start everywhere at once.
+
+*COMMITMENT*
 
 - How many times a year does this actually come up? A rough count of the last two years is fine - it does not need to be exact, it needs to be yours.
 - If you handed this to an outside specialist ONCE, what would it cost you all-in - their fee, plus the time to find them, brief them, and check their work?
@@ -61,7 +55,9 @@ Suspected compound (consider splitting before answering): L22, L26, L31
 - What happens if you get it wrong once? Say whether it is recoverable, expensive, or permanent.
 - Is this ONE decision, or several? Could two reasonable people answer different PARTS of this question differently? If so it needs splitting before anything here means much.
 
-## [L07] Whether to change the established rotation on a given parcel.
+## [E04] Whether to enter by buying into an existing operating business or by building greenfield.
+
+*SCREENING*
 
 - How many times a year does this actually come up? A rough count of the last two years is fine - it does not need to be exact, it needs to be yours.
 - If you handed this to an outside specialist ONCE, what would it cost you all-in - their fee, plus the time to find them, brief them, and check their work?
@@ -73,7 +69,9 @@ Suspected compound (consider splitting before answering): L22, L26, L31
 - What happens if you get it wrong once? Say whether it is recoverable, expensive, or permanent.
 - Is this ONE decision, or several? Could two reasonable people answer different PARTS of this question differently? If so it needs splitting before anything here means much.
 
-## [L10] When to harvest a given block once it is within its window.
+## [E05] Whether to hold land, lease it, or contract-farm without holding land at all.
+
+*SCREENING*
 
 - How many times a year does this actually come up? A rough count of the last two years is fine - it does not need to be exact, it needs to be yours.
 - If you handed this to an outside specialist ONCE, what would it cost you all-in - their fee, plus the time to find them, brief them, and check their work?
@@ -85,7 +83,9 @@ Suspected compound (consider splitting before answering): L22, L26, L31
 - What happens if you get it wrong once? Say whether it is recoverable, expensive, or permanent.
 - Is this ONE decision, or several? Could two reasonable people answer different PARTS of this question differently? If so it needs splitting before anything here means much.
 
-## [L11] How much of a major input to commit to in advance of a season, and when to commit.
+## [E06] Whether a specific candidate partner passes diligence well enough to proceed with.
+
+*SCREENING*
 
 - How many times a year does this actually come up? A rough count of the last two years is fine - it does not need to be exact, it needs to be yours.
 - If you handed this to an outside specialist ONCE, what would it cost you all-in - their fee, plus the time to find them, brief them, and check their work?
@@ -97,7 +97,9 @@ Suspected compound (consider splitting before answering): L22, L26, L31
 - What happens if you get it wrong once? Say whether it is recoverable, expensive, or permanent.
 - Is this ONE decision, or several? Could two reasonable people answer different PARTS of this question differently? If so it needs splitting before anything here means much.
 
-## [L13] For a given machine requirement, whether to buy, lease, or hire it in with an operator.
+## [E07] What control and information rights to require from a partner, decided separately from how much of the equity we hold.
+
+*COMMITMENT*
 
 - How many times a year does this actually come up? A rough count of the last two years is fine - it does not need to be exact, it needs to be yours.
 - If you handed this to an outside specialist ONCE, what would it cost you all-in - their fee, plus the time to find them, brief them, and check their work?
@@ -109,7 +111,9 @@ Suspected compound (consider splitting before answering): L22, L26, L31
 - What happens if you get it wrong once? Say whether it is recoverable, expensive, or permanent.
 - Is this ONE decision, or several? Could two reasonable people answer different PARTS of this question differently? If so it needs splitting before anything here means much.
 
-## [L15] Whether to sell stored output now or continue holding it.
+## [E08] How to structure the partner's economic incentive so their upside and ours point the same way.
+
+*COMMITMENT*
 
 - How many times a year does this actually come up? A rough count of the last two years is fine - it does not need to be exact, it needs to be yours.
 - If you handed this to an outside specialist ONCE, what would it cost you all-in - their fee, plus the time to find them, brief them, and check their work?
@@ -121,7 +125,9 @@ Suspected compound (consider splitting before answering): L22, L26, L31
 - What happens if you get it wrong once? Say whether it is recoverable, expensive, or permanent.
 - Is this ONE decision, or several? Could two reasonable people answer different PARTS of this question differently? If so it needs splitting before anything here means much.
 
-## [L16] Whether to commit a share of an expected harvest to a forward price before it is in hand.
+## [E09] What exit mechanism to fix at entry, before we need it.
+
+*COMMITMENT*
 
 - How many times a year does this actually come up? A rough count of the last two years is fine - it does not need to be exact, it needs to be yours.
 - If you handed this to an outside specialist ONCE, what would it cost you all-in - their fee, plus the time to find them, brief them, and check their work?
@@ -133,7 +139,9 @@ Suspected compound (consider splitting before answering): L22, L26, L31
 - What happens if you get it wrong once? Say whether it is recoverable, expensive, or permanent.
 - Is this ONE decision, or several? Could two reasonable people answer different PARTS of this question differently? If so it needs splitting before anything here means much.
 
-## [L18] For a given recurring work need, whether to fill it with a permanent hire, seasonal labour, or a contractor.
+## [E10] How much capital to commit to a first venture.
+
+*COMMITMENT*
 
 - How many times a year does this actually come up? A rough count of the last two years is fine - it does not need to be exact, it needs to be yours.
 - If you handed this to an outside specialist ONCE, what would it cost you all-in - their fee, plus the time to find them, brief them, and check their work?
@@ -145,7 +153,9 @@ Suspected compound (consider splitting before answering): L22, L26, L31
 - What happens if you get it wrong once? Say whether it is recoverable, expensive, or permanent.
 - Is this ONE decision, or several? Could two reasonable people answer different PARTS of this question differently? If so it needs splitting before anything here means much.
 
-## [L21] Whether to fund a given investment with borrowing rather than from our own cash.
+## [E11] Whether to fund it with family equity alone, or bring in local debt or outside co-investors.
+
+*COMMITMENT*
 
 - How many times a year does this actually come up? A rough count of the last two years is fine - it does not need to be exact, it needs to be yours.
 - If you handed this to an outside specialist ONCE, what would it cost you all-in - their fee, plus the time to find them, brief them, and check their work?
@@ -157,7 +167,9 @@ Suspected compound (consider splitting before answering): L22, L26, L31
 - What happens if you get it wrong once? Say whether it is recoverable, expensive, or permanent.
 - Is this ONE decision, or several? Could two reasonable people answer different PARTS of this question differently? If so it needs splitting before anything here means much.
 
-## [L22] Which of the competing parcel-level investments in front of us to fund this cycle, given we cannot fund all of them.
+## [E12] What holding structure to route the investment through, given repatriation and treaty considerations.
+
+*COMMITMENT*
 
 - How many times a year does this actually come up? A rough count of the last two years is fine - it does not need to be exact, it needs to be yours.
 - If you handed this to an outside specialist ONCE, what would it cost you all-in - their fee, plus the time to find them, brief them, and check their work?
@@ -169,7 +181,9 @@ Suspected compound (consider splitting before answering): L22, L26, L31
 - What happens if you get it wrong once? Say whether it is recoverable, expensive, or permanent.
 - Is this ONE decision, or several? Could two reasonable people answer different PARTS of this question differently? If so it needs splitting before anything here means much.
 
-## [L23] Whether to move cash out of the jurisdiction that generated it.
+## [E13] For a given claim a partner makes about the operation, whether we must be able to verify it independently or can accept it on their report.
+
+*SCREENING*
 
 - How many times a year does this actually come up? A rough count of the last two years is fine - it does not need to be exact, it needs to be yours.
 - If you handed this to an outside specialist ONCE, what would it cost you all-in - their fee, plus the time to find them, brief them, and check their work?
@@ -181,7 +195,9 @@ Suspected compound (consider splitting before answering): L22, L26, L31
 - What happens if you get it wrong once? Say whether it is recoverable, expensive, or permanent.
 - Is this ONE decision, or several? Could two reasonable people answer different PARTS of this question differently? If so it needs splitting before anything here means much.
 
-## [L26] How to respond when a jurisdiction changes a rule that binds one of our operations.
+## [E14] Whether to deploy our own instrumentation on an operation we do not run, and how deep to take it.
+
+*COMMITMENT*
 
 - How many times a year does this actually come up? A rough count of the last two years is fine - it does not need to be exact, it needs to be yours.
 - If you handed this to an outside specialist ONCE, what would it cost you all-in - their fee, plus the time to find them, brief them, and check their work?
@@ -193,7 +209,51 @@ Suspected compound (consider splitting before answering): L22, L26, L31
 - What happens if you get it wrong once? Say whether it is recoverable, expensive, or permanent.
 - Is this ONE decision, or several? Could two reasonable people answer different PARTS of this question differently? If so it needs splitting before anything here means much.
 
-## [L30] For a given period, whether to distribute earnings or retain them in the business.
+## [E15] Which political, currency and production risks to mitigate deliberately and which to carry ourselves.
+
+*COMMITMENT*  ·  **suspected compound — split before answering**
+
+- How many times a year does this actually come up? A rough count of the last two years is fine - it does not need to be exact, it needs to be yours.
+- If you handed this to an outside specialist ONCE, what would it cost you all-in - their fee, plus the time to find them, brief them, and check their work?
+- What would it cost per year to keep this capability in-house - the person's time, the tools, and the attention it takes off other things?
+- Is there anyone you could actually buy this judgement from? If nobody sells it, that settles it on its own.
+- What do you know about this that an outside expert could not find out? That is the thing that makes buying it worse than it looks on price.
+- What has to be KNOWN before you can make this call? List the facts, not the sources.
+- Who ANSWERS for this decision - the role, not the person? If nobody does yet, say so.
+- What happens if you get it wrong once? Say whether it is recoverable, expensive, or permanent.
+- Is this ONE decision, or several? Could two reasonable people answer different PARTS of this question differently? If so it needs splitting before anything here means much.
+
+## [E16] Whether to run a bounded pilot before committing at full size.
+
+*COMMITMENT*
+
+- How many times a year does this actually come up? A rough count of the last two years is fine - it does not need to be exact, it needs to be yours.
+- If you handed this to an outside specialist ONCE, what would it cost you all-in - their fee, plus the time to find them, brief them, and check their work?
+- What would it cost per year to keep this capability in-house - the person's time, the tools, and the attention it takes off other things?
+- Is there anyone you could actually buy this judgement from? If nobody sells it, that settles it on its own.
+- What do you know about this that an outside expert could not find out? That is the thing that makes buying it worse than it looks on price.
+- What has to be KNOWN before you can make this call? List the facts, not the sources.
+- Who ANSWERS for this decision - the role, not the person? If nobody does yet, say so.
+- What happens if you get it wrong once? Say whether it is recoverable, expensive, or permanent.
+- Is this ONE decision, or several? Could two reasonable people answer different PARTS of this question differently? If so it needs splitting before anything here means much.
+
+## [E17] Who on our side answers for this venture — the role, not the person.
+
+*COMMITMENT*
+
+- How many times a year does this actually come up? A rough count of the last two years is fine - it does not need to be exact, it needs to be yours.
+- If you handed this to an outside specialist ONCE, what would it cost you all-in - their fee, plus the time to find them, brief them, and check their work?
+- What would it cost per year to keep this capability in-house - the person's time, the tools, and the attention it takes off other things?
+- Is there anyone you could actually buy this judgement from? If nobody sells it, that settles it on its own.
+- What do you know about this that an outside expert could not find out? That is the thing that makes buying it worse than it looks on price.
+- What has to be KNOWN before you can make this call? List the facts, not the sources.
+- Who ANSWERS for this decision - the role, not the person? If nobody does yet, say so.
+- What happens if you get it wrong once? Say whether it is recoverable, expensive, or permanent.
+- Is this ONE decision, or several? Could two reasonable people answer different PARTS of this question differently? If so it needs splitting before anything here means much.
+
+## [E18] Whether to bring agricultural expertise in-house or rely entirely on the partner for it.
+
+*COMMITMENT*
 
 - How many times a year does this actually come up? A rough count of the last two years is fine - it does not need to be exact, it needs to be yours.
 - If you handed this to an outside specialist ONCE, what would it cost you all-in - their fee, plus the time to find them, brief them, and check their work?

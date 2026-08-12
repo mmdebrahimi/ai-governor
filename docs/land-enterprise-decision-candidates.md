@@ -16,41 +16,33 @@ missing answers named. That is correct, not broken.
 **The order carries no structure.** Groups are computed from couplings you affirm, never
 proposed here — proposing them would import the template this whole family exists to avoid.
 
-`*` = recommended first pass (16 of 31) · `!` = suspected compound, consider splitting
+**SCREENING** decisions recur across candidates, so a real frequency exists and a genuine
+INTERNALIZE verdict is reachable. **COMMITMENT** decisions are taken once, so expect
+MARKET or HYBRID unless private information or a missing market carries them — that is the
+arithmetic working, not a defect.
 
-| | id | decision |
-|---|---|---|
-| * | L01 | Whether to acquire a specific parcel that has been offered to us in a jurisdiction where we already operate. |
-| * | L02 | Whether to begin operating in a jurisdiction we are not currently in. |
-| &nbsp; | L03 | Whether to sell a parcel we currently hold. |
-| * | L04 | For a given parcel, whether to farm it ourselves or lease it out to an operator. |
-| &nbsp; | L05 | Whether to renew, renegotiate or end a tenancy or share arrangement as it comes up for term. |
-| * | L06 | What to plant on a given parcel for the coming season. |
-| * | L07 | Whether to change the established rotation on a given parcel. |
-| &nbsp; | L08 | Whether to fund an irrigation or drainage improvement on a given parcel. |
-| &nbsp; | L09 | Whether to convert a parcel from one land use to another (a change measured in years, not seasons). |
-| * | L10 | When to harvest a given block once it is within its window. |
-| * | L11 | How much of a major input to commit to in advance of a season, and when to commit. |
-| &nbsp; | L12 | Whether to move a category of purchasing from our current supplier to another. |
-| * | L13 | For a given machine requirement, whether to buy, lease, or hire it in with an operator. |
-| &nbsp; | L14 | Whether to repair or replace a major machine at the point it fails or comes due. |
-| * | L15 | Whether to sell stored output now or continue holding it. |
-| * | L16 | Whether to commit a share of an expected harvest to a forward price before it is in hand. |
-| &nbsp; | L17 | Which buyer or channel to direct a given lot to. |
-| * | L18 | For a given recurring work need, whether to fill it with a permanent hire, seasonal labour, or a contractor. |
-| &nbsp; | L19 | When a site-level manager leaves, whether to promote from inside or recruit from outside. |
-| &nbsp; | L20 | Whether to change the terms on which a site-level manager is rewarded. |
-| * | L21 | Whether to fund a given investment with borrowing rather than from our own cash. |
-| *! | L22 | Which of the competing parcel-level investments in front of us to fund this cycle, given we cannot fund all of them. |
-| * | L23 | Whether to move cash out of the jurisdiction that generated it. |
-| &nbsp; | L24 | Which currency to hold working capital in for a given operating unit. |
-| &nbsp; | L25 | Whether to insure a given exposure or carry it ourselves. |
-| *! | L26 | How to respond when a jurisdiction changes a rule that binds one of our operations. |
-| &nbsp; | L27 | Whether to contest an assessment or ruling rather than pay it. |
-| &nbsp; | L28 | Whether to obtain or renew a certification that a buyer or market asks for. |
-| &nbsp; | L29 | Whether to place a family member into an operating role. |
-| * | L30 | For a given period, whether to distribute earnings or retain them in the business. |
-| ! | L31 | Whether to change how the holding entities are arranged across jurisdictions. |
+`!` = suspected compound, consider splitting (E02, E15)
 
-Drafted: 31 · first pass: 16 · family bar: >=15 with all four
+| | id | phase | decision |
+|---|---|---|---|
+| &nbsp; | E01 | SCREENING | Whether a candidate jurisdiction passes our political-stability and personal-safety screen well enough to put capital into at all. |
+| ! | E02 | SCREENING | Whether a candidate jurisdiction's foreign-ownership regime permits a structure we would actually accept — and if direct ownership is barred, whether the available workaround is one we are willing to rely on. |
+| &nbsp; | E03 | COMMITMENT | Which jurisdiction to commit the first venture to, given we cannot start everywhere at once. |
+| &nbsp; | E04 | SCREENING | Whether to enter by buying into an existing operating business or by building greenfield. |
+| &nbsp; | E05 | SCREENING | Whether to hold land, lease it, or contract-farm without holding land at all. |
+| &nbsp; | E06 | SCREENING | Whether a specific candidate partner passes diligence well enough to proceed with. |
+| &nbsp; | E07 | COMMITMENT | What control and information rights to require from a partner, decided separately from how much of the equity we hold. |
+| &nbsp; | E08 | COMMITMENT | How to structure the partner's economic incentive so their upside and ours point the same way. |
+| &nbsp; | E09 | COMMITMENT | What exit mechanism to fix at entry, before we need it. |
+| &nbsp; | E10 | COMMITMENT | How much capital to commit to a first venture. |
+| &nbsp; | E11 | COMMITMENT | Whether to fund it with family equity alone, or bring in local debt or outside co-investors. |
+| &nbsp; | E12 | COMMITMENT | What holding structure to route the investment through, given repatriation and treaty considerations. |
+| &nbsp; | E13 | SCREENING | For a given claim a partner makes about the operation, whether we must be able to verify it independently or can accept it on their report. |
+| &nbsp; | E14 | COMMITMENT | Whether to deploy our own instrumentation on an operation we do not run, and how deep to take it. |
+| ! | E15 | COMMITMENT | Which political, currency and production risks to mitigate deliberately and which to carry ourselves. |
+| &nbsp; | E16 | COMMITMENT | Whether to run a bounded pilot before committing at full size. |
+| &nbsp; | E17 | COMMITMENT | Who on our side answers for this venture — the role, not the person. |
+| &nbsp; | E18 | COMMITMENT | Whether to bring agricultural expertise in-house or rely entirely on the partner for it. |
+
+Drafted: 18 · first pass: 18 · family bar: >=15 with all four
 sourcing inputs answered.
