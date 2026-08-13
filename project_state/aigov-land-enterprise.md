@@ -160,6 +160,8 @@ A decision inventory of at least 15 real recurring decisions with all four sourc
 | 6 | 2026-08-12 | edit-local-code | Rewrote aigov/instances/land_enterprise.py for the entry phase - 18 decisions, SCREENING vs COMMITMENT phase marker, operating draft preserved as OPERATING_CANDIDATES_DEFERRED | 18 candidates (6 SCREENING / 12 COMMITMENT); E02 and E15 flagged suspected-compound; no jurisdiction named - country list stays out of the public repo |
 | 7 | 2026-08-12 | run-tests | Regenerated both docs from the entry set and ran the suite | 18/18 UNDECIDABLE with gaps named; privacy scan for candidate-country leakage clean; 402 tests pass, 0 regressions |
 | 8 | 2026-08-12 | edit-local-code | Emit ba-beautify .docx as the read-facing deliverable for all three documents | ba-beautify parser drops every block before the first ## heading - candidates doc converted to an EMPTY docx (0 tables) and the policy library lost both rail headers; confirmed by executed kill-test, fixed in the generator by wrapping content in ## sections; all three rebuilt and re-verified |
+| 9 | 2026-08-12 | run-tests | Exercised the decision instrument end-to-end on a synthetic fully-answered 18-decision entry inventory - a size no prior test reached (largest was 4) | 8 new tests, 402->410, 0 regressions; 10 MARKET / 4 INTERNALIZE / 4 HYBRID; 2 capabilities derived |
+| 10 | 2026-08-12 | research | Measured the coupling-question count at full size against the predicted pairwise blowup | FORECAST MISS: predicted >20 questions and a usability wall; actual 7 vs a naive bound of 40, because coupling_candidates pairs only over RETAINED decisions - MARKET and UNDECIDABLE are excluded at source |
 <!-- project-state:end:action-log -->
 
 ## Open Questions for User

@@ -1,0 +1,17 @@
+{
+ "forecasts": [
+  {
+   "id": "f1",
+   "run_id": null,
+   "family": null,
+   "action": "Run build_inventory on a realistic fully-answered 18-decision entry fixture",
+   "action_class": "run-tests",
+   "target_criterion": "full-size derivation is usable end-to-end",
+   "predicted_flip": true,
+   "expected_progress": "high",
+   "ts": null,
+   "outcome": "miss",
+   "scored_ts": null
+  }
+ ]
+}
