@@ -1,17 +1,30 @@
 {
- "forecasts": [
-  {
-   "id": "f1",
-   "run_id": null,
-   "family": null,
-   "action": "Run build_inventory on a realistic fully-answered 18-decision entry fixture",
-   "action_class": "run-tests",
-   "target_criterion": "full-size derivation is usable end-to-end",
-   "predicted_flip": true,
-   "expected_progress": "high",
-   "ts": null,
-   "outcome": "miss",
-   "scored_ts": null
-  }
- ]
+  "forecasts": [
+    {
+      "id": "f1",
+      "run_id": null,
+      "family": null,
+      "action": "Run build_inventory on a realistic fully-answered 18-decision entry fixture",
+      "action_class": "run-tests",
+      "target_criterion": "full-size derivation is usable end-to-end",
+      "predicted_flip": true,
+      "expected_progress": "high",
+      "ts": null,
+      "outcome": "miss",
+      "scored_ts": null
+    },
+    {
+      "id": "f2",
+      "run_id": null,
+      "family": null,
+      "action": "Build a TOML answers-intake path (file -> DecisionRecords -> build_inventory) with an outside-repo privacy guard",
+      "action_class": "edit-local-code",
+      "target_criterion": "candidate action 3: encode the corrected list as DecisionRecords and run build_inventory",
+      "predicted_flip": true,
+      "expected_progress": "high",
+      "ts": null,
+      "outcome": "hit",
+      "scored_ts": null
+    }
+  ]
 }

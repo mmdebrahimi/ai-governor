@@ -21,3 +21,8 @@ desktop.ini
 
 # ba-beautify build outputs (regenerate with the skill; not source)
 docs/*_Bombardier.docx
+
+# Filled-in answers files NEVER belong here - the repo is public.
+# aigov/answers.py refuses to read one from inside the tree; this is belt-and-braces.
+answers*.toml
+*answers*.toml

@@ -19,6 +19,9 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
+from aigov.answers import (                                                      # noqa: E402
+    AnswersError, answered_ids, load_answers, render_template,
+)
 from aigov.decisions import build_inventory, interview_questions, render_report  # noqa: E402
 from aigov.instances.land_enterprise import (                                    # noqa: E402
     CANDIDATES, FIRST_PASS, FIRST_PASS_IDS, SUSPECTED_COMPOUND_IDS, phase_of,
@@ -120,22 +123,43 @@ def main(argv=None) -> int:
                     help="emit the flat candidate list for correction")
     ap.add_argument("--first-pass", action="store_true",
                     help="restrict to the recommended first-pass subset")
+    ap.add_argument("--answers-template", action="store_true",
+                    help="emit a blank answers file to fill in (keep it OUTSIDE this repo)")
+    ap.add_argument("--answers", type=Path, default=None,
+                    help="path to a filled-in answers file; runs the inventory on real answers")
+    ap.add_argument("--allow-answers-inside-repo", action="store_true",
+                    help="override the privacy refusal. ONLY for fixtures with nothing real in them")
     ap.add_argument("--out", type=Path, default=None, help="write to this path instead of stdout")
     args = ap.parse_args(argv)
 
     decisions = FIRST_PASS if args.first_pass else CANDIDATES
 
-    if args.candidate_list:
+    if args.answers:
+        try:
+            decisions = load_answers(
+                args.answers,
+                {d.id: d.question for d in decisions},
+                allow_inside_repo=args.allow_answers_inside_repo,
+            )
+        except AnswersError as exc:
+            print(f"REFUSED: {exc}", file=sys.stderr)
+            return 2
+
+    if args.answers_template:
+        text = render_template(decisions, phase_of=phase_of)
+    elif args.candidate_list:
         text = candidate_list(decisions)
     elif args.interview_sheet:
         text = interview_sheet(decisions)
     else:
         report = build_inventory(decisions)
         text = render_report(report)
+        answered = answered_ids(decisions)
         text += (
             f"\n\nSUMMARY\n"
-            f"  decisions drafted        {len(decisions)}\n"
-            f"  first-pass subset        {len(FIRST_PASS_IDS)}\n"
+            f"  decisions in scope       {len(decisions)}\n"
+            f"  fully answered           {len(answered)} of {len(decisions)}"
+            f"   (family bar: >=15)\n"
             f"  sourcing verdicts        {len(report.verdicts)}\n"
             f"  confirmed capabilities   {len(report.capabilities)}\n"
             f"  undecided (named gaps)   {len(report.undecided)}\n"

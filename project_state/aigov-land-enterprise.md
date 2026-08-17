@@ -59,11 +59,12 @@ The land enterprise runs its recurring capital and management decisions through 
 ### Short-term (≤1 month)
 | # | Action | Class | Owner | Horizon |
 |---|---|---|---|---|
-| 1 | Run the decision-inventory session; Claude drafts the candidate decision list from prior conversation, user corrects | ask-user | user + claude | 1-2 hrs |
-| 2 | Establish the PRIVATE inventory location outside this public repo and wire the pointer | edit-local-code | claude | same day |
-| 3 | Encode the corrected decision list as DecisionRecord instances and run build_inventory | edit-local-code | claude | same day |
-| 4 | Answer the coupling questions the cheap filter surfaces | ask-user | user | 1 wk |
-| 5 | Report derived capabilities, ungrouped links, unowned decisions and unanswered gaps | propose | claude | 1 wk |
+| 1 | Correct the 18 drafted entry decisions, then answer them into a private answers file | ask-user | user | 1-2 hrs |
+| 2 | Choose where the private answers file lives outside this public repo | ask-user | user | same day |
+| 3 | Run `--answers <path>` on the filled file and read the derived verdicts | run-tests | claude | minutes |
+| 4 | Split any decision the instrument refuses as compound, and re-run | ask-user | user + claude | same day |
+| 5 | Answer the coupling questions the retained set surfaces | ask-user | user | 1 wk |
+| 6 | Report derived capabilities, ungrouped links, unowned decisions and named gaps | propose | claude | 1 wk |
 
 ## State Snapshot
 
@@ -128,11 +129,12 @@ A decision inventory of at least 15 real recurring decisions with all four sourc
 ### Candidate next actions
 | # | Action | Class | Expected progress | Expected info gain | Uncertainty | Cost |
 |---|---|---|---|---|---|---|
-| 1 | Run the decision-inventory session, Claude drafting the candidate list for the user to correct | ask-user | high | highest | low | 1-2 hrs user time |
-| 2 | Establish the private inventory location outside this public repo | edit-local-code | medium | low | low | same day |
-| 3 | Encode the corrected list as DecisionRecords and run build_inventory | edit-local-code | high | high | low | same day |
-| 4 | Answer the coupling questions surfaced by the cheap filter | ask-user | high | high | medium | 1 wk |
-| 5 | Report capabilities, ungrouped links, unowned decisions and gaps | propose | medium | high | low | 1 wk |
+| 1 | Correct the 18 drafted entry decisions, then answer them into a private answers file | ask-user | high | highest | low | 1-2 hrs user time |
+| 2 | Choose where the private answers file lives outside this public repo | ask-user | medium | low | low | same day |
+| 3 | Run `--answers <path>` on the filled file and read the derived verdicts | run-tests | high | high | low | minutes |
+| 4 | Split any decision the instrument refuses as compound, and re-run | ask-user | medium | medium | low | same day |
+| 5 | Answer the coupling questions the retained set surfaces | ask-user | high | high | medium | 1 wk |
+| 6 | Report capabilities, ungrouped links, unowned decisions and named gaps | propose | medium | high | low | 1 wk |
 <!-- project-state:end:candidate-actions -->
 
 ### Re-evaluation trigger
@@ -162,6 +164,10 @@ A decision inventory of at least 15 real recurring decisions with all four sourc
 | 8 | 2026-08-12 | edit-local-code | Emit ba-beautify .docx as the read-facing deliverable for all three documents | ba-beautify parser drops every block before the first ## heading - candidates doc converted to an EMPTY docx (0 tables) and the policy library lost both rail headers; confirmed by executed kill-test, fixed in the generator by wrapping content in ## sections; all three rebuilt and re-verified |
 | 9 | 2026-08-12 | run-tests | Exercised the decision instrument end-to-end on a synthetic fully-answered 18-decision entry inventory - a size no prior test reached (largest was 4) | 8 new tests, 402->410, 0 regressions; 10 MARKET / 4 INTERNALIZE / 4 HYBRID; 2 capabilities derived |
 | 10 | 2026-08-12 | research | Measured the coupling-question count at full size against the predicted pairwise blowup | FORECAST MISS: predicted >20 questions and a usability wall; actual 7 vs a naive bound of 40, because coupling_candidates pairs only over RETAINED decisions - MARKET and UNDECIDABLE are excluded at source |
+| 11 | 2026-08-17 | edit-local-code | Built the answers-intake path: aigov/answers.py + --answers / --answers-template on the inventory script | TOML (stdlib, read-only) keyed on worksheet wording not field names; omitted key = unanswered, never defaulted; load_answers REFUSES a path inside the public repo (exit 2 verified on the real CLI) |
+| 12 | 2026-08-17 | edit-local-code | Refreshed the stale candidate-actions table - action 1 still said Claude should draft the list, which was already done | Direct-Edit + this mirror per AC9 (no /project-state op covers candidate-actions). 6 actions now reflect the real next moves; the ranker no longer points at completed work |
+| 13 | 2026-08-17 | run-tests | Round-tripped the synthetic 18-decision inventory through the answers file and ran the real CLI on a partial file | 19 new tests, 410->429, 0 regressions; round trip reproduces every verdict and every elicited field; compound-refusal and no-market-INTERNALIZE both fire on the real surface |
+| 14 | 2026-08-17 | edit-local-code | Refreshed the Goal Hierarchy short-term table, stale in the same way as candidate-actions | Direct-Edit + this mirror per AC9 (no /project-state op covers Goal Hierarchy; v0.5 --refresh-goal-hierarchy is the named gap). Both tables now agree on the same 6 next moves |
 <!-- project-state:end:action-log -->
 
 ## Open Questions for User
