@@ -13,7 +13,7 @@ answering. A decision drafted wrong and answered carefully is worse than one del
 
 **Roles, never names** — 'who answers for this' takes a role or an unfilled slot.
 
-Suspected compound (consider splitting before answering): E02, E15
+Suspected compound (consider splitting before answering): E15
 
 ## [E01] Whether a candidate jurisdiction passes our political-stability and personal-safety screen well enough to put capital into at all.
 
@@ -29,9 +29,23 @@ Suspected compound (consider splitting before answering): E02, E15
 - What happens if you get it wrong once? Say whether it is recoverable, expensive, or permanent.
 - Is this ONE decision, or several? Could two reasonable people answer different PARTS of this question differently? If so it needs splitting before anything here means much.
 
-## [E02] Whether a candidate jurisdiction's foreign-ownership regime permits a structure we would actually accept — and if direct ownership is barred, whether the available workaround is one we are willing to rely on.
+## [E02a] What ownership or use structure does a candidate jurisdiction actually permit a foreign-controlled entity over agricultural land, on what term, and with what renewal and treaty protection.
 
-*SCREENING*  ·  **suspected compound — split before answering**
+*SCREENING*
+
+- How many times a year does this actually come up? A rough count of the last two years is fine - it does not need to be exact, it needs to be yours.
+- If you handed this to an outside specialist ONCE, what would it cost you all-in - their fee, plus the time to find them, brief them, and check their work?
+- What would it cost per year to keep this capability in-house - the person's time, the tools, and the attention it takes off other things?
+- Is there anyone you could actually buy this judgement from? If nobody sells it, that settles it on its own.
+- What do you know about this that an outside expert could not find out? That is the thing that makes buying it worse than it looks on price.
+- What has to be KNOWN before you can make this call? List the facts, not the sources.
+- Who ANSWERS for this decision - the role, not the person? If nobody does yet, say so.
+- What happens if you get it wrong once? Say whether it is recoverable, expensive, or permanent.
+- Is this ONE decision, or several? Could two reasonable people answer different PARTS of this question differently? If so it needs splitting before anything here means much.
+
+## [E02b] Whether the structure a jurisdiction permits is one we are willing to build on — given that every available route is a term of use rather than title.
+
+*SCREENING*
 
 - How many times a year does this actually come up? A rough count of the last two years is fine - it does not need to be exact, it needs to be yours.
 - If you handed this to an outside specialist ONCE, what would it cost you all-in - their fee, plus the time to find them, brief them, and check their work?

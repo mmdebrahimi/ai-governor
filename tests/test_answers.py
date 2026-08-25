@@ -1,7 +1,7 @@
 """The answers-intake path: a file a person fills in becomes DecisionRecords.
 
 The load-bearing test here is the ROUND TRIP. `test_entry_inventory_endtoend` builds a fully
-answered 18-decision inventory in Python and asserts what it derives. This module writes that
+answered full-size inventory in Python and asserts what it derives. This module writes that
 same inventory out as an answers FILE, reads it back through the intake, and asserts the derived
 inventory is identical. If those two disagree, the intake is lossy and every real session would
 silently lose part of what the user said.
@@ -137,7 +137,7 @@ def test_answered_ids_counts_only_fully_sourced_decisions():
     text = (
         "[E01]\ntimes_per_year = 4\ncost_to_buy_the_call_once = 1\n"
         "cost_per_year_to_hold_it = 2\nanyone_sells_this = true\n"
-        "[E02]\ntimes_per_year = 4\n"
+        "[E02a]\ntimes_per_year = 4\n"
     )
     assert answered_ids(parse_answers(text, QUESTIONS)) == ("E01",)
 
@@ -228,7 +228,7 @@ def test_a_missing_file_is_refused_clearly(tmp_path):
 def test_the_emitted_template_parses_and_answers_nothing():
     text = render_template(ENTRY_CANDIDATES, phase_of=phase_of)
     records = parse_answers(text, QUESTIONS)
-    assert len(records) == 18
+    assert len(records) == len(ENTRY_CANDIDATES)
     assert all(len(r.missing_fields()) == 4 for r in records), \
         "a freshly emitted template must answer nothing - every field is commented out"
 

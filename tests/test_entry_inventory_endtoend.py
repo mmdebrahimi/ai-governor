@@ -2,7 +2,7 @@
 
 Every other test in `test_decisions.py` exercises 2-4 decisions. That is right for unit-testing a
 rule, and it says nothing about whether the instrument is USABLE at the size a real inventory
-reaches. The entry-phase inventory is 18 decisions, and 18 decisions is where the pairwise parts
+reaches. The entry-phase inventory is 19 decisions, and that is where the pairwise parts
 of the design (coupling candidates, capability derivation) either hold up or fall over.
 
 > **The fixture below is SYNTHETIC and is not elicited data.** It exists to exercise the
@@ -54,7 +54,8 @@ _KIND = {
 #: decision id -> facts it turns on. Deliberately overlapping.
 _FACTS = {
     "E01": [TOLERANCE],
-    "E02": [PARTNER_READ],
+    "E02a": [PARTNER_READ],
+    "E02b": [TOLERANCE],
     "E03": [TOLERANCE, RETURN_BAR],
     "E04": [PARTNER_READ, RETURN_BAR],
     "E05": [RETURN_BAR],
@@ -76,7 +77,8 @@ _FACTS = {
 #: decision id -> (freq/yr, cost to buy the call once, cost/yr to hold it, market exists?)
 _COSTS = {
     "E01": (8, 6_000, 40_000, True),
-    "E02": (8, 5_000, 55_000, True),   # market cheaper + private info -> HYBRID
+    "E02a": (8, 5_000, 55_000, True),  # market cheaper + private info -> HYBRID
+    "E02b": (8, 30_000, 45_000, True), # buying the family's own risk appetite is dear -> INTERNALIZE
     "E03": (1, 25_000, 90_000, True),
     "E04": (5, 12_000, 60_000, True),
     "E05": (5, 7_000, 45_000, True),
@@ -98,14 +100,15 @@ _COSTS = {
 #: decisions where the family knows something the market cannot acquire -> HYBRID, not MARKET.
 _PRIVATE = {
     "E01": ("what our own development history says about this kind of jurisdiction",),
-    "E02": ("which local workarounds we have seen fail",),
+    "E02a": ("which local workarounds we have seen fail",),
+    "E02b": ("what this family will actually build on",),
     "E06": ("how this partner behaved in an unrelated prior dealing",),
     "E07": ("which rights we have previously needed and been refused",),
     "E13": ("which partner claims have proven unreliable before",),
 }
 
 _ROLES = {
-    "E01": "principal", "E02": "principal", "E03": "principal", "E04": "principal",
+    "E01": "principal", "E02a": "principal", "E02b": "principal", "E03": "principal", "E04": "principal",
     "E05": "operating lead", "E06": "principal", "E07": "principal", "E08": "principal",
     "E09": "principal", "E10": "principal", "E11": "principal", "E12": "principal",
     "E13": "operating lead", "E14": "operating lead", "E15": "principal",
@@ -114,7 +117,8 @@ _ROLES = {
 }
 
 _REVERSIBILITY = {
-    "E01": Reversibility.REVERSIBLE, "E02": Reversibility.REVERSIBLE,
+    "E01": Reversibility.REVERSIBLE, "E02a": Reversibility.REVERSIBLE,
+    "E02b": Reversibility.COSTLY,
     "E03": Reversibility.COSTLY, "E04": Reversibility.COSTLY,
     "E05": Reversibility.COSTLY, "E06": Reversibility.COSTLY,
     "E07": Reversibility.IRREVERSIBLE, "E08": Reversibility.COSTLY,
@@ -128,7 +132,7 @@ _REVERSIBILITY = {
 
 
 def answered_entry_inventory() -> tuple:
-    """The 18 entry decisions, fully answered. SYNTHETIC - see the module docstring."""
+    """Every entry decision, fully answered. SYNTHETIC - see the module docstring."""
     out = []
     for d in ENTRY_CANDIDATES:
         freq, ext, internal, market = _COSTS[d.id]
@@ -157,7 +161,7 @@ def answered_entry_inventory() -> tuple:
 def test_every_entry_decision_gets_a_sourcing_verdict_at_full_size():
     ds = answered_entry_inventory()
     report = build_inventory(ds)
-    assert len(report.verdicts) == 18
+    assert len(report.verdicts) == len(ENTRY_CANDIDATES)
     assert not report.undecided, "every cost field is answered, so nothing may be UNDECIDABLE"
 
 
@@ -173,7 +177,7 @@ def test_private_information_produces_hybrid_not_market():
     """The historical defect: private info was recorded, printed, then ignored."""
     report = build_inventory(answered_entry_inventory())
     by_id = {v.decision_id: v.sourcing for v in report.verdicts}
-    for did in ("E02", "E06", "E13"):
+    for did in ("E02a", "E06", "E13"):
         assert by_id[did] is Sourcing.HYBRID, f"{did} has private info and a cheaper market"
 
 
@@ -217,7 +221,7 @@ def test_sourcing_verdict_prunes_the_pairwise_blowup():
         assert c.a in retained and c.b in retained, "only retained decisions may be paired"
 
     # Pinned measurement. Update deliberately if the fixture changes; a silent jump is a defect.
-    assert (naive, len(pairs)) == (40, 7)
+    assert (naive, len(pairs)) == (46, 9)
 
 
 def test_unanswered_role_and_consequence_are_reported_not_guessed():

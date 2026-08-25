@@ -25,6 +25,32 @@
       "ts": null,
       "outcome": "hit",
       "scored_ts": null
+    },
+    {
+      "id": "f3",
+      "run_id": null,
+      "family": null,
+      "action": "Close the named treaty-coverage gap for Indonesia, Laos, Ethiopia and verify the Thailand FIPPA claim",
+      "action_class": "research",
+      "target_criterion": "bundle claims are verified rather than none-found",
+      "predicted_flip": true,
+      "expected_progress": "high",
+      "ts": null,
+      "outcome": "partial",
+      "scored_ts": null
+    },
+    {
+      "id": "f4",
+      "run_id": null,
+      "family": null,
+      "action": "Split E02 into a factual half and an authority half",
+      "action_class": "edit-local-code",
+      "target_criterion": "E02 gets a verdict instead of being refused as compound",
+      "predicted_flip": true,
+      "expected_progress": "medium",
+      "ts": null,
+      "outcome": "hit",
+      "scored_ts": null
     }
   ]
 }

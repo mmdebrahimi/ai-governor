@@ -44,7 +44,7 @@ from aigov.decisions import DecisionRecord
 
 #: Decisions run REPEATEDLY across candidates during the search, so a real frequency exists and a
 #: genuine INTERNALIZE verdict is reachable.
-SCREENING_IDS = ("E01", "E02", "E04", "E05", "E06", "E13")
+SCREENING_IDS = ("E01", "E02a", "E02b", "E04", "E05", "E06", "E13")
 
 #: Decisions taken ONCE for the first venture. Frequency will be about 1, so expect MARKET/HYBRID
 #: unless private information or a missing market carries them.
@@ -55,11 +55,14 @@ COMMITMENT_IDS = (
 #: Decisions the DRAFTER suspects are COMPOUND — two reasonable people could answer different
 #: parts differently, so `aigov.decisions` would refuse a verdict. `atomic` stays `None` in the
 #: records; this is a flag for the correction session, never an input to the instrument.
-SUSPECTED_COMPOUND_IDS = ("E02", "E15")
+#:
+#: E02 was split into E02a/E02b on 2026-08-17 and is no longer listed — see the ENTRY_CANDIDATES
+#: note. E15 remains flagged and unsplit.
+SUSPECTED_COMPOUND_IDS = ("E15",)
 
 #: Reading aid for the correction session ONLY. Never exported into a record.
 _READING_GROUPS = {
-    "where": ("E01", "E02", "E03"),
+    "where": ("E01", "E02a", "E02b", "E03"),
     "what shape of asset": ("E04", "E05"),
     "who with": ("E06", "E07", "E08", "E09"),
     "how much and through what": ("E10", "E11", "E12"),
@@ -78,9 +81,17 @@ ENTRY_CANDIDATES = (
     # --- where ---
     _d("E01", "Whether a candidate jurisdiction passes our political-stability and personal-safety "
               "screen well enough to put capital into at all."),
-    _d("E02", "Whether a candidate jurisdiction's foreign-ownership regime permits a structure we "
-              "would actually accept — and if direct ownership is barred, whether the available "
-              "workaround is one we are willing to rely on."),
+    # E02 was ONE question until 2026-08-17. It bundled a FACT ("what does the regime permit?")
+    # with a JUDGMENT ("would we accept that?"), and the instrument would have refused it a verdict
+    # for exactly that reason. The split follows the factual/authority seam: E02a is researchable
+    # and belongs to whoever does the research; E02b is the family's call and cannot be delegated.
+    # Splitting here rather than at the fact/judgment boundary would have produced two questions
+    # that both still needed the other's answer.
+    _d("E02a", "What ownership or use structure does a candidate jurisdiction actually permit a "
+               "foreign-controlled entity over agricultural land, on what term, and with what "
+               "renewal and treaty protection."),
+    _d("E02b", "Whether the structure a jurisdiction permits is one we are willing to build on — "
+               "given that every available route is a term of use rather than title."),
     _d("E03", "Which jurisdiction to commit the first venture to, given we cannot start "
               "everywhere at once."),
 

@@ -23,14 +23,15 @@ INTERNALIZE verdict is reachable. **COMMITMENT** decisions are taken once, so ex
 MARKET or HYBRID unless private information or a missing market carries them — that is the
 arithmetic working, not a defect.
 
-`!` = suspected compound, consider splitting (E02, E15)
+`!` = suspected compound, consider splitting (E15)
 
 ## Candidate decisions
 
 | mark | id | phase | decision |
 |---|---|---|---|
 | &nbsp; | E01 | SCREENING | Whether a candidate jurisdiction passes our political-stability and personal-safety screen well enough to put capital into at all. |
-| ! | E02 | SCREENING | Whether a candidate jurisdiction's foreign-ownership regime permits a structure we would actually accept — and if direct ownership is barred, whether the available workaround is one we are willing to rely on. |
+| &nbsp; | E02a | SCREENING | What ownership or use structure does a candidate jurisdiction actually permit a foreign-controlled entity over agricultural land, on what term, and with what renewal and treaty protection. |
+| &nbsp; | E02b | SCREENING | Whether the structure a jurisdiction permits is one we are willing to build on — given that every available route is a term of use rather than title. |
 | &nbsp; | E03 | COMMITMENT | Which jurisdiction to commit the first venture to, given we cannot start everywhere at once. |
 | &nbsp; | E04 | SCREENING | Whether to enter by buying into an existing operating business or by building greenfield. |
 | &nbsp; | E05 | SCREENING | Whether to hold land, lease it, or contract-farm without holding land at all. |
@@ -48,5 +49,5 @@ arithmetic working, not a defect.
 | &nbsp; | E17 | COMMITMENT | Who on our side answers for this venture — the role, not the person. |
 | &nbsp; | E18 | COMMITMENT | Whether to bring agricultural expertise in-house or rely entirely on the partner for it. |
 
-Drafted: 18 · first pass: 18 · family bar: >=15 with all four
+Drafted: 19 · first pass: 19 · family bar: >=15 with all four
 sourcing inputs answered.
