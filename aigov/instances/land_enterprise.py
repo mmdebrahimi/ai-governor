@@ -50,6 +50,7 @@ SCREENING_IDS = ("E01", "E02a", "E02b", "E04", "E05", "E06", "E13")
 #: unless private information or a missing market carries them.
 COMMITMENT_IDS = (
     "E03", "E07", "E08", "E09", "E10", "E11", "E12", "E14", "E15", "E16", "E17", "E18",
+    "E19", "E20", "E21", "E22", "E23",
 )
 
 #: Decisions the DRAFTER suspects are COMPOUND — two reasonable people could answer different
@@ -69,6 +70,8 @@ _READING_GROUPS = {
     "what we can see": ("E13", "E14"),
     "what we carry": ("E15", "E16"),
     "who answers for it": ("E17", "E18"),
+    "what we put on it": ("E19", "E20"),
+    "where we stand personally": ("E21", "E22", "E23"),
 }
 
 
@@ -130,6 +133,22 @@ ENTRY_CANDIDATES = (
     _d("E17", "Who on our side answers for this venture — the role, not the person."),
     _d("E18", "Whether to bring agricultural expertise in-house or rely entirely on the partner "
               "for it."),
+
+    # Added 2026-08-17. The drafted set assumed a partner-led commodity venture. The elicited
+    # programme — own the freehold, plant long-rotation high-value trees, run automation
+    # experiments, and put a family residence and retreat on the same land — raises decisions
+    # none of E01–E18 covers. Each is here because it was MISSING, not because it is answered.
+    _d("E19", "Which species programme to commit the land to, given that establishment cost, years "
+              "to positive cash flow and market concentration differ by an order of magnitude "
+              "between candidate crops."),
+    _d("E20", "Whether to operate the hospitality side ourselves or contract it to an operator — "
+              "it is a different business from farming that happens to share a site."),
+    _d("E21", "Whether family members will be resident on or near the holding, and which "
+              "jurisdiction the family's tax residence sits in."),
+    _d("E22", "In what ORDER to change tax residence and to acquire, given that the change itself "
+              "can crystallise tax on assets held at the time."),
+    _d("E23", "How much real substance each holding entity must carry to survive a "
+              "denial-of-benefits challenge, as against existing only on paper."),
 )
 
 #: The superseded operating-farm draft. NOT the live inventory. Retained because it becomes

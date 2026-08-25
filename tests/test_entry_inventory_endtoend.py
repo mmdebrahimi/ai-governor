@@ -72,6 +72,11 @@ _FACTS = {
     "E16": [TOLERANCE],
     "E17": [],
     "E18": [],
+    "E19": [TOLERANCE],
+    "E20": [],
+    "E21": [TOLERANCE],
+    "E22": [CASH],
+    "E23": [FX],
 }
 
 #: decision id -> (freq/yr, cost to buy the call once, cost/yr to hold it, market exists?)
@@ -95,6 +100,11 @@ _COSTS = {
     "E16": (1, 12_000, 55_000, True),
     "E17": (1, 8_000, 20_000, False),     # no market -> forced INTERNALIZE
     "E18": (1, 14_000, 95_000, True),
+    "E19": (1, 20_000, 60_000, True),    # market cheaper + private info -> HYBRID
+    "E20": (1, 15_000, 50_000, True),
+    "E21": (1, 25_000, 15_000, False),   # no market -> forced INTERNALIZE
+    "E22": (1, 30_000, 80_000, True),
+    "E23": (1, 12_000, 40_000, True),
 }
 
 #: decisions where the family knows something the market cannot acquire -> HYBRID, not MARKET.
@@ -105,6 +115,7 @@ _PRIVATE = {
     "E06": ("how this partner behaved in an unrelated prior dealing",),
     "E07": ("which rights we have previously needed and been refused",),
     "E13": ("which partner claims have proven unreliable before",),
+    "E19": ("what this family actually wants standing on the land in thirty years",),
 }
 
 _ROLES = {
@@ -113,6 +124,8 @@ _ROLES = {
     "E09": "principal", "E10": "principal", "E11": "principal", "E12": "principal",
     "E13": "operating lead", "E14": "operating lead", "E15": "principal",
     "E16": "operating lead", "E17": "principal",
+    "E19": "principal", "E20": "operating lead", "E21": "principal",
+    "E22": "principal", "E23": "principal",
     # E18 deliberately left unowned so the unowned-reporting path stays live.
 }
 
@@ -127,8 +140,28 @@ _REVERSIBILITY = {
     "E13": Reversibility.REVERSIBLE, "E14": Reversibility.REVERSIBLE,
     "E15": Reversibility.COSTLY, "E16": Reversibility.REVERSIBLE,
     "E17": Reversibility.COSTLY,
+    "E19": Reversibility.IRREVERSIBLE, "E20": Reversibility.COSTLY,
+    "E21": Reversibility.COSTLY, "E22": Reversibility.IRREVERSIBLE,
+    "E23": Reversibility.COSTLY,
     # E18 deliberately left unanswered so the unassured-reporting path stays live.
 }
+
+
+def test_every_instance_decision_has_a_fixture_entry():
+    """Adding a decision upstream must fail here, once, and say what is missing.
+
+    This fixture has been hand-patched three times as the inventory grew, each time surfacing as a
+    scatter of KeyErrors across unrelated tests. One explicit guard is cheaper to read than seven
+    incidental failures.
+    """
+    missing = {
+        "_FACTS": [d.id for d in ENTRY_CANDIDATES if d.id not in _FACTS],
+        "_COSTS": [d.id for d in ENTRY_CANDIDATES if d.id not in _COSTS],
+    }
+    assert not any(missing.values()), (
+        f"decisions added to aigov.instances.land_enterprise without fixture entries: {missing}. "
+        f"Add them to the dicts above; _PRIVATE / _ROLES / _REVERSIBILITY are optional by design."
+    )
 
 
 def answered_entry_inventory() -> tuple:
@@ -221,7 +254,7 @@ def test_sourcing_verdict_prunes_the_pairwise_blowup():
         assert c.a in retained and c.b in retained, "only retained decisions may be paired"
 
     # Pinned measurement. Update deliberately if the fixture changes; a silent jump is a defect.
-    assert (naive, len(pairs)) == (46, 9)
+    assert (naive, len(pairs)) == (61, 16)
 
 
 def test_unanswered_role_and_consequence_are_reported_not_guessed():

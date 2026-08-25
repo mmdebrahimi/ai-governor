@@ -48,6 +48,11 @@ arithmetic working, not a defect.
 | &nbsp; | E16 | COMMITMENT | Whether to run a bounded pilot before committing at full size. |
 | &nbsp; | E17 | COMMITMENT | Who on our side answers for this venture — the role, not the person. |
 | &nbsp; | E18 | COMMITMENT | Whether to bring agricultural expertise in-house or rely entirely on the partner for it. |
+| &nbsp; | E19 | COMMITMENT | Which species programme to commit the land to, given that establishment cost, years to positive cash flow and market concentration differ by an order of magnitude between candidate crops. |
+| &nbsp; | E20 | COMMITMENT | Whether to operate the hospitality side ourselves or contract it to an operator — it is a different business from farming that happens to share a site. |
+| &nbsp; | E21 | COMMITMENT | Whether family members will be resident on or near the holding, and which jurisdiction the family's tax residence sits in. |
+| &nbsp; | E22 | COMMITMENT | In what ORDER to change tax residence and to acquire, given that the change itself can crystallise tax on assets held at the time. |
+| &nbsp; | E23 | COMMITMENT | How much real substance each holding entity must carry to survive a denial-of-benefits challenge, as against existing only on paper. |
 
-Drafted: 19 · first pass: 19 · family bar: >=15 with all four
+Drafted: 24 · first pass: 24 · family bar: >=15 with all four
 sourcing inputs answered.
