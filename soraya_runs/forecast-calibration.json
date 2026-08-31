@@ -51,6 +51,19 @@
       "ts": null,
       "outcome": "hit",
       "scored_ts": null
+    },
+    {
+      "id": "f5",
+      "run_id": null,
+      "family": null,
+      "action": "Encode the answers the user gave in conversation but never wrote to the answers file",
+      "action_class": "edit-local-code",
+      "target_criterion": "inventory moves off 1-of-24 and derives a first real verdict set",
+      "predicted_flip": true,
+      "expected_progress": "high",
+      "ts": null,
+      "outcome": "hit",
+      "scored_ts": null
     }
   ]
 }

@@ -50,7 +50,7 @@ SCREENING_IDS = ("E01", "E02a", "E02b", "E04", "E05", "E06", "E13")
 #: unless private information or a missing market carries them.
 COMMITMENT_IDS = (
     "E03", "E07", "E08", "E09", "E10", "E11", "E12", "E14", "E15", "E16", "E17", "E18",
-    "E19", "E20", "E21", "E22", "E23",
+    "E19a", "E19b", "E20", "E21a", "E21b", "E22", "E23",
 )
 
 #: Decisions the DRAFTER suspects are COMPOUND — two reasonable people could answer different
@@ -70,8 +70,8 @@ _READING_GROUPS = {
     "what we can see": ("E13", "E14"),
     "what we carry": ("E15", "E16"),
     "who answers for it": ("E17", "E18"),
-    "what we put on it": ("E19", "E20"),
-    "where we stand personally": ("E21", "E22", "E23"),
+    "what we put on it": ("E19a", "E19b", "E20"),
+    "where we stand personally": ("E21a", "E21b", "E22", "E23"),
 }
 
 
@@ -138,13 +138,25 @@ ENTRY_CANDIDATES = (
     # programme — own the freehold, plant long-rotation high-value trees, run automation
     # experiments, and put a family residence and retreat on the same land — raises decisions
     # none of E01–E18 covers. Each is here because it was MISSING, not because it is answered.
-    _d("E19", "Which species programme to commit the land to, given that establishment cost, years "
-              "to positive cash flow and market concentration differ by an order of magnitude "
-              "between candidate crops."),
+    # E19 split 2026-08-31. The user named three separable things in one breath - "long term
+    # high value trees are one thing. perhaps animals as well, and farm automation experiments
+    # is another goal" - and the instrument refused it a verdict on exactly that basis. The
+    # automation strand is already E14, so this splits in two rather than three.
+    _d("E19a", "Which TREE species programme to commit the land to, given that establishment "
+               "cost, years to positive cash flow and market concentration differ by an order "
+               "of magnitude between candidate crops."),
+    _d("E19b", "Whether to run livestock, and whether integrated with the trees or kept "
+               "separate - noting that a silvopastoral system makes this one decision rather "
+               "than two."),
     _d("E20", "Whether to operate the hospitality side ourselves or contract it to an operator — "
               "it is a different business from farming that happens to share a site."),
-    _d("E21", "Whether family members will be resident on or near the holding, and which "
-              "jurisdiction the family's tax residence sits in."),
+    # E21 split 2026-08-31. Refused as compound, correctly: where the family LIVES and where
+    # its TAX RESIDENCE sits are different questions with different answers - the stated plan
+    # keeps Canadian citizenship for travel, moves tax residence elsewhere, and may put
+    # physical residence in a third place.
+    _d("E21a", "Whether family members will be resident on or near the holding, and how much "
+               "of the year."),
+    _d("E21b", "Which jurisdiction the family's tax residence sits in."),
     _d("E22", "In what ORDER to change tax residence and to acquire, given that the change itself "
               "can crystallise tax on assets held at the time."),
     _d("E23", "How much real substance each holding entity must carry to survive a "

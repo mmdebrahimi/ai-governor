@@ -72,9 +72,11 @@ _FACTS = {
     "E16": [TOLERANCE],
     "E17": [],
     "E18": [],
-    "E19": [TOLERANCE],
+    "E19a": [TOLERANCE],
+    "E19b": [],
     "E20": [],
-    "E21": [TOLERANCE],
+    "E21a": [TOLERANCE],
+    "E21b": [CASH],
     "E22": [CASH],
     "E23": [FX],
 }
@@ -100,9 +102,11 @@ _COSTS = {
     "E16": (1, 12_000, 55_000, True),
     "E17": (1, 8_000, 20_000, False),     # no market -> forced INTERNALIZE
     "E18": (1, 14_000, 95_000, True),
-    "E19": (1, 20_000, 60_000, True),    # market cheaper + private info -> HYBRID
+    "E19a": (1, 20_000, 60_000, True),   # market cheaper + private info -> HYBRID
+    "E19b": (1, 10_000, 30_000, True),
     "E20": (1, 15_000, 50_000, True),
-    "E21": (1, 25_000, 15_000, False),   # no market -> forced INTERNALIZE
+    "E21a": (1, 25_000, 15_000, False),  # no market -> forced INTERNALIZE
+    "E21b": (1, 18_000, 40_000, True),
     "E22": (1, 30_000, 80_000, True),
     "E23": (1, 12_000, 40_000, True),
 }
@@ -115,7 +119,7 @@ _PRIVATE = {
     "E06": ("how this partner behaved in an unrelated prior dealing",),
     "E07": ("which rights we have previously needed and been refused",),
     "E13": ("which partner claims have proven unreliable before",),
-    "E19": ("what this family actually wants standing on the land in thirty years",),
+    "E19a": ("what this family actually wants standing on the land in thirty years",),
 }
 
 _ROLES = {
@@ -124,7 +128,8 @@ _ROLES = {
     "E09": "principal", "E10": "principal", "E11": "principal", "E12": "principal",
     "E13": "operating lead", "E14": "operating lead", "E15": "principal",
     "E16": "operating lead", "E17": "principal",
-    "E19": "principal", "E20": "operating lead", "E21": "principal",
+    "E19a": "principal", "E19b": "operating lead", "E20": "operating lead",
+    "E21a": "principal", "E21b": "principal",
     "E22": "principal", "E23": "principal",
     # E18 deliberately left unowned so the unowned-reporting path stays live.
 }
@@ -140,8 +145,10 @@ _REVERSIBILITY = {
     "E13": Reversibility.REVERSIBLE, "E14": Reversibility.REVERSIBLE,
     "E15": Reversibility.COSTLY, "E16": Reversibility.REVERSIBLE,
     "E17": Reversibility.COSTLY,
-    "E19": Reversibility.IRREVERSIBLE, "E20": Reversibility.COSTLY,
-    "E21": Reversibility.COSTLY, "E22": Reversibility.IRREVERSIBLE,
+    "E19a": Reversibility.IRREVERSIBLE, "E19b": Reversibility.REVERSIBLE,
+    "E20": Reversibility.COSTLY,
+    "E21a": Reversibility.COSTLY, "E21b": Reversibility.COSTLY,
+    "E22": Reversibility.IRREVERSIBLE,
     "E23": Reversibility.COSTLY,
     # E18 deliberately left unanswered so the unassured-reporting path stays live.
 }

@@ -281,7 +281,21 @@ Suspected compound (consider splitting before answering): E15
 - What happens if you get it wrong once? Say whether it is recoverable, expensive, or permanent.
 - Is this ONE decision, or several? Could two reasonable people answer different PARTS of this question differently? If so it needs splitting before anything here means much.
 
-## [E19] Which species programme to commit the land to, given that establishment cost, years to positive cash flow and market concentration differ by an order of magnitude between candidate crops.
+## [E19a] Which TREE species programme to commit the land to, given that establishment cost, years to positive cash flow and market concentration differ by an order of magnitude between candidate crops.
+
+*COMMITMENT*
+
+- How many times a year does this actually come up? A rough count of the last two years is fine - it does not need to be exact, it needs to be yours.
+- If you handed this to an outside specialist ONCE, what would it cost you all-in - their fee, plus the time to find them, brief them, and check their work?
+- What would it cost per year to keep this capability in-house - the person's time, the tools, and the attention it takes off other things?
+- Is there anyone you could actually buy this judgement from? If nobody sells it, that settles it on its own.
+- What do you know about this that an outside expert could not find out? That is the thing that makes buying it worse than it looks on price.
+- What has to be KNOWN before you can make this call? List the facts, not the sources.
+- Who ANSWERS for this decision - the role, not the person? If nobody does yet, say so.
+- What happens if you get it wrong once? Say whether it is recoverable, expensive, or permanent.
+- Is this ONE decision, or several? Could two reasonable people answer different PARTS of this question differently? If so it needs splitting before anything here means much.
+
+## [E19b] Whether to run livestock, and whether integrated with the trees or kept separate - noting that a silvopastoral system makes this one decision rather than two.
 
 *COMMITMENT*
 
@@ -309,7 +323,21 @@ Suspected compound (consider splitting before answering): E15
 - What happens if you get it wrong once? Say whether it is recoverable, expensive, or permanent.
 - Is this ONE decision, or several? Could two reasonable people answer different PARTS of this question differently? If so it needs splitting before anything here means much.
 
-## [E21] Whether family members will be resident on or near the holding, and which jurisdiction the family's tax residence sits in.
+## [E21a] Whether family members will be resident on or near the holding, and how much of the year.
+
+*COMMITMENT*
+
+- How many times a year does this actually come up? A rough count of the last two years is fine - it does not need to be exact, it needs to be yours.
+- If you handed this to an outside specialist ONCE, what would it cost you all-in - their fee, plus the time to find them, brief them, and check their work?
+- What would it cost per year to keep this capability in-house - the person's time, the tools, and the attention it takes off other things?
+- Is there anyone you could actually buy this judgement from? If nobody sells it, that settles it on its own.
+- What do you know about this that an outside expert could not find out? That is the thing that makes buying it worse than it looks on price.
+- What has to be KNOWN before you can make this call? List the facts, not the sources.
+- Who ANSWERS for this decision - the role, not the person? If nobody does yet, say so.
+- What happens if you get it wrong once? Say whether it is recoverable, expensive, or permanent.
+- Is this ONE decision, or several? Could two reasonable people answer different PARTS of this question differently? If so it needs splitting before anything here means much.
+
+## [E21b] Which jurisdiction the family's tax residence sits in.
 
 *COMMITMENT*
 
