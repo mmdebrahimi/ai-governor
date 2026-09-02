@@ -55,6 +55,7 @@ arithmetic working, not a defect.
 | &nbsp; | E21b | COMMITMENT | Which jurisdiction the family's tax residence sits in. |
 | &nbsp; | E22 | COMMITMENT | In what ORDER to change tax residence and to acquire, given that the change itself can crystallise tax on assets held at the time. |
 | &nbsp; | E23 | COMMITMENT | How much real substance each holding entity must carry to survive a denial-of-benefits challenge, as against existing only on paper. |
+| &nbsp; | E24 | COMMITMENT | How to acquire and maintain modern farm equipment — buy, lease, or hire it in with an operator. |
 
-Drafted: 26 · first pass: 26 · family bar: >=15 with all four
+Drafted: 27 · first pass: 27 · family bar: >=15 with all four
 sourcing inputs answered.

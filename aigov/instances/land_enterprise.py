@@ -50,7 +50,7 @@ SCREENING_IDS = ("E01", "E02a", "E02b", "E04", "E05", "E06", "E13")
 #: unless private information or a missing market carries them.
 COMMITMENT_IDS = (
     "E03", "E07", "E08", "E09", "E10", "E11", "E12", "E14", "E15", "E16", "E17", "E18",
-    "E19a", "E19b", "E20", "E21a", "E21b", "E22", "E23",
+    "E19a", "E19b", "E20", "E21a", "E21b", "E22", "E23", "E24",
 )
 
 #: Decisions the DRAFTER suspects are COMPOUND — two reasonable people could answer different
@@ -72,6 +72,7 @@ _READING_GROUPS = {
     "who answers for it": ("E17", "E18"),
     "what we put on it": ("E19a", "E19b", "E20"),
     "where we stand personally": ("E21a", "E21b", "E22", "E23"),
+    "what we run it with": ("E24",),
 }
 
 
@@ -161,6 +162,12 @@ ENTRY_CANDIDATES = (
               "can crystallise tax on assets held at the time."),
     _d("E23", "How much real substance each holding entity must carry to survive a "
               "denial-of-benefits challenge, as against existing only on paper."),
+
+    # Added 2026-09-01. The user named farm equipment as a separate need from the AI/sensor
+    # hobby — "it would be a fun hobby project, we still need modern farm equipment". Nothing
+    # in E01–E23 covers acquiring or maintaining machinery.
+    _d("E24", "How to acquire and maintain modern farm equipment — buy, lease, or hire it in "
+              "with an operator."),
 )
 
 #: The superseded operating-farm draft. NOT the live inventory. Retained because it becomes

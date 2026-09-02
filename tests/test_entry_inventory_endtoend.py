@@ -79,6 +79,7 @@ _FACTS = {
     "E21b": [CASH],
     "E22": [CASH],
     "E23": [FX],
+    "E24": [],
 }
 
 #: decision id -> (freq/yr, cost to buy the call once, cost/yr to hold it, market exists?)
@@ -109,6 +110,7 @@ _COSTS = {
     "E21b": (1, 18_000, 40_000, True),
     "E22": (1, 30_000, 80_000, True),
     "E23": (1, 12_000, 40_000, True),
+    "E24": (1, 9_000, 35_000, True),
 }
 
 #: decisions where the family knows something the market cannot acquire -> HYBRID, not MARKET.
@@ -130,7 +132,7 @@ _ROLES = {
     "E16": "operating lead", "E17": "principal",
     "E19a": "principal", "E19b": "operating lead", "E20": "operating lead",
     "E21a": "principal", "E21b": "principal",
-    "E22": "principal", "E23": "principal",
+    "E22": "principal", "E23": "principal", "E24": "operating lead",
     # E18 deliberately left unowned so the unowned-reporting path stays live.
 }
 
@@ -149,7 +151,7 @@ _REVERSIBILITY = {
     "E20": Reversibility.COSTLY,
     "E21a": Reversibility.COSTLY, "E21b": Reversibility.COSTLY,
     "E22": Reversibility.IRREVERSIBLE,
-    "E23": Reversibility.COSTLY,
+    "E23": Reversibility.COSTLY, "E24": Reversibility.REVERSIBLE,
     # E18 deliberately left unanswered so the unassured-reporting path stays live.
 }
 
