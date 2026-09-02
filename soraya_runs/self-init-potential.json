@@ -8,7 +8,8 @@
     "aigov-collective-choice",
     "aigov-guideline-intake",
     "aigov-twin",
-    "aigov-kernel"
+    "aigov-kernel",
+    "aigov-land-enterprise"
   ],
   "spent": [
     {
@@ -58,6 +59,12 @@
       "mode": "advance-spillover",
       "project_id": "aigov-kernel",
       "justification": "Gate D \u2014 the runtime"
+    },
+    {
+      "when": null,
+      "mode": "advance",
+      "project_id": "aigov-land-enterprise",
+      "justification": "F13 - first REAL instance of the V2 north star; user redirect off Mars sandbox"
     }
   ]
 }

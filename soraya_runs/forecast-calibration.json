@@ -64,6 +64,19 @@
       "ts": null,
       "outcome": "hit",
       "scored_ts": null
+    },
+    {
+      "id": "f6",
+      "run_id": null,
+      "family": null,
+      "action": "Model TOTAL tax burden (income+land+CGT+inheritance+exit) across Uruguay/Chile/UAE-holding on a realistic holding",
+      "action_class": "research",
+      "target_criterion": "the user-named total-tax comparison is run rather than asserted",
+      "predicted_flip": true,
+      "expected_progress": "high",
+      "ts": null,
+      "outcome": "miss",
+      "scored_ts": null
     }
   ]
 }

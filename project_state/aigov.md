@@ -33,20 +33,34 @@
 - **Candidates:** C1 (top-ranked, integrated — the refined goal above): a governed simulation — kernel + contract + ≥3 departments + adversarial suite, ≥12 cycles on a twin, every binding action ratified-certified-constrained or fail-closed escalated. C2 (contract-only): a `DepartmentSpec` + validator enforcing I1–I10 such that two structurally different departments (HIGH and LOW central-legitimacy) are both expressible and their coupling is declared bilaterally — falsifies assumption A1 cheaply. C3 (guideline-compilation): a guideline-intake mechanism (sortition assembly + quadratic priority budget) whose output compiles to `ObjectiveRef` + `Constraint` with no human rewriting — falsifies crux assumption A2, the single highest-information test in the project. C4 (charter-only): a constitutional charter for the machine in which every clause is either machine-checkable or explicitly labelled aspirational, with the checkable fraction reported as a measured number.
 
 ## Project Families
+
+> **MARS SANDBOX FROZEN 2026-08-12 (user decision).** F0-F12 are the Mars-colony SANDBOX that
+> proved the machinery. They are frozen at their current honest state — not abandoned, not
+> complete. Reopen only when the land-enterprise instrument needs something proven that the
+> sandbox is the right place to prove.
+>
+> **WHY THIS WAS NEEDED:** the family table held 13 Mars families and ZERO Earth families, so the
+> code-owned `advance_ranker` structurally could not surface land-enterprise work — every
+> `--advance` correctly pointed at Mars, and a whole session went to the sandbox while the actual
+> north star sat blocked on a user session. **F13 is the fix.** The V2 north star recorded in the
+> frame explicitly SUPERSEDES the Mars target as the program goal; the family table had not
+> caught up.
+
 | # | Family slug | Status | Success-criteria pointer | Critical-path role | blocked_by |
 |---|---|---|---|---|---|
-| F0 | `aigov-foundations` | ACCEPTED (seeded 2026-08-11) | its `## MVP Criteria` — V1/V2/V4/V5 audit-tier memos + contested-set record | Gate A — evidence base for every design bound | none |
-| F1 | `aigov-constitution` | ACCEPTED (seeded 2026-08-11) | its `## MVP Criteria` — charter + invariant module + measured checkable fraction | Gate A — the machine limits (D0) | aigov-foundations |
-| F3 | `aigov-dept-contract` | ACCEPTED (seeded 2026-08-11) | its `## MVP Criteria` — contract + validator I1–I11 + mutation-proof | Gate B — the scaling primitive | aigov-constitution |
-| F2 | `aigov-guideline-intake` | ACCEPTED (seeded 2026-08-11) | elicited-level guidelines compile with no human rewrite (crux A2) | Gate B — legitimacy-critical | aigov-foundations, aigov-constitution |
-| F6 | `aigov-collective-choice` | ACCEPTED (seeded 2026-08-11) | zero test loss (193/193) porting the Mars_Governance organ | Gate B — the sovereign channel (D3) | aigov-constitution |
-| F4 | `aigov-twin` | ACCEPTED (seeded 2026-08-11) | twin reproduces reused ECLSS/analog baselines within a stated tolerance | Gate C — the world departments act on | aigov-dept-contract |
-| F5 | `aigov-kernel` | ACCEPTED (seeded 2026-08-11) | no action applies without ratified ∧ certified ∧ constraint-satisfying | Gate D — the runtime | aigov-guideline-intake, aigov-dept-contract, aigov-twin, aigov-collective-choice |
-| F7 | `aigov-dept-lifesupport` | PROPOSED — seed at Gate D | closed loop respects physical bounds (HIGH legitimacy) | Gate D — department instance | aigov-dept-contract, aigov-twin |
-| F8 | `aigov-dept-economy` | PROPOSED — seed at Gate D | fiscal instrument funds the public-goods bill AND passes I8 (LOW legitimacy) | Gate D — department instance | aigov-dept-contract, aigov-twin |
-| F9 | `aigov-audit-arbitration` | PROPOSED — seed at Gate E | never certifies a capture it cannot faithfully audit | Gate E — the checks (D15 + D13) | aigov-kernel |
-| F10 | `aigov-adversarial` | PROPOSED — run at every gate | every named attack ends in detection or escalation, never silent success | cross-cutting red team | aigov-kernel |
-| F11 | `aigov-integration` | PROPOSED — seed at Gate F | ≥12 cycles · ≥3 departments · adversarial load · reproducible via pytest | Gate F — mission terminal | aigov-audit-arbitration, aigov-adversarial, aigov-dept-lifesupport, aigov-dept-economy |
+| F13 | `aigov-land-enterprise` | ACCEPTED (seeded 2026-08-12) — THE LIVE FAMILY | its `## Bellman` target state — 15+ decisions elicited, ≥1 ConfirmedCapability, a role per decision, every gap named | the V2 north star's first REAL instance; Mars was the rig, this is the thing (unblocked; needs a user session) | none |
+| F0 | `aigov-foundations` | FROZEN 2026-08-12 (was ACCEPTED, MVP bar met) | its `## MVP Criteria` — V1/V2/V4/V5 audit-tier memos + contested-set record | Gate A — evidence base for every design bound | none |
+| F1 | `aigov-constitution` | FROZEN 2026-08-12 (was ACCEPTED, MVP bar met) | its `## MVP Criteria` — charter + invariant module + measured checkable fraction | Gate A — the machine limits (D0) | aigov-foundations |
+| F3 | `aigov-dept-contract` | FROZEN 2026-08-12 (was ACCEPTED, MVP bar met) | its `## MVP Criteria` — contract + validator I1–I11 + mutation-proof | Gate B — the scaling primitive | aigov-constitution |
+| F2 | `aigov-guideline-intake` | FROZEN 2026-08-12 (was ACCEPTED, MVP bar met) | elicited-level guidelines compile with no human rewrite (crux A2) | Gate B — legitimacy-critical | aigov-foundations, aigov-constitution |
+| F6 | `aigov-collective-choice` | FROZEN 2026-08-12 (was ACCEPTED, MVP bar met) | zero test loss (193/193) porting the Mars_Governance organ | Gate B — the sovereign channel (D3) | aigov-constitution |
+| F4 | `aigov-twin` | FROZEN 2026-08-12 (was ACCEPTED, MVP bar met) | twin reproduces reused ECLSS/analog baselines within a stated tolerance | Gate C — the world departments act on | aigov-dept-contract |
+| F5 | `aigov-kernel` | FROZEN 2026-08-12 (was ACCEPTED, MVP bar met) | no action applies without ratified ∧ certified ∧ constraint-satisfying | Gate D — the runtime | aigov-guideline-intake, aigov-dept-contract, aigov-twin, aigov-collective-choice |
+| F7 | `aigov-dept-lifesupport` | FROZEN 2026-08-12 (was PROPOSED — seed at Gate D) | closed loop respects physical bounds (HIGH legitimacy) | Gate D — department instance | aigov-dept-contract, aigov-twin |
+| F8 | `aigov-dept-economy` | FROZEN 2026-08-12 (was PROPOSED — seed at Gate D) | fiscal instrument funds the public-goods bill AND passes I8 (LOW legitimacy) | Gate D — department instance | aigov-dept-contract, aigov-twin |
+| F9 | `aigov-audit-arbitration` | FROZEN 2026-08-12 (was PROPOSED — seed at Gate E) | never certifies a capture it cannot faithfully audit | Gate E — the checks (D15 + D13) | aigov-kernel |
+| F10 | `aigov-adversarial` | FROZEN 2026-08-12 (was PROPOSED — run at every gate) | every named attack ends in detection or escalation, never silent success | cross-cutting red team | aigov-kernel |
+| F11 | `aigov-integration` | FROZEN 2026-08-12 (was PROPOSED — seed at Gate F) | ≥12 cycles · ≥3 departments · adversarial load · reproducible via pytest | Gate F — mission terminal | aigov-audit-arbitration, aigov-adversarial, aigov-dept-lifesupport, aigov-dept-economy |
 | F12 | `aigov-scale-gates` | PROPOSED — DEFERRED to phase 2 | colony→city→nation phase-change gates | post-phase-1 | aigov-integration |
 <!-- project-state:end:project-families -->
 
@@ -62,9 +76,9 @@
 ## Requirements Flow-down
 | From | To | Requirement that flows |
 |---|---|---|
-| Fork 1 (AWAITING RATIFICATION) | all families | The AI never selects the objective, never amends its own constraints, never holds the exception |
-| Fork 2 (AWAITING RATIFICATION) | all families | Scale = colony 100–1000; nation-scale is out of phase-1 scope |
-| Fork 3 (AWAITING RATIFICATION) | all families | Primary deliverable is a runnable governed simulation, not a document and not a deployable stack |
+| Fork 1 (RATIFIED 2026-08-11, decision D1) | all families | The AI never selects the objective, never amends its own constraints, never holds the exception |
+| Fork 2 (RATIFIED 2026-08-11, decision D2) | all families | Scale = colony 100–1000; nation-scale is out of phase-1 scope |
+| Fork 3 (RATIFIED 2026-08-11, decision D3) | all families | Primary deliverable is a runnable governed simulation, not a document and not a deployable stack |
 | aigov-foundations V1 (walls) | aigov-constitution, aigov-kernel, aigov-audit-arbitration | Certify only inside the domain where the property is faithful; otherwise escalate |
 | aigov-foundations V4 (Fuller) | aigov-dept-contract (I10), aigov-kernel | Every machine-emitted rule passes the legality linter |
 | aigov-foundations V2 (Henry George) | aigov-dept-economy | Fiscal base + its efficiency claim |
@@ -291,13 +305,16 @@ Two terminals, deliberately distinct. PHASE-1 MECHANICAL (unchanged): >=12 gover
 | 50 | 2026-08-12 | propose | /project-state --refresh-frame | current-state: refreshed from LIVE numbers after finding the frame ~3 weeks stale. Corrections: tests 247 -> 383; invariants I1-I14 -> 18 (I1-I15 + I8'/I8b/I8c); charter 30 clauses/0.7667 -> 32 clauses/0.78125 (IDs non-contiguous C01-C25 + C32-C38); adversarial 12 attacks/3 residuals -> 14 attacks/1 residual (A10). Added: vocabulary artifact, decision inventory, advisory panel, and the NAMED remaining gap (no MEDIUM-legitimacy department). Also corrected my own prior report, which said 38 clauses. |
 | 51 | 2026-08-12 | edit-local-code | Built D3 fabrication-capacity, the MEDIUM-legitimacy department, anchored on ratified G-P-001 ("free to invent without a committee deciding what is worth inventing"): may allocate MACHINE-HOURS, may not rank PROPOSALS. Allocative instrument's discretion sits with a published-seed lottery (no officer to capture); project_value declared LATENT; NO objective received (its job is a procedure staying honest, not a level). 4 new ratified vocabulary entries (I8c/I15). New aigov/registry.py: couplings are relative to a COMPOSITION, so phase1_registry() builds a D3-aware D1 while the two-department colony stays valid. | 402 root tests (+19), 193 organ, 0 regressions. D3 validated clean first try; vocabulary integrity clean. 12 cycles ran across the full HIGH/MEDIUM/LOW span. THE KERNEL REFUSED the first three-department registry on I3 (unmirrored coupling) - the admission gate working. |
 | 52 | 2026-08-12 | run-tests | Ran the three-department registry and INSPECTED the output instead of trusting the green suite. | CORRECTION TO MY OWN PRIOR ANALYSIS: I reported phase 1 was "one missing piece away". FALSE. applied=0 across all 12 cycles and D3 proposed NOTHING. Governor.propose hard-codes two instrument names; CERTIFIABLE_INSTRUMENTS holds one. So the MEDIUM department was necessary but NOT sufficient, and the real phase-1 gap is the PROPOSAL LAYER + the NON-STEERING CERTIFICATION DOMAIN. Both pinned as assert-the-defect tests to be INVERTED not deleted. Extending the certification gate is real design work - V1 says certify only where the property is faithful - so it was NOT hand-patched under time pressure. |
+| 53 | 2026-08-12 | research | Compiled a comparative government policy library - 40 largest economies by nominal GDP plus 11 instructive smaller states, 1-5 policies each | docs/comparative-government-policy-library.md; 176 bullets, 18 marked contested; DISCOVERY tier, quarantined from build_inventory by an explicit header - not promoted to research_outputs/ |
+| 54 | 2026-09-01 | research | Total-tax model across Uruguay/Chile/UAE-holding; derived UY assessed ratio 0.084 from the Durazno benchmark; 4 sensitivities | Uruguay wins every scenario 3.8x-5.3x; USD 1.41M cheaper than Chile over 20yr |
+| 55 | 2026-09-01 | edit-local-code | Fixed defect in total_tax_model.py: Chile income_tax_foreign was 0.0, granting a permanent holiday and inverting the answer | Corrected to 0.30 effective post-holiday; UAE excluded from ranking as a non-land option |
+| 56 | 2026-09-01 | research | Two-buildings rule in Uruguay (Ley 18.308 + Decreto 371/2002) and Chile (Art.55 LGUC + SAG IFC) | Permitted in both; Colonia allows 2 units/plot + tourist use; Spain Andalucia is the binding one-dwelling constraint |
+| 57 | 2026-09-01 | edit-local-code | Published total-tax + two-buildings memo and Bombardier docx to the private folder | Verified 82 paragraphs / 21 tables / 5 content probes after the ba-beautify pre-heading drop was worked around |
 <!-- project-state:end:action-log -->
 
 ## Open Questions for User
-- **Fork 1 (AUTHORITY):** Is the AI a *sovereign decider* or an *administrative + analytic organ* under human sovereignty? Drafted position: administrative organ, encoded constitutionally. Rationale + risk of the alternative in `docs/idea-anchor-DRAFT-2026-08-11.md` §2.
-- **Fork 2 (AUTHORITY):** What scale is V1 targeting — colony (100–1000), city, or nation-general? Drafted position: colony, with the scale transitions named as explicit gates.
-- **Fork 3 (AUTHORITY):** What is the primary ~1-month deliverable — a runnable governed simulation, a framework/constitution document, or a deployable stack for a real community? Drafted position: runnable governed simulation.
-- **Non-blocking, drafted:** the eight framework forks K1–K8 (guideline source, objective structure, fiscal base, economic coordination, emergency authority, scale strategy, property regime, minority protection) have drafted leans in `docs/foundations-canon-map.md` §3 and become ratified Decisions once F0 evidence lands.
+- **Forks 1-3: RESOLVED 2026-08-11** (decisions D1/D2/D3). The AI is an administrative + analytic organ under human sovereignty; V1 scale is colony 100-1000; the deliverable is a runnable governed simulation. Listed here as open until 2026-08-12 by STALE TEXT ONLY - the Decisions Made table carried the answers the whole time, and the stale label produced a wrong recommendation to the user before it was caught.
+- **K1-K8 framework forks: THE GENUINELY OPEN SET, and now UNBLOCKED.** Their recorded blocker was 'Fork 1-3 ratification + F0 evidence'; both are satisfied. Drafted leans are in `docs/foundations-canon-map.md` section 3. NOTE: all eight are ALREADY IMPLEMENTED in code (K1 intake.py, K2 contract.py, K3/K7 d2_economy.py, K4 d1+d2, K5 fail_safe_gate, K8 charter C21/C23/C24; K6 deferred to aigov-scale-gates), so ratifying CONFIRMS what is built and rejecting any one implies real rework.
 
 ## Last Evaluation (v0.2 placeholder — not enforced in v0.1)
 - **Date:** 2026-08-11
