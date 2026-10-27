@@ -203,4 +203,7 @@ def test_the_certifiable_domain_is_a_single_instrument():
     resource-menu domain, so every other instrument is refused out-of-domain. Extending it is real
     design work, not a list edit — V1's rule is to certify only where the property is faithful."""
     from aigov.kernel import CERTIFIABLE_INSTRUMENTS
-    assert CERTIFIABLE_INSTRUMENTS == {"crop_area_allocation"}
+    # Widened 2026-10-27 (F15): blight_treatment_trigger gained a REAL certifier
+    # (aigov/farm_certifier.py — recompute-the-published-rule). The boundary's meaning is
+    # unchanged: exactly the instruments with a real certifier, everything else refused.
+    assert CERTIFIABLE_INSTRUMENTS == {"crop_area_allocation", "blight_treatment_trigger"}

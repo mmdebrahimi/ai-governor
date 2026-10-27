@@ -129,6 +129,32 @@
       "ts": null,
       "outcome": "hit",
       "scored_ts": null
+    },
+    {
+      "id": "f11",
+      "run_id": null,
+      "family": null,
+      "action": "implement aigov/blight_rules.py (Wallin table from WSU/WISDOM 1995 + UMaine 2418 cross-check; Blitecast accumulation from 50pct emergence, threshold 18; Smith Period) + published-value unit tests",
+      "action_class": "edit-local-code",
+      "target_criterion": "test-exit-0 python -m pytest tests/test_blight_rules.py -q",
+      "predicted_flip": true,
+      "expected_progress": "high",
+      "ts": null,
+      "outcome": "hit",
+      "scored_ts": null
+    },
+    {
+      "id": "f12",
+      "run_id": null,
+      "family": null,
+      "action": "observation layer (Estimate-wrapped, derived RH-sensor interval) + farm certifier (recompute-rule anti-steering, ESCALATE on threshold-straddle) + kernel registration",
+      "action_class": "edit-local-code",
+      "target_criterion": "test-exit-0 python -m pytest tests/test_farm_instrument_certifier.py -q",
+      "predicted_flip": true,
+      "expected_progress": "high",
+      "ts": null,
+      "outcome": "hit",
+      "scored_ts": null
     }
   ]
 }

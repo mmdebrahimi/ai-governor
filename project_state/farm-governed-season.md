@@ -65,6 +65,8 @@
 | # | Claim | Source | Confidence | Captured |
 |---|---|---|---|---|
 | 1 | Running the composed loop finds defects green suites cannot (kernel lost-atmosphere incident; decisions.py 3 defects) | this repo's own record | high | 2026-10-27 |
+| 2 | Published LAI-shaped damage coupling exists: potato late-blight yield loss fully explained by reduced green leaf area (lesion coverage; senescence ≤15%) — implementable against WOFOST's own LAI | van Oijen WUR thesis 1991 + model papers 1991a/b, 1992 (Springer BF01998073); found by F15 run 2026-10-27-1300 | medium-high (abstract-level; fetch exact form before implementing) | 2026-10-27 |
+| 3 | The governed chain works end-to-end on real replayed data: steered 'treat' at accumulation 9 (interval 3–15) → STEERING_DETECTED → kernel refused; conforming treat over clear-threshold observation → CERTIFY → applied | one-governed-tick spike, F15 run 2026-10-27-1300 (inline, not yet pinned as a test) | high (reproduced live; pin it in this family's first run) | 2026-10-27 |
 <!-- project-state:end:evidence -->
 
 ### Unknowns
@@ -118,6 +120,7 @@ explicitly NOT the terminal.
 | # | Date | Action class | Description | Outcome |
 |---|---|---|---|---|
 | 1 | 2026-10-27 | propose | /project-init protocol executed by hand (Soraya self-init, decompose mode) | ledger created |
+| 2 | 2026-10-27 | run-tests | Spillover from F15 run: one-governed-tick integration spike executed inline (candidate 1, SPIKE ONLY — not pinned) | Full propose→certify→apply chain demonstrated on real Lelystad-2020 data incl. a kernel REFUSAL of a steered proposal (evidence 3). Named integration gap carried over: kernel._constraints_hold probes the COLONY twin for farm actions — binding the FarmTwin into the constraint probe is this family's work. Bar framing: damage coupling EXISTS published (evidence 2) → the yield-denominated bar stands as drafted; reframe-to-compliance NOT needed |
 <!-- project-state:end:action-log -->
 
 ## Open Questions for User

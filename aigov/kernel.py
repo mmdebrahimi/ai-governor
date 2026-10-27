@@ -43,8 +43,12 @@ NOT_CERTIFIABLE = "not-certifiable-out-of-domain"
 #: name, so `the governor` and `governor-office` are caught — an exact-string blocklist was not.
 _SELF_REFERRING = frozenset({"governor", "ai", "kernel", "self", "machine", "system"})
 
-#: The ONLY instrument for which a real anti-steering certifier exists today.
-CERTIFIABLE_INSTRUMENTS = {"crop_area_allocation"}
+#: The instruments for which a REAL anti-steering certifier exists today — one per domain:
+#: - crop_area_allocation: the vendored resource-domain menu gate (fail_safe_gate).
+#: - blight_treatment_trigger: the farm recompute-the-published-rule gate (aigov/farm_certifier.py,
+#:   added 2026-10-27 under the F15 flow-down "a farm instrument executes ONLY once it has a real
+#:   certifier"). Everything else stays NOT_CERTIFIABLE -> refuse.
+CERTIFIABLE_INSTRUMENTS = {"crop_area_allocation", "blight_treatment_trigger"}
 
 
 class InvalidRegistryError(ValueError):
@@ -227,7 +231,11 @@ class Governor:
     # ---------------------------------------------------------------- certify
 
     def certify(self, action: CandidateAction, panel,
-                ratification: Optional[RatificationRecord]) -> Certification:
+                ratification: Optional[RatificationRecord],
+                observation=None) -> Certification:
+        """`observation` is the measured context an instrument-specific certifier recomputes from
+        (today: the farm instrument's Estimate-wrapped accumulated severity). Instruments whose
+        certifier needs no observation ignore it; the farm gate fail-closes (ESCALATE) without one."""
         notes = []
 
         ratified = bool(ratification
@@ -236,12 +244,18 @@ class Governor:
         if ratification and not ratified:
             notes.append("ratification record does not cover this action, or was self-issued")
 
-        # --- non-steering: only where a REAL certifier exists ---
-        if action.instrument in CERTIFIABLE_INSTRUMENTS:
+        # --- non-steering: only where a REAL certifier exists, each bound to ITS OWN domain ---
+        if action.instrument == "crop_area_allocation":
             menu = complete_menu(self.scenario, self.twin.n_crew)
             verdict = fail_safe_gate(menu, action.value, self.scenario, self.twin.n_crew, panel)
             non_steering = verdict.label
             if verdict.label == ESCALATE:
+                notes.append(verdict.recommended_procedure)
+        elif action.instrument == "blight_treatment_trigger":
+            from .farm_certifier import farm_fail_safe_gate
+            verdict = farm_fail_safe_gate(action.value, observation)
+            non_steering = verdict.label
+            if verdict.label != CERTIFY:
                 notes.append(verdict.recommended_procedure)
         else:
             non_steering = NOT_CERTIFIABLE

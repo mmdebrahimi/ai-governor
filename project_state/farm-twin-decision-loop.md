@@ -63,11 +63,14 @@
 | 4 | Damage-coupling literature check (published yield-loss function or reframe) | research | claude |
 
 ## MVP Criteria
-| Criterion | Kind | Predicate |
-|---|---|---|
-| Rules pinned to published values | test-exit-0 | `python -m pytest tests/test_blight_rules.py -q` |
-| Certifier + observation adversarial tests green | test-exit-0 | `python -m pytest tests/test_farm_instrument_certifier.py -q` |
-| Provenance record exists | file-exists | `docs/blight_rules_provenance.md` |
+<!-- attempt-budget: 3 -->
+- test-exit-0 python -m pytest tests/test_blight_rules.py -q
+- test-exit-0 python -m pytest tests/test_farm_instrument_certifier.py -q
+- file-exists docs/blight_rules_provenance.md
+<!-- project-state:end:mvp-criteria -->
+
+(Schema-normalized 2026-10-27 from the seed-time table — same three criteria, no redefinition: rules
+pinned to published values / certifier + observation adversarial tests green / provenance record.)
 
 ## State Snapshot
 
@@ -86,19 +89,22 @@
 | 5 | Blitecast primary citation: Krause, Massie & Hyre 1975, "BLITECAST: a computerized forecast of potato late blight", Plant Disease Reporter 59:95–98; combines Wallin 1962 severity values + Hyre 1954 favorable days; accumulation threshold 18 → first spray | OSU Malheur 1998-22 (operational text extracted) + Litschmann et al. 2020 JPPR 60(2) | medium-high (operational statements; Wallin 1962 severity TABLE still to fetch) | 2026-10-27 |
 | 6 | Blitecast severity accumulation STARTS at 50% crop emergence (negative prognosis: 70%) — operational detail the rules module needs | Litschmann et al. 2020 JPPR 60(2):440 | medium | 2026-10-27 |
 | 7 | Hourly RH for both reference sites CACHED: open-meteo ERA5, data/farm_twin/weather/{lelystad,vredepeel}_hourly_rh.csv, 2019+2020, UTC | built by aigov/farm_weather.py (F14 run 2026-10-27-1100) | high (in-repo) | 2026-10-27 |
+| 8 | Potato late-blight yield loss is FULLY explained by reduced light interception (green-LAI reduction via lesion coverage; accelerated senescence ≤15% of loss) — a published, LAI-shaped damage coupling | van Oijen, WUR thesis 1991 ('Identification of the major characteristics of potato cultivars which affect yield loss caused by late blight', advisor Rabbinge) + model papers 1991a/b, 1992 (Springer BF01998073) | medium-high (abstract-level; implementation run must fetch the function's exact form) | 2026-10-27 |
+| 9 | MEASURED finding (not published): with ±3% RH error propagated through the 90% threshold, the Lelystad-2020 season-end severity estimate is 18 with interval (−4, 40) — the Blitecast trigger is measurement-limited near its own threshold on reanalysis-grade RH | this repo, docs/blight_rules_provenance.md §measured-finding | high (in-repo, reproducible) | 2026-10-27 |
+| 10 | On the replayed Lelystad-2020 season the two rules DISAGREE by two months: Blitecast first spray 2020-09-09 (nominal); first FULL Smith Period 2020-07-08 (+5 near-misses) | this repo, replay observation | high (in-repo, reproducible) | 2026-10-27 |
 <!-- project-state:end:evidence -->
 
 ### Unknowns
-- Primary rule texts — PARTIALLY RESOLVED 2026-10-27: Smith definition pinned (evidence 4); Blitecast threshold-18 + 50%-emergence start pinned (evidence 5,6). STILL OPEN: the Wallin (1962) severity-value TABLE itself (temp range × RH≥90% hours → 0–4) — fetch before implementing the rules module
+- ~~Primary rule texts~~ RESOLVED 2026-10-27 to the extent paywalls allow: Wallin TABLE retrieved from two concurring published extension sources (1°F band-edge variant named); Smith + Blitecast pinned earlier (evidence 4–6). Residual: the paywalled 1962/1975 primaries themselves — fetch-if-ever-accessible
 - ~~Hourly RH availability~~ RESOLVED 2026-10-27: open-meteo ERA5 hourly RH cached for both reference sites (evidence 7)
-- Damage coupling: published function vs reframe-to-compliance
+- ~~Damage coupling~~ RESOLVED 2026-10-27: published LAI-shaped mechanism exists (van Oijen 1991/1992, evidence 8) — exact functional form to be fetched by F16's implementation run
 
 ### Hypotheses (Active)
 | ID | Statement | Status | Last-tested |
 |---|---|---|---|
-| H1 | Published example weather sequences reproduce published Smith/Blitecast classifications in our implementation | open | never |
-| H2 | The binary instrument admits a menu-based anti-steering certifier in the fail_safe_gate pattern | open | never |
-| H3 | A published potato late-blight yield-loss function exists with usable inputs | open | never |
+| H1 | Published example weather sequences reproduce published Smith/Blitecast classifications in our implementation | confirmed | 2026-10-27 |
+| H2 | The binary instrument admits a menu-based anti-steering certifier in the fail_safe_gate pattern | confirmed | 2026-10-27 |
+| H3 | A published potato late-blight yield-loss function exists with usable inputs | confirmed | 2026-10-27 |
 <!-- project-state:end:hypotheses -->
 
 ### Decisions Made
@@ -110,18 +116,25 @@
 ### Pending Decisions
 | Decision | Proposer | Blocker | Notes |
 |---|---|---|---|
-| Blitecast vs Smith as the RATIFIED season-one rule (or both, ensembled) | claude | milestone 1 evidence | drafted: implement BOTH, ratify ONE after seeing them disagree on the replayed season — disagreement is signal, not noise |
+| Blitecast vs Smith as the RATIFIED season-one rule (or both, ensembled) | claude | USER ratification | Both now implemented; on the replayed Lelystad-2020 season they DISAGREE by two months (evidence 10). DRAFTED: ratify **Blitecast** as the season-one instrument rule (published threshold + validation trail + the certifier already keys on it), keep Smith as a reported diagnostic; UK's own criteria are under revision (Hutton), which weakens Smith as the primary |
 <!-- project-state:end:pending-decisions -->
 
 ## Bellman-Inspired Decision Frame
 
 ### Current state (one-line summary)
-Seeded 2026-10-27. Rules identified with secondary-source evidence; nothing implemented; primary-source
-fetch is the first action per the standing primary-source-before-load-bearing rule.
+**MVP REACHED 2026-10-27** (run `2026-10-27-1300-until-mvp-farm-twin-decision-loop`): rules module
+pinned to published values (17 tests incl. UMaine worked examples + every table bucket boundary);
+Estimate-wrapped observation layer with a DERIVED ±3%-RH interval; recompute-the-rule certifier
+registered in the kernel (CERTIFIABLE_INSTRUMENTS now 2; STEERING/ESCALATE demonstrated end-to-end on
+real replayed data); provenance record authored. Suite 679 green, 0 regressions. Milestone 4 (status
+quo provenanced) remains open — not in the MVP bar; F16's integration binds it.
 
 ### Target state / terminal condition
 All four milestones met; every number in the chain traceable to a published source or the replayed
 season; the kernel certifies exactly one new instrument.
+
+### Progress proxy
+- MVP criteria met: 3 / 3 (measured 2026-10-27, code-owned verdict mvp-reached)
 
 ### Candidate next actions
 | # | Action | Class | Expected progress | Expected info gain | Uncertainty | Cost |
@@ -143,7 +156,12 @@ season; the kernel certifies exactly one new instrument.
 | # | Date | Action class | Description | Outcome |
 |---|---|---|---|---|
 | 1 | 2026-10-27 | propose | /project-init protocol executed by hand (Soraya self-init, decompose mode) | ledger created |
-| 2 | 2026-10-27 | research | Spillover from F14 until-mvp run: primary-source fetch for the spray rules (candidate action 1, partial) + hourly-RH confirmation (candidate action 3, complete) | Smith Period definition pinned from the Hutton-supervised GB 2003–2014 review; Blitecast citation + threshold-18 + 50%-emergence accumulation start pinned; hourly RH cached in-repo for both reference sites. REMAINING for action 1: the Wallin 1962 severity TABLE (evidence rows 4–7) |
+| 2 | 2026-10-27 | research | Spillover from F14 until-mvp run: primary-source fetch for the spray rules (candidate action 1, partial) + hourly-RH confirmation (candidate action 3, complete) | Smith Period definition pinned from the Hutton-supervised GB 2003–2014 review; Blitecast citation + threshold-18 + 50%-emergence accumulation start pinned; hourly RH cached in-repo for both reference sites. REMAINING for action 1: the Wallin 1962 severity TABLE (evidence rows 4–7) [done:d6a2b468] |
+| 3 | 2026-10-27 | research | Wallin severity TABLE retrieved from TWO independent published sources (WSU TB65E / IPM WISDOM 1995; UMaine Bulletin 2418) — hour thresholds agree cell-for-cell; 1°F band-edge variant named; UMaine supplies published worked examples (18h → SV 3/2/1/0/0 at 65/56/50/40/85°F) | Primary-source action closed to the extent the paywalled primaries allow (two concurring extension publications; fetch-if-ever-accessible noted in provenance doc) [done:01b523f7] |
+| 4 | 2026-10-27 | edit-local-code | aigov/blight_rules.py: Wallin table (°F, WSU edges), daily SV, Blitecast accumulation from 50% emergence + threshold 18, Smith Period + near-miss. tests/test_blight_rules.py (17 tests) pins published examples + every bucket boundary + real-cache structural run | All green. MVP criterion 1 MET. Forecast f11 HIT [done:4ca940cc] |
+| 5 | 2026-10-27 | edit-local-code | aigov/farm_observation.py (Estimate-wrapped reads; interval = recount at RH≥87/93 per published ±3% RH sensor error; truth-reads refused) + aigov/farm_certifier.py (recompute-the-rule gate: CERTIFY / STEERING_DETECTED / ESCALATE-on-straddle / ESCALATE-on-no-observation) + kernel registration (CERTIFIABLE_INSTRUMENTS now 2; certify() routes per-instrument; phase1 pin updated as declared work). tests/test_farm_instrument_certifier.py (16 tests) | All green; full repo suite **679 passed, 0 regressions**. MVP criteria 2+3 MET (provenance doc docs/blight_rules_provenance.md). Forecast f12 HIT. Named gap: kernel._constraints_hold still probes the COLONY twin for farm actions — F16 integration surface |
+| 6 | 2026-10-27 | research | Damage-coupling literature check (candidate 4): van Oijen (WUR thesis 1991 + model papers 1991/1992, Springer BF01998073) — potato late-blight yield loss FULLY explained by reduced green leaf area (lesion coverage; accelerated senescence ≤15%) | PUBLISHED MECHANISM EXISTS and is LAI-shaped — implementable against WOFOST's own LAI. F16's bar can stay yield-denominated (drafted position; reframe decision NOT needed). Evidence row 8 [done:04960b16] |
+| 7 | 2026-10-27 | run-tests | One-governed-tick integration spike (F16 candidate 1, run inline): real Lelystad mid-July accumulation 9 (interval 3–15) + steered 'treat' proposal → STEERING_DETECTED → kernel REFUSED to apply; tight above-threshold observation + conforming proposal → CERTIFY → applied | Full propose→certify→apply chain works end-to-end on real replayed data; spike recorded in F16 ledger (not yet pinned as a test — F16's own run pins it) |
 <!-- project-state:end:action-log -->
 
 ## Open Questions for User
