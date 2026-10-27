@@ -77,6 +77,32 @@
       "ts": null,
       "outcome": "miss",
       "scored_ts": null
+    },
+    {
+      "id": "f7",
+      "run_id": null,
+      "family": null,
+      "action": "pip install pcse on Python 3.14",
+      "action_class": "run-tests",
+      "target_criterion": "F14 smoke green",
+      "predicted_flip": true,
+      "expected_progress": "high",
+      "ts": null,
+      "outcome": "hit",
+      "scored_ts": null
+    },
+    {
+      "id": "f8",
+      "run_id": null,
+      "family": null,
+      "action": "day-step potato season with mid-run reads",
+      "action_class": "run-tests",
+      "target_criterion": "F14 MVP criterion 1",
+      "predicted_flip": true,
+      "expected_progress": "high",
+      "ts": null,
+      "outcome": "hit",
+      "scored_ts": null
     }
   ]
 }

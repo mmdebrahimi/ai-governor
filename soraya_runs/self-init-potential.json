@@ -9,7 +9,10 @@
     "aigov-guideline-intake",
     "aigov-twin",
     "aigov-kernel",
-    "aigov-land-enterprise"
+    "aigov-land-enterprise",
+    "farm-twin-world",
+    "farm-twin-decision-loop",
+    "farm-governed-season"
   ],
   "spent": [
     {
@@ -65,6 +68,24 @@
       "mode": "advance",
       "project_id": "aigov-land-enterprise",
       "justification": "F13 - first REAL instance of the V2 north star; user redirect off Mars sandbox"
+    },
+    {
+      "when": null,
+      "mode": "decompose",
+      "project_id": "farm-twin-world",
+      "justification": "Gate A of farm-season-twin venture (decompose 2026-10-27)"
+    },
+    {
+      "when": null,
+      "mode": "decompose",
+      "project_id": "farm-twin-decision-loop",
+      "justification": "Gate B - governed instrument + certifier"
+    },
+    {
+      "when": null,
+      "mode": "decompose",
+      "project_id": "farm-governed-season",
+      "justification": "Gate C - venture terminal, kill-condition holder"
     }
   ]
 }

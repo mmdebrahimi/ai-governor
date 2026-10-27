@@ -49,6 +49,9 @@
 | # | Family slug | Status | Success-criteria pointer | Critical-path role | blocked_by |
 |---|---|---|---|---|---|
 | F13 | `aigov-land-enterprise` | ACCEPTED (seeded 2026-08-12) — THE LIVE FAMILY | its `## Bellman` target state — 15+ decisions elicited, ≥1 ConfirmedCapability, a role per decision, every gap named | the V2 north star's first REAL instance; Mars was the rig, this is the thing (unblocked; needs a user session) | none |
+| F14 | `farm-twin-world` | ACCEPTED (seeded 2026-10-27, farm-season-twin venture) | its `## MVP Criteria` — day-step smoke green on this host + world spec + validation contract evaluated | venture Gate A — the ground-truth world (PCSE/WOFOST + replayed real season) | none |
+| F15 | `farm-twin-decision-loop` | ACCEPTED (seeded 2026-10-27, farm-season-twin venture) | its `## MVP Criteria` — rules pinned to published values + certifier adversarial tests green + provenance record | venture Gate B — the ONE governed instrument (late-blight treat/don't-treat) | farm-twin-world |
+| F16 | `farm-governed-season` | ACCEPTED (seeded 2026-10-27, farm-season-twin venture) | its `## MVP Criteria` — governed season test + season report + adversarial extension green | venture Gate C — terminal; holds the ratified kill condition + $0 season-one cap | farm-twin-world, farm-twin-decision-loop |
 | F0 | `aigov-foundations` | FROZEN 2026-08-12 (was ACCEPTED, MVP bar met) | its `## MVP Criteria` — V1/V2/V4/V5 audit-tier memos + contested-set record | Gate A — evidence base for every design bound | none |
 | F1 | `aigov-constitution` | FROZEN 2026-08-12 (was ACCEPTED, MVP bar met) | its `## MVP Criteria` — charter + invariant module + measured checkable fraction | Gate A — the machine limits (D0) | aigov-foundations |
 | F3 | `aigov-dept-contract` | FROZEN 2026-08-12 (was ACCEPTED, MVP bar met) | its `## MVP Criteria` — contract + validator I1–I11 + mutation-proof | Gate B — the scaling primitive | aigov-constitution |
@@ -93,6 +96,10 @@
 | aigov-twin | aigov-dept-lifesupport, aigov-dept-economy, aigov-adversarial | Shared world-state; no department holds a private copy of a shared var |
 | mars-governance D7 | all families | Every "confirmed" result is MODEL-COHERENT, not governance-validated |
 | colonization roadmap Gates 2/5 | aigov-twin, aigov-dept-lifesupport | Power and life-support-closure envelopes bound what the twin may assume |
+| idea-anchor 2026-10-26 (ratified: standalone venture / supersede-bounded / sim-only) | farm-twin-world, farm-twin-decision-loop, farm-governed-season | Season one is sim-only ($0 capital — money gate IS the cap); venture must not distort F13's jurisdiction ranking; kill condition lives in farm-governed-season |
+| independent-author rail (probe 2026-10-27, issue 2.3) | farm-twin-world | The world model's author is external (PCSE/WOFOST + real weather); in-repo agronomy authorship breaks the rail and trips the kill condition |
+| aigov-kernel certifiability boundary | farm-twin-decision-loop | A farm instrument executes ONLY once it has a real certifier in CERTIFIABLE_INSTRUMENTS; NOT_CERTIFIABLE → refuse is the forcing function |
+| I11 threshold provenance (dept-contract) | farm-twin-decision-loop, farm-governed-season | Every threshold externally provenanced (Blitecast 18 / Smith Period / replayed-season conventional practice); zero invented numbers |
 <!-- project-state:end:requirements-flowdown -->
 
 ## Mission Terminal Condition
@@ -310,6 +317,8 @@ Two terminals, deliberately distinct. PHASE-1 MECHANICAL (unchanged): >=12 gover
 | 55 | 2026-09-01 | edit-local-code | Fixed defect in total_tax_model.py: Chile income_tax_foreign was 0.0, granting a permanent holiday and inverting the answer | Corrected to 0.30 effective post-holiday; UAE excluded from ranking as a non-land option |
 | 56 | 2026-09-01 | research | Two-buildings rule in Uruguay (Ley 18.308 + Decreto 371/2002) and Chile (Art.55 LGUC + SAG IFC) | Permitted in both; Colonia allows 2 units/plot + tourist use; Spain Andalucia is the binding one-dwelling constraint |
 | 57 | 2026-09-01 | edit-local-code | Published total-tax + two-buildings memo and Bombardier docx to the private folder | Verified 82 paragraphs / 21 tables / 5 content probes after the ba-beautify pre-heading drop was worked around |
+| 58 | 2026-10-27 | propose | Soraya decompose: farm-season-twin venture (per ratified idea-anchor 2026-10-26 + probe 2026-10-27) — 3 families self-inited (F14 farm-twin-world, F15 farm-twin-decision-loop, F16 farm-governed-season), account 12/25 aligned | docs/farm-season-twin-decompose-2026-10-27.md; ledgers created; family rows added (mirror of direct-Edit — umbrella sections have no /project-state op) |
+| 59 | 2026-10-27 | edit-local-code | Requirements Flow-down extended with 4 venture rows (anchor ratifications, independent-author rail, certifiability boundary, I11 provenance); F13 Decisions Made row added superseding action-row 46's hobby decision (bounded) | Mirror of direct-Edits per AC9; F13 jurisdiction ranking explicitly NOT re-run on venture basis |
 <!-- project-state:end:action-log -->
 
 ## Open Questions for User
