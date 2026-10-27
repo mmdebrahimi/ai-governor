@@ -119,6 +119,7 @@ class FarmTwin:
             raise ValueError(f"unknown trial combo: {cultivar} at {site}")
         trial = TRIALS[(site, year)]
         self.cultivar, self.site, self.year = cultivar, site, year
+        self._weather_dir = weather_dir
         self.planting = trial["planting"]
         self.emergence = self.planting + datetime.timedelta(days=EMERGENCE_DAYS[(cultivar, site)])
         self.crop_end = trial["crop_end"]
@@ -211,15 +212,39 @@ class FarmTwin:
             )
         return report
 
+    def probe_next_tick(self) -> tuple[bool, str]:
+        """Constraint probe WITHOUT deepcopy (PCSE's VariableKiosk breaks ``copy.deepcopy`` —
+        found by running). The season is deterministic over cached weather, so a faithful probe is
+        a FRESH replica re-simulated to this twin's tick count and advanced one day. The live twin
+        is never touched."""
+        replica = FarmTwin(self.cultivar, self.site, self.year, self._weather_dir)
+        for _ in range(self.ticks):
+            if replica.terminated:
+                break
+            replica.tick()
+        if replica.terminated:
+            return False, "farm season already terminated; no tick left to constrain"
+        try:
+            replica.tick()
+        except FarmTwinHalted as exc:
+            return False, str(exc)
+        return True, ""
+
+    def summary(self) -> dict:
+        """The season summary (final TWSO etc.) — only once the season has terminated."""
+        if not self.terminated:
+            raise FarmTwinHalted("season not finished; summary would be a mid-season fiction")
+        out = self._sim.get_summary_output()[0]
+        out["ticks"] = self.ticks
+        return out
+
     def run_season(self, max_days: int = 250) -> dict:
         """Tick to termination; return the season summary (final TWSO etc.)."""
         while not self.terminated and self.ticks < max_days:
             self.tick()
         if not self.terminated:
             raise FarmTwinHalted(f"season did not terminate within {max_days} daily ticks")
-        summary = self._sim.get_summary_output()[0]
-        summary["ticks"] = self.ticks
-        return summary
+        return self.summary()
 
 
 # --------------------------------------------------------------------------------------

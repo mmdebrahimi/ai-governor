@@ -152,7 +152,12 @@ class Governor:
     """The runtime. Holds no decision power: it orchestrates and executes ratified, certified actions."""
 
     def __init__(self, specs, guidelines, twin: ColonyTwin, scenario: str = "nominal",
-                 status_quo: Optional[InstrumentSettings] = None, vocabulary=None):
+                 status_quo: Optional[InstrumentSettings] = None, vocabulary=None,
+                 farm_twin=None):
+        #: The farm world (aigov/farm_twin.py FarmTwin) that `_constraints_hold` probes for the farm
+        #: instrument. None (the default) FAILS CLOSED for farm actions — probing the COLONY twin for
+        #: a farm action would be a vacuous constraint check (the F16 named gap this closes).
+        self.farm_twin = farm_twin
         # The vocabulary is MANDATORY at runtime and optional at authoring time. A kernel with no
         # ratified vocabulary would accept any free-string rule target, which is the surface I15
         # exists to close, so the default is the live ratified artifact rather than None.
@@ -271,7 +276,26 @@ class Governor:
         return Certification(action, ratified, non_steering, satisfied, tuple(notes))
 
     def _constraints_hold(self, action: CandidateAction):
-        """Simulate the action on a COPY of the twin and check for violations."""
+        """Simulate the action on a COPY of the relevant twin and check for violations.
+
+        Each instrument probes ITS OWN world: colony instruments tick a colony-twin copy; the farm
+        instrument ticks a farm-twin copy (whose per-tick physical bounds are the constraints).
+        A farm action with NO farm twin bound fails CLOSED — the colony twin cannot vouch for a
+        field it does not model.
+        """
+        if action.instrument == "blight_treatment_trigger":
+            if self.farm_twin is None:
+                return False, ("no farm twin bound to the kernel: refusing to certify a farm action "
+                               "against the colony twin (vacuous probe)")
+            # No deepcopy: PCSE's engine is not deep-copyable; the farm twin provides its own
+            # non-mutating probe (a fresh replica of the deterministic season).
+            try:
+                ok, why = self.farm_twin.probe_next_tick()
+            except Exception as exc:
+                return False, "farm twin probe failed: {}".format(exc)
+            if not ok:
+                return False, "farm twin refused the action's next tick: {}".format(why)
+            return True, ""
         probe = copy.deepcopy(self.twin)
         trial = copy.deepcopy(self.settings)
         setattr(trial, action.instrument, action.value)

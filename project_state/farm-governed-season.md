@@ -49,11 +49,13 @@
 | 5 | Kill condition evaluated | written verdict against the decompose doc §5 condition, either way |
 
 ## MVP Criteria
-| Criterion | Kind | Predicate |
-|---|---|---|
-| Governed season test green | test-exit-0 | `python -m pytest tests/test_farm_governed_season.py -q` |
-| Season report exists | file-exists | `docs/farm_season_report_v1.md` |
-| Adversarial extension green | test-exit-0 | `python -m pytest tests/test_adversarial_farm_instrument.py -q` |
+<!-- attempt-budget: 3 -->
+- test-exit-0 python -m pytest tests/test_farm_governed_season.py -q
+- file-exists docs/farm_season_report_v1.md
+- test-exit-0 python -m pytest tests/test_adversarial_farm_instrument.py -q
+<!-- project-state:end:mvp-criteria -->
+
+(Schema-normalized 2026-10-27 from the seed-time table — same three criteria, no redefinition.)
 
 ## State Snapshot
 
@@ -70,14 +72,15 @@
 <!-- project-state:end:evidence -->
 
 ### Unknowns
-- Whether kernel cycle cadence (propose each tick vs propose on rule-change) fits a 150-day season
-- What the season report's denominator is (yield vs compliance — F15 action 4 decides)
+- ~~Cadence~~ RESOLVED 2026-10-27: on-change proposals + one on-the-record escalation at a nominal trigger under ambiguity (design note in aigov/farm_season.py)
+- ~~Report denominator~~ RESOLVED 2026-10-27: v1 = risk-coverage + compliance (yield model-coherent-only); yield-denominated = registered v2 arm behind `van-oijen-coupling-paywall` (R9)
+- H2's yield half — reopens when the constraint lifts (the v2 arm runs)
 
 ### Hypotheses (Active)
 | ID | Statement | Status | Last-tested |
 |---|---|---|---|
-| H1 | The governed season completes with zero ungated applications | open | never |
-| H2 | Governed run beats never-treat and ≈ matches status-quo calendar on the replayed season's risk profile | open | never |
+| H1 | The governed season completes with zero ungated applications | confirmed | 2026-10-27 |
+| H2 | Governed run beats never-treat and ≈ matches status-quo calendar on the replayed season's risk profile | open | 2026-10-27 |
 <!-- project-state:end:hypotheses -->
 
 ### Decisions Made
@@ -95,12 +98,18 @@
 ## Bellman-Inspired Decision Frame
 
 ### Current state (one-line summary)
-Seeded 2026-10-27. Blocked on F14 + F15 by design; first unblocked action is the one-governed-tick
-spike as soon as F14's wrapper and F15's rules exist in any walking form.
+**MVP REACHED 2026-10-27** (run `2026-10-27-1500-until-mvp-farm-governed-season`): full governed
+replayed season (125 days, deterministic), zero ungated applications (H1 confirmed), 8 named
+adversarial attacks all detected/escalated/refused, season report v1 authored with the
+kill-condition evaluation — **NOT TRIPPED, $0 spent**. Suite 693 green. Remaining: H2's yield half
+(registered v2 arm behind the van Oijen paywall constraint) + the SEASON-TWO GO/NO-GO (user).
 
 ### Target state / terminal condition
 All five milestones met and the kill condition evaluated in writing. The unbounded operating state is
 explicitly NOT the terminal.
+
+### Progress proxy
+- MVP criteria met: 3 / 3 (measured 2026-10-27, code-owned verdict mvp-reached); milestones 5/5
 
 ### Candidate next actions
 | # | Action | Class | Expected progress | Expected info gain | Uncertainty | Cost |
@@ -121,6 +130,12 @@ explicitly NOT the terminal.
 |---|---|---|---|---|
 | 1 | 2026-10-27 | propose | /project-init protocol executed by hand (Soraya self-init, decompose mode) | ledger created |
 | 2 | 2026-10-27 | run-tests | Spillover from F15 run: one-governed-tick integration spike executed inline (candidate 1, SPIKE ONLY — not pinned) | Full propose→certify→apply chain demonstrated on real Lelystad-2020 data incl. a kernel REFUSAL of a steered proposal (evidence 3). Named integration gap carried over: kernel._constraints_hold probes the COLONY twin for farm actions — binding the FarmTwin into the constraint probe is this family's work. Bar framing: damage coupling EXISTS published (evidence 2) → the yield-denominated bar stands as drafted; reframe-to-compliance NOT needed |
+| 3 | 2026-10-27 | research | van Oijen 1991/1992 exact functional form sought: PAYWALLED (Springer BF01998073; NJPP 97/98). Deferred-and-registered instead of improvised: arm `van Oijen dynamic LAI damage coupling` declared (planned, R6) on "season-report-v2 yield-denominated comparison"; constraint `van-oijen-coupling-paywall` registered with manual expiry (R9) | Season-report v1 yield column stays model-coherent-only; NO agronomy authored in-house (the kill-condition rail held by refusing to improvise) |
+| 4 | 2026-10-27 | edit-local-code | Kernel named gap CLOSED: Governor gains `farm_twin` binding; `_constraints_hold` routes the farm instrument to `FarmTwin.probe_next_tick()` (fresh-replica probe — PCSE's VariableKiosk breaks deepcopy, found by running); unbound farm twin FAILS CLOSED | Milestone 1 machinery completed properly (the spike's vacuous colony-probe is gone) |
+| 5 | 2026-10-27 | edit-local-code | aigov/farm_season.py: governed-season runner — on-change cadence (resolves ledger unknown 1), scripted conventional-practice ratifier (NAMED simulation seam), two governed arms (precision-honoring / nominal-sensitivity), calendar + never-treat comparison arms. Two defects found by inspection mid-batch: unprotected-Smith counter included near-misses; ambiguity silently swallowed the nominal trigger (now routed through the kernel once → ESCALATE on record) | Deterministic 125-day season in ~11s. Measured: precision arm 0 sprays / 61 ambiguous days / 1 kernel ESCALATE (2020-09-09); nominal arm 1 spray CERTIFIED+applied (2020-09-09, the published trigger date) / 15 protected days; calendar 18 sprays; never-treat 0. Zero ungated applications anywhere |
+| 6 | 2026-10-27 | run-tests | tests/test_farm_governed_season.py (6 tests: completion, H1 zero-bypass, both arms' kernel events, bracket arms, determinism) + tests/test_adversarial_farm_instrument.py (8 NAMED attacks A-FARM-1..8, every one ends in detection/escalation/refusal AND apply() raises) | 14 passed. Milestones 1,2,4 MET. Forecasts f13+f14 HIT |
+| 7 | 2026-10-27 | write-plan | docs/farm_season_report_v1.md: measured arm table, honesty labels (yield = model-coherent PP ceiling, identical across arms BY CONSTRUCTION), H2 partial verdict (risk-coverage evaluable, yield deferred to v2), registered follow-ons, KILL-CONDITION EVALUATION: **NOT TRIPPED** (contract met first-run inside bands; zero in-house agronomy; $0 spent), season-two decision framed as USER authority with the sensor-quality input | Milestones 3+5 MET. Forecast f15 HIT. MVP criterion 2 MET |
+| 8 | 2026-10-27 | run-tests | Full repo regression + code-owned verdict | **693 passed, 0 regressions** (14 new). compute_verdict → **mvp-reached**; auto-optimize skip:no-ceiling-criterion; calibration 0.83 over 15 |
 <!-- project-state:end:action-log -->
 
 ## Open Questions for User

@@ -155,6 +155,45 @@
       "ts": null,
       "outcome": "hit",
       "scored_ts": null
+    },
+    {
+      "id": "f13",
+      "run_id": null,
+      "family": null,
+      "action": "bind FarmTwin into kernel constraint probe + build governed-season runner (on-change cadence) + pin tests/test_farm_governed_season.py",
+      "action_class": "edit-local-code",
+      "target_criterion": "test-exit-0 python -m pytest tests/test_farm_governed_season.py -q",
+      "predicted_flip": true,
+      "expected_progress": "high",
+      "ts": null,
+      "outcome": "hit",
+      "scored_ts": null
+    },
+    {
+      "id": "f14",
+      "run_id": null,
+      "family": null,
+      "action": "adversarial extension: >=3 named attacks on the farm instrument all ending in detection/escalation/refusal",
+      "action_class": "edit-local-code",
+      "target_criterion": "test-exit-0 python -m pytest tests/test_adversarial_farm_instrument.py -q",
+      "predicted_flip": true,
+      "expected_progress": "high",
+      "ts": null,
+      "outcome": "hit",
+      "scored_ts": null
+    },
+    {
+      "id": "f15",
+      "run_id": null,
+      "family": null,
+      "action": "season report v1 with governed vs calendar vs never-treat + kill-condition evaluation, honesty-labelled",
+      "action_class": "write-plan",
+      "target_criterion": "file-exists docs/farm_season_report_v1.md",
+      "predicted_flip": true,
+      "expected_progress": "high",
+      "ts": null,
+      "outcome": "hit",
+      "scored_ts": null
     }
   ]
 }

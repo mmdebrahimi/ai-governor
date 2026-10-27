@@ -111,12 +111,13 @@ pinned to published values / certifier + observation adversarial tests green / p
 | Decision | Date | Notes |
 |---|---|---|
 | ONE instrument deep (treat/don't-treat), not several shallow | 2026-10-27 | Probe issue 2.1: the kernel's NOT_CERTIFIABLE refusal makes uncertified instruments inert; certifier authorship is the core work |
+| Season-one rule RATIFIED: Blitecast primary (the certified instrument rule), Smith Period reported-diagnostic | 2026-10-27 | User ratified the drafted position (directive 2026-10-27 "you are right, lets continue with the brain-in-a-simulator plan"). Basis: published threshold 18 + validation trail; Smith under revision in its home country (Hutton). Re-openable by the user per R10 |
 <!-- project-state:end:decisions-made -->
 
 ### Pending Decisions
 | Decision | Proposer | Blocker | Notes |
 |---|---|---|---|
-| Blitecast vs Smith as the RATIFIED season-one rule (or both, ensembled) | claude | USER ratification | Both now implemented; on the replayed Lelystad-2020 season they DISAGREE by two months (evidence 10). DRAFTED: ratify **Blitecast** as the season-one instrument rule (published threshold + validation trail + the certifier already keys on it), keep Smith as a reported diagnostic; UK's own criteria are under revision (Hutton), which weakens Smith as the primary |
+| ~~Blitecast vs Smith~~ RATIFIED 2026-10-27 | claude | — | User ratified the drafted position ("you are right, lets continue"): **Blitecast primary** (the certified instrument rule), **Smith reported-diagnostic**. Recorded in Decisions Made |
 <!-- project-state:end:pending-decisions -->
 
 ## Bellman-Inspired Decision Frame
