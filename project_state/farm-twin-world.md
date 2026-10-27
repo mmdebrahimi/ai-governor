@@ -66,11 +66,14 @@ happened, that the governed loop can be falsified against.
 | 4 | Wrap as FarmTwin honoring the three ColonyTwin disciplines | edit-local-code | claude |
 
 ## MVP Criteria
-| Criterion | Kind | Predicate |
-|---|---|---|
-| Day-step smoke green | test-exit-0 | `python -m pytest tests/test_farm_twin_smoke.py -q` |
-| World spec exists | file-exists | `docs/farm_twin_world_spec.md` |
-| Validation contract evaluated | test-exit-0 | `python -m pytest tests/test_farm_twin_validation.py -q` |
+<!-- attempt-budget: 3 -->
+- test-exit-0 python -m pytest tests/test_farm_twin_smoke.py -q
+- file-exists docs/farm_twin_world_spec.md
+- test-exit-0 python -m pytest tests/test_farm_twin_validation.py -q
+<!-- project-state:end:mvp-criteria -->
+
+(Schema-normalized 2026-10-27 from the seed-time table — same three criteria, no redefinition: smoke
+green / world spec exists / validation contract evaluated.)
 
 ## State Snapshot
 
@@ -89,44 +92,48 @@ happened, that the governed loop can be falsified against.
 <!-- project-state:end:evidence -->
 
 ### Unknowns
-- PCSE × Python 3.14 compatibility (smoke decides; fallback = pinned venv on 3.10)
-- Which region-season (candidate criteria: published yield statistics + blight-relevant climate + good POWER coverage)
-- Whether NASA POWER daily RH suffices for Smith Period's HOURLY ≥11h RH≥90% clause, or open-meteo hourly is required
+- ~~PCSE × Python 3.14 compatibility~~ RESOLVED 2026-10-27: runs clean (smoke + 13 replayed seasons)
+- ~~Which region-season~~ RESOLVED 2026-10-27: ten Den 2022 trial site-seasons (draft-then-ratify)
+- ~~NASA POWER daily RH vs hourly~~ RESOLVED 2026-10-27: open-meteo ERA5 hourly RH cached for both sites (Smith Period needs hourly; spine carries it)
 
 ### Hypotheses (Active)
 | ID | Statement | Status | Last-tested |
 |---|---|---|---|
 | H1 | PCSE potato runs day-steppable on this host unmodified | confirmed | 2026-10-27 |
-| H2 | Sim end-of-season yield falls within the published regional range without local calibration | open | never |
-| H3 | The wrapper can honor observability-enforced reads without forking PCSE internals | open | never |
+| H2 | Sim end-of-season yield falls within the published regional range without local calibration | confirmed | 2026-10-27 |
+| H3 | The wrapper can honor observability-enforced reads without forking PCSE internals | confirmed | 2026-10-27 |
 <!-- project-state:end:hypotheses -->
 
 ### Decisions Made
 | Decision | Date | Notes |
 |---|---|---|
 | World model = PCSE/WOFOST (external author), not in-repo authored agronomy and not DSSAT | 2026-10-27 | Independent-author rail (self-authored sim = self-authored kill test); DSSAT not steppable; verified surfaces in decompose doc §0 |
+| Reference region-season = the ten Den et al. 2022 trial site-seasons (Lelystad + Vredepeel NL, 2019+2020) | 2026-10-27 | DRAFT-THEN-RATIFY (user invoked --until-mvp over the drafted fork; surfaced for redirect). Supersedes the "regional yield statistic" draft: field-measured near-potential yields for the EXACT shipped cultivars beat a management-limited regional average. Public criteria only |
+| Validation contract frozen BEFORE first run: Layer-1 repro ±10% vs paper-sim, Layer-2 fidelity ±20% vs observed, 2020 gating / 2019 reported | 2026-10-27 | DRAFT-THEN-RATIFY (acceptance bar — user may amend; any band change is a logged contract amendment). docs/farm_twin_world_spec.md §5. Bands NOT widened after results (results landed inside) |
 <!-- project-state:end:decisions-made -->
 
 ### Pending Decisions
 | Decision | Proposer | Blocker | Notes |
 |---|---|---|---|
-| Reference region-season | claude | short-term action 2 | drafted: a published NW-European or Andean potato region with EuroBlight-adjacent data; chosen on PUBLIC criteria only |
+| ~~Reference region-season~~ RESOLVED 2026-10-27 | claude | — | Resolved draft-then-ratify (see Decisions Made); user redirect re-opens it |
 <!-- project-state:end:pending-decisions -->
 
 ## Bellman-Inspired Decision Frame
 
 ### Current state (one-line summary)
-Milestone 1 MET (2026-10-27, same-day as seed): PCSE 6.0.13 installed on Python 3.14, full potato
-season (Fontane, Wageningen 2006, NASA POWER) ran as 173 individual daily ticks with mid-run state
-reads, pinned by `tests/test_farm_twin_smoke.py` (4 tests; repo suite 627 green, 0 regressions).
-Next: region-season choice (pending decision 1) + validation contract WRITTEN BEFORE first validation run.
+**MVP REACHED 2026-10-27** (run `2026-10-27-1100-until-mvp-farm-twin-world`): all 4 milestones MET —
+smoke green; data spine cached offline (`data/farm_twin/weather/`, both sites, 2019+2020, daily +
+hourly RH); FarmTwin wrapper enforcing the three disciplines (`aigov/farm_twin.py` + 6 tests); frozen
+two-layer validation contract EVALUATED AND PASSED (6/6 gating 2020 combos: Layer-1 worst +7.6% of
+band ±10%, Layer-2 worst −7.4% of band ±20%; 2019 reported). Repo suite 646 green, 0 regressions.
+Gate A done pending user ratification of the two draft-then-ratify decisions (region-season, bands).
 
 ### Target state / terminal condition
 All four mid-term milestones met: smoke green on this host, one season cached, wrapper honoring the
 three disciplines with tests, validation contract evaluated with a recorded verdict.
 
 ### Progress proxy
-- unknowns-retired + gates-passed (raw counts)
+- MVP criteria met: 3 / 3 (measured 2026-10-27, code-owned verdict mvp-reached)
 
 ### Candidate next actions
 | # | Action | Class | Expected progress | Expected info gain | Uncertainty | Cost |
@@ -151,11 +158,17 @@ three disciplines with tests, validation contract evaluated with a recorded verd
 | 2 | 2026-10-27 | run-tests | pip install pcse (6.0.13) on Python 3.14; rollback note: pip uninstall pcse -y | Installed clean despite 3.9/3.10 target; forecast f1 HIT. Gotchas found by running: YAMLCropDataProvider must take model=Wofost81_PP (default branch lacks REALLOC_DVS); site provider requires NAVAILI |
 | 3 | 2026-10-27 | run-tests | Day-step smoke: full Fontane season, Wageningen 2006, NASA POWER weather, 173 × run(days=1) with mid-run DVS/LAI/TWSO reads | TWSO 22,315 kg/ha dry (PP-mode ceiling, model-coherent only), LAImax 4.78, clean harvest-date termination; forecast f2 HIT. PCSE 6 also ships OpenMeteoWeatherDataProvider — hourly-RH fallback for Smith Period in-package |
 | 4 | 2026-10-27 | edit-local-code | Pinned as tests/test_farm_twin_smoke.py (4 tests: >100 daily ticks, mid-run readability, biological monotonicity, shape bounds); H1 → confirmed (mirror: hypothesis row updated by hand, --update-hypothesis semantics) | 4 passed in 2.4s offline-cached; FULL repo suite 627 passed, 0 regressions. MVP criterion 1 of 3 MET |
+| 5 | 2026-10-27 | research | Primary source fetched + extracted: ten Den et al. 2022 (EJA 137:126510) — THE paper PCSE's Wofost81 potato parameters come from. Verified by running: shipped Fontane carries calibrated TSUMEM=255 + REALLOC_* params; all 5 trial cultivars present | Reference region-season resolved on public criteria: Lelystad (52.52N,5.47E) + Vredepeel (51.54N,5.88E), 2019+2020 near-potential trials; per-cultivar observed ±sd AND paper-simulated yields (Tables 6+9). Named data defect: Vredepeel 2020 planting printed 24/09/2020 (impossible) → inferred 24/04/2020. [done:6b275b49] |
+| 6 | 2026-10-27 | write-plan | docs/farm_twin_world_spec.md authored BEFORE first validation run: world composition, agromanagement derivation, data spine, disciplines, FROZEN two-layer contract (Layer-1 repro ±10% vs paper sim; Layer-2 fidelity ±20% vs observed; 2020 gating, 2019 reported) | MVP criterion 2 MET. Forecast f9 HIT. [done:ce3d0f63] |
+| 7 | 2026-10-27 | run-tests | Data spine built: aigov/farm_weather.py exports NASA POWER daily (PCSE CSV) + open-meteo ERA5 hourly RH to data/farm_twin/weather/ (4 files, both sites, 2019+2020); offline load verified with unit round-trip | Milestone 2 MET: re-runs are offline; missing cache raises, never silently re-downloads |
+| 8 | 2026-10-27 | edit-local-code | aigov/farm_twin.py: FarmTwin wrapper — SERVED observability map, read() refuses undeclared, per-tick tripwires (DVS/TWSO monotone, LAI bounds, max daily gain) that HALT, harvest-day termination contract, check_coverage. Pinned by tests/test_farm_twin_disciplines.py (6 tests) | Milestone 3 MET. One real defect found by running: harvest-day crop-object removal read as a DVS/TWSO collapse → final tick serves last pre-harvest state. [done:f55e6b17] |
+| 9 | 2026-10-27 | run-tests | tests/test_farm_twin_validation.py: contract §5 verbatim — 6 gating 2020 combos (Layer 1 + Layer 2) + 2019 replayed-and-reported | ALL PASS: Layer-1 worst +7.6% (band 10%), Layer-2 worst −7.4% (band 20%). 2019 reported: replay within ±4.7% of paper-sim on all 6; vs observed drifts to +21.1% (mirrors the paper's own evaluation-year drift — non-gating classification vindicated). Milestone 4 + MVP criterion 3 MET. Forecast f10 HIT |
+| 10 | 2026-10-27 | run-tests | Full repo regression + code-owned verdict (until_mvp_driver.compute_verdict) | 646 passed, 0 regressions (627 + 19 new). Verdict: mvp-reached (all 3 criteria live-MET). Auto-optimize: skip:no-ceiling-criterion |
 <!-- project-state:end:action-log -->
 
 ## Open Questions for User
 - None yet — region-season choice is drafted-then-ratified when proposed (public criteria only).
 
 ## Last Evaluation
-- **Date:** 2026-10-27
-- **Progress signal:** (init only)
+- **Date:** 2026-10-27 (until-mvp run close)
+- **Progress signal:** mvp-reached — 3/3 criteria live-MET (code-owned verdict); 4/4 milestones; H1–H3 confirmed; unknowns 3/3 resolved; 646-test suite green

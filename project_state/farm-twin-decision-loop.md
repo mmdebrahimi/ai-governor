@@ -82,11 +82,15 @@
 | 1 | Blitecast threshold 18 severity values triggers warning/spray recommendation | OSU Malheur 1998-22, 2001-27 | medium (secondary) | 2026-10-27 |
 | 2 | Smith Period: 2 consecutive days ≥10°C min + ≥11h RH≥90%, near-miss allowance; under revision | EuroBlight 2013 (Skelsey) | medium (secondary) | 2026-10-27 |
 | 3 | Blitecast reduced sprays 25–70% vs weekly calendar with yield preserved (Brazil) | Ciência Rural 2024 + earlier validation | medium | 2026-10-27 |
+| 4 | Smith Period full definition: "Two consecutive days where the minimum temperature does not fall below 10°C and there are at least 11 hours in each day where the relative humidity is ≥90%" — defined 1956 by L.P. Smith refining the Beaumont Criteria | Dancey (Hutton/Cooke+Skelsey+Birch-supervised) Smith Period Review, GB 2003–2014 evaluation, eapr.net/sites/default/files/event-document/DANCEY Siobhan.pdf | high (authoritative review; original Smith 1956 Plant Pathology 5 paywalled) | 2026-10-27 |
+| 5 | Blitecast primary citation: Krause, Massie & Hyre 1975, "BLITECAST: a computerized forecast of potato late blight", Plant Disease Reporter 59:95–98; combines Wallin 1962 severity values + Hyre 1954 favorable days; accumulation threshold 18 → first spray | OSU Malheur 1998-22 (operational text extracted) + Litschmann et al. 2020 JPPR 60(2) | medium-high (operational statements; Wallin 1962 severity TABLE still to fetch) | 2026-10-27 |
+| 6 | Blitecast severity accumulation STARTS at 50% crop emergence (negative prognosis: 70%) — operational detail the rules module needs | Litschmann et al. 2020 JPPR 60(2):440 | medium | 2026-10-27 |
+| 7 | Hourly RH for both reference sites CACHED: open-meteo ERA5, data/farm_twin/weather/{lelystad,vredepeel}_hourly_rh.csv, 2019+2020, UTC | built by aigov/farm_weather.py (F14 run 2026-10-27-1100) | high (in-repo) | 2026-10-27 |
 <!-- project-state:end:evidence -->
 
 ### Unknowns
-- Primary rule texts (Smith 1956; Krause/Massie/Hyre 1975 Blitecast) — fetch before load-bearing
-- Hourly RH availability for the chosen region-season
+- Primary rule texts — PARTIALLY RESOLVED 2026-10-27: Smith definition pinned (evidence 4); Blitecast threshold-18 + 50%-emergence start pinned (evidence 5,6). STILL OPEN: the Wallin (1962) severity-value TABLE itself (temp range × RH≥90% hours → 0–4) — fetch before implementing the rules module
+- ~~Hourly RH availability~~ RESOLVED 2026-10-27: open-meteo ERA5 hourly RH cached for both reference sites (evidence 7)
 - Damage coupling: published function vs reframe-to-compliance
 
 ### Hypotheses (Active)
@@ -139,6 +143,7 @@ season; the kernel certifies exactly one new instrument.
 | # | Date | Action class | Description | Outcome |
 |---|---|---|---|---|
 | 1 | 2026-10-27 | propose | /project-init protocol executed by hand (Soraya self-init, decompose mode) | ledger created |
+| 2 | 2026-10-27 | research | Spillover from F14 until-mvp run: primary-source fetch for the spray rules (candidate action 1, partial) + hourly-RH confirmation (candidate action 3, complete) | Smith Period definition pinned from the Hutton-supervised GB 2003–2014 review; Blitecast citation + threshold-18 + 50%-emergence accumulation start pinned; hourly RH cached in-repo for both reference sites. REMAINING for action 1: the Wallin 1962 severity TABLE (evidence rows 4–7) |
 <!-- project-state:end:action-log -->
 
 ## Open Questions for User

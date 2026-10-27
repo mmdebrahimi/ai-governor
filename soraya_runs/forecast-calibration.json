@@ -103,6 +103,32 @@
       "ts": null,
       "outcome": "hit",
       "scored_ts": null
+    },
+    {
+      "id": "f9",
+      "run_id": null,
+      "family": null,
+      "action": "author docs/farm_twin_world_spec.md incl. written-first two-layer validation contract (ten Den 2022 anchors)",
+      "action_class": "write-plan",
+      "target_criterion": "file-exists docs/farm_twin_world_spec.md",
+      "predicted_flip": true,
+      "expected_progress": "high",
+      "ts": null,
+      "outcome": "hit",
+      "scored_ts": null
+    },
+    {
+      "id": "f10",
+      "run_id": null,
+      "family": null,
+      "action": "replay 2020 six cultivar-site combos (Lelystad+Vredepeel) under the frozen contract; expect Layer-1 repro \u00b110% all 6 and Layer-2 fidelity \u00b120% all 6",
+      "action_class": "run-tests",
+      "target_criterion": "test-exit-0 python -m pytest tests/test_farm_twin_validation.py -q",
+      "predicted_flip": true,
+      "expected_progress": "high",
+      "ts": null,
+      "outcome": "hit",
+      "scored_ts": null
     }
   ]
 }
