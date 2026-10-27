@@ -87,12 +87,13 @@
 | Decision | Date | Notes |
 |---|---|---|
 | Venture kill condition + $0 season-one capital cap encoded here (user-ratified "supersede, bounded") | 2026-10-27 | See decompose doc §5; failing it re-instates F13 row 46's hobby decision with an R9 constraint-expiry entry |
+| **SEASON-TWO: GO** (user, verbatim: "strong GO!") | 2026-10-27 | USER authority exercised against the season report (milestone 5 complete). Scope of season two is NOT yet decomposed — dirt/hardware/sensors/orchestration planning is a NEW cycle (idea-anchor → decompose), and the $0 season-one cap does NOT carry over automatically: season-two spend limits are a decision for that cycle's anchor. Sensor quality named in the report as the first budget question |
 <!-- project-state:end:decisions-made -->
 
 ### Pending Decisions
 | Decision | Proposer | Blocker | Notes |
 |---|---|---|---|
-| Season-two go/no-go (dirt, hardware, orchestration over bought machines) | user | milestone 5 | AUTHORITY — never Soraya's |
+| ~~Season-two go/no-go~~ DECIDED 2026-10-27: **GO** | user | — | See Decisions Made; season-two planning is a new cycle |
 <!-- project-state:end:pending-decisions -->
 
 ## Bellman-Inspired Decision Frame
@@ -136,6 +137,7 @@ explicitly NOT the terminal.
 | 6 | 2026-10-27 | run-tests | tests/test_farm_governed_season.py (6 tests: completion, H1 zero-bypass, both arms' kernel events, bracket arms, determinism) + tests/test_adversarial_farm_instrument.py (8 NAMED attacks A-FARM-1..8, every one ends in detection/escalation/refusal AND apply() raises) | 14 passed. Milestones 1,2,4 MET. Forecasts f13+f14 HIT |
 | 7 | 2026-10-27 | write-plan | docs/farm_season_report_v1.md: measured arm table, honesty labels (yield = model-coherent PP ceiling, identical across arms BY CONSTRUCTION), H2 partial verdict (risk-coverage evaluable, yield deferred to v2), registered follow-ons, KILL-CONDITION EVALUATION: **NOT TRIPPED** (contract met first-run inside bands; zero in-house agronomy; $0 spent), season-two decision framed as USER authority with the sensor-quality input | Milestones 3+5 MET. Forecast f15 HIT. MVP criterion 2 MET |
 | 8 | 2026-10-27 | run-tests | Full repo regression + code-owned verdict | **693 passed, 0 regressions** (14 new). compute_verdict → **mvp-reached**; auto-optimize skip:no-ceiling-criterion; calibration 0.83 over 15 |
+| 9 | 2026-10-27 | ask-user | Season report delivered; user decided | **SEASON-TWO GO** recorded (user verbatim "strong GO!"); push to origin authorized by the user; plain-English season-one summary requested before formal sign-off |
 <!-- project-state:end:action-log -->
 
 ## Open Questions for User
