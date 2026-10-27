@@ -115,10 +115,10 @@ explicitly NOT the terminal.
 ### Candidate next actions
 | # | Action | Class | Expected progress | Expected info gain | Uncertainty | Cost |
 |---|---|---|---|---|---|---|
-| 1 | One-governed-tick spike (earliest possible integration) | run-tests | high | highest | medium | 1 day once F14/F15 walk |
-| 2 | Season-cadence design note (propose-per-tick vs on-change) | write-plan | medium | medium | low | 2 hrs |
+| 1 | None live — MVP met 2026-10-27; season-two scope is a NEW planning cycle (idea-anchor drafted, awaiting user confirmation) | stop | — | — | — | — |
 <!-- project-state:end:candidate-actions -->
 
+(Table closed 2026-10-27 after mvp-reached — the seed-time candidates were all completed and journaled in this ledger's action log; F16 has no live code candidates.)
 ### Re-evaluation trigger
 - after any action; immediately when F14 milestone 1 + F15 milestone 1 both land (unblocks the spike)
 

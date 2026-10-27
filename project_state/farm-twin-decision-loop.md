@@ -140,12 +140,10 @@ season; the kernel certifies exactly one new instrument.
 ### Candidate next actions
 | # | Action | Class | Expected progress | Expected info gain | Uncertainty | Cost |
 |---|---|---|---|---|---|---|
-| 1 | Fetch primary rule texts | research | medium | high | low | 1-2 hrs |
-| 2 | Rules module + published-value tests | edit-local-code | high | high | low | 1 day |
-| 3 | Hourly-RH source confirmation | research | low | medium | low | 30 min |
-| 4 | Damage-coupling literature check | research | medium | high | medium | 2-3 hrs |
+| 1 | None live — MVP met 2026-10-27; season-two scope is a NEW planning cycle (idea-anchor drafted, awaiting user confirmation) | stop | — | — | — | — |
 <!-- project-state:end:candidate-actions -->
 
+(Table closed 2026-10-27 after mvp-reached — the seed-time candidates were all completed and journaled in this ledger's action log; F15 has no live code candidates.)
 ### Re-evaluation trigger
 - after any action; immediately if the damage-coupling check fails (bar reframe is an AUTHORITY decision — surface to user)
 

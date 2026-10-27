@@ -194,6 +194,45 @@
       "ts": null,
       "outcome": "hit",
       "scored_ts": null
+    },
+    {
+      "id": "f16",
+      "run_id": null,
+      "family": null,
+      "action": "F13 frame + candidate-table refresh to actual state (standing handoff)",
+      "action_class": "edit-local-code",
+      "target_criterion": "ranker: F13 stale-candidate warnings cleared",
+      "predicted_flip": true,
+      "expected_progress": "medium",
+      "ts": null,
+      "outcome": "partial",
+      "scored_ts": null
+    },
+    {
+      "id": "f17",
+      "run_id": null,
+      "family": null,
+      "action": "F14/F15/F16 candidate-table hygiene (MVP met; retire stale rows)",
+      "action_class": "edit-local-code",
+      "target_criterion": "ranker: venture already-done warnings cleared",
+      "predicted_flip": true,
+      "expected_progress": "low",
+      "ts": null,
+      "outcome": "hit",
+      "scored_ts": null
+    },
+    {
+      "id": "f18",
+      "run_id": null,
+      "family": null,
+      "action": "season-two idea-anchor DRAFTED in full (parked for user confirmation per standing directive)",
+      "action_class": "write-plan",
+      "target_criterion": "file-exists docs/idea-anchor-prompt-farm-season-two-2026-10-27.md",
+      "predicted_flip": true,
+      "expected_progress": "high",
+      "ts": null,
+      "outcome": "hit",
+      "scored_ts": null
     }
   ]
 }

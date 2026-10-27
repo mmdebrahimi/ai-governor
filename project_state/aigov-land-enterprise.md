@@ -118,7 +118,13 @@ The land enterprise runs its recurring capital and management decisions through 
 ## Bellman-Inspired Decision Frame
 
 ### Current state (one-line summary)
-Seeded 2026-08-12. Nothing elicited yet. The instrument itself is built and hardened — `aigov/decisions.py` derives retained capabilities from elicited affirmed pairs, refuses transitive chaining, refuses to group on transferable records, splits assurance from sourcing, and refuses a verdict on a compound decision; `docs/decision-inventory-protocol.md` is the session runbook. What is missing is the one thing no code can supply: the user's actual decisions.
+Refreshed 2026-10-27 (frame had been stale since seed): decision inventory at 6 of 26 encoded with
+8 verdicts (3 INTERNALIZE / 4 HYBRID + 1 coupling question E01+E02b surfaced); ownership gate relaxed
+2026-09-01 to a 50-year-lease floor (top six jurisdictions UNCHANGED); row-46's automation-hobby
+downgrade SUPERSEDED (bounded) into the standalone farm-season-twin venture (F14–F16, all MVP-met
+2026-10-27; jurisdiction scoring deliberately NOT re-run on venture basis). The binding input remains
+the one no code can supply: the user's remaining ~20 decision answers, in the PRIVATE answers file
+that lives OFF this machine (location to be supplied by the user in an elicitation session).
 
 ### Target state / terminal condition
 A decision inventory of at least 15 real recurring decisions with all four sourcing inputs answered; at least one ConfirmedCapability derived from affirmed pairs; an accountable ROLE for every decision including bought-in ones; every must-know fact classified by kind with an acquisition route; and every remaining gap NAMED rather than defaulted. The unbounded operating state (running every decision through the loop) is explicitly NOT the terminal condition.
@@ -130,13 +136,15 @@ A decision inventory of at least 15 real recurring decisions with all four sourc
 ### Candidate next actions
 | # | Action | Class | Expected progress | Expected info gain | Uncertainty | Cost |
 |---|---|---|---|---|---|---|
-| 1 | Correct the 18 drafted entry decisions, then answer them into a private answers file | ask-user | high | highest | low | 1-2 hrs user time |
-| 2 | Choose where the private answers file lives outside this public repo | ask-user | medium | low | low | same day |
-| 3 | Run `--answers <path>` on the filled file and read the derived verdicts | run-tests | high | high | low | minutes |
-| 4 | Split any decision the instrument refuses as compound, and re-run | ask-user | medium | medium | low | same day |
-| 5 | Answer the coupling questions the retained set surfaces | ask-user | high | high | medium | 1 wk |
-| 6 | Report capabilities, ungrouped links, unowned decisions and named gaps | propose | medium | high | low | 1 wk |
+| 1 | User supplies the private answers file location (it lives OFF this machine) + an elicitation session encodes the remaining ~20 decision answers | ask-user | high | highest | low | 1-2 hrs user time |
+| 2 | Resolve the surfaced E01+E02b coupling question (both turn on what the family will tolerate losing) | ask-user | high | high | medium | same session |
+| 3 | Re-run `--answers <path>` + suite on the updated file; read derived verdicts | run-tests | high | high | low | minutes |
+| 4 | Report capabilities, ungrouped links, unowned decisions and named gaps | propose | medium | high | low | 1 wk |
 <!-- project-state:end:candidate-actions -->
+
+(Table refreshed 2026-10-27 — the 2026-08-12 seed table's rows 1–4 were substantially completed by
+action rows 41–43 (2026-08-31: 6/26 encoded, first 8 verdicts, compound splits done) but never
+journaled with done-markers; superseded wholesale rather than marker-patched.)
 
 ### Re-evaluation trigger
 - **Default:** re-run `/project-state` after any action class fires
@@ -202,6 +210,7 @@ A decision inventory of at least 15 real recurring decisions with all four sourc
 | 45 | 2026-09-01 | research | Checked my own tropical-nuts claim before publishing it - and it was too strong | I was about to publish no-chill-hours-means-no-nuts as the reason to keep tropical Asia out. TRUE for hazelnut/walnut/pistachio (750-1400 chill hours). FALSE as a blanket: pecan needs only 200-500 for some varieties, and MACADAMIA and CASHEW are real high-value tropical nuts - Vietnam targets USD 400m macadamia exports by 2030 and is the worlds largest cashew kernel exporter. Raised Vietnam trees 3 to 6, Indonesia 3 to 5. Moved Vietnam 18th to 17th; outcome unchanged but the reasoning is now honest |
 | 46 | 2026-09-01 | edit-local-code | Encoded four more conversational answers and added E24 for farm equipment | Two buildings not one - which collides with Andalucias ONE-dwelling-per-rural-plot rule and needs checking in every candidate. Tax explicitly UNDECIDED with the load-bearing word being TOTAL, not income - Chiles 1.0 pct/yr agricultural land tax can outweigh a lower income rate and that comparison is unrun. AI/sensor build downgraded to hobby, which makes Chiles weak rural connectivity LESS disqualifying. 27 decisions, 8 with verdicts, 430 tests pass |
 | 47 | 2026-10-27 | edit-local-code | Decisions Made row added: row 46's hobby downgrade SUPERSEDED (bounded) per user-ratified idea-anchor 2026-10-26 — farm automation is now the standalone farm-season-twin venture (umbrella F14-F16) | Mirror per AC9. Jurisdiction scoring deliberately NOT re-run on venture basis (venture must not distort the ranking); kill-condition failure re-instates the hobby decision via R9 constraint-expiry |
+| 48 | 2026-10-27 | edit-local-code | STANDING HANDOFF executed: frame current-state + candidate table refreshed to actual state (frame was stale since the 2026-08-12 seed; refresh-frame semantics by hand, mirrored here) | Inventory truth restored: 6/26 encoded, 8 verdicts, E01+E02b coupling open; next action = user supplies the off-machine answers file. Old candidates 1-4 superseded (completed by rows 41-43) |
 <!-- project-state:end:action-log -->
 
 ## Open Questions for User

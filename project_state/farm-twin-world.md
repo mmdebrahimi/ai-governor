@@ -138,12 +138,10 @@ three disciplines with tests, validation contract evaluated with a recorded verd
 ### Candidate next actions
 | # | Action | Class | Expected progress | Expected info gain | Uncertainty | Cost |
 |---|---|---|---|---|---|---|
-| 1 | pip install pcse + day-step smoke (3.14) | run-tests | high | highest | low | minutes |
-| 2 | Pick region-season + cache weather | research | high | high | low | 1-2 hrs |
-| 3 | Write validation contract (before first run) | write-plan | medium | medium | low | 1 hr |
-| 4 | FarmTwin wrapper + discipline tests | edit-local-code | high | medium | medium | 1-2 days |
+| 1 | None live — MVP met 2026-10-27; season-two scope is a NEW planning cycle (idea-anchor drafted, awaiting user confirmation) | stop | — | — | — | — |
 <!-- project-state:end:candidate-actions -->
 
+(Table closed 2026-10-27 after mvp-reached — the seed-time candidates were all completed and journaled in this ledger's action log; F14 has no live code candidates.)
 ### Re-evaluation trigger
 - after any action class fires; immediately if the smoke FAILS on 3.14 (fallback decision needed: pinned venv vs version work)
 
