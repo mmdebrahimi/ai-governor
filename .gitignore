@@ -31,3 +31,6 @@ answers*.toml
 # The repo records the site as a SHAPE only ("a reachable sensor site"). See
 # docs/idea-anchor-prompt-farm-season-two-2026-10-27.md + aigov/farm_site_config.py.
 local/
+
+# Generated docx of the season report stays untracked by design (user decision 2026-10-27)
+docs/farm_season_report_v1.docx
