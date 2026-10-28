@@ -110,8 +110,8 @@ by construction; that is honest, not a defect.)
 <!-- project-state:end:evidence -->
 
 ### Unknowns
-- Restart-safety shape: what exactly persists between daily ticks (twin state is NOT deepcopy-able — probe_next_tick re-simulates; does the live loop re-simulate from day 1 each tick, or checkpoint?)
-- Dry-run window: which 7+ winter days (user-paced; any stretch works on the free spine)
+- ~~Restart-safety shape~~ RESOLVED 2026-10-27: recompute, no checkpoint — rules recompute severity from the cache each tick; the record file (`local/shadow_season/records.jsonl`, idempotent by date) is the only state; the live-season twin re-simulates from planting each tick (H1 watches the runtime)
+- Dry-run window: which 7+ winter days (user-paced; any stretch works on the free spine — needs `local/farm_site.json` filled first, a one-minute user step)
 - Whether the station lands before planting (money-gate timing) — determines which arms have real-sensor data from day 1
 
 ### Hypotheses (Active)
@@ -145,7 +145,7 @@ Machinery green on simulated days, protocol authored, ≥7-real-day dry-run repo
 complete live season Apr-Sep 2027 whose decision record F19 can score.
 
 ### Progress proxy
-MVP criteria met: 0 / 3 (seeded 2026-10-27)
+MVP criteria met: 2 / 3 (measured 2026-10-27, run `2026-10-27-2339-advance-season-two-spine`: shadow-loop tests 6/6 green + protocol doc; the dry-run report is CALENDAR-GATED — ≥7 real days of live ticks, needs the off-repo site config filled first)
 
 ### Candidate next actions
 | # | Action | Class | Expected progress | Expected info gain | Uncertainty | Cost |
@@ -173,6 +173,9 @@ MVP criteria met: 0 / 3 (seeded 2026-10-27)
 | # | Date | Action class | Description | Outcome |
 |---|---|---|---|---|
 | 1 | 2026-10-27 | propose | /project-init executed (Soraya self-init by hand, season-two decompose) | ledger created |
+| 2 | 2026-10-27 | edit-local-code | Daily-tick runner built: aigov/farm_shadow_season.py — decide-yesterday cadence, F17 spine refresh, Estimate-based severity, nominal proposal gated through the REAL farm_fail_safe_gate, TickRecord append (idempotent by date), season_summary aggregates; tests/test_farm_shadow_loop.py 6/6 green via the refresh=False seam (clean-certify, straddle-escalate, degraded, absent-day-escalate, idempotency, pre-season refusal) | MVP criterion 1 MET; full suite 520, 0 regressions [done:state-store+runner+outage rows] |
+| 3 | 2026-10-27 | write-plan | Season protocol frozen: docs/farm_shadow_season_protocol.md — cadence, outage behavior (inherits derived budget), dry-run definition, live-season arms (governed-precision / governed-nominal / ERA5-baseline), virtual-planting rule shape, restart-by-recomputation | MVP criterion 2 MET. Named fidelity question recorded: Wallin integer-°F band GAPS (53.6°F scores 0) — an F19 contract question against the primary sources, NOT silently changed here |
+| 4 | 2026-10-27 | ask-user | Dry-run start is now a one-minute user step: fill local/farm_site.json (write_example() scaffolds it) — then `python -m aigov.farm_shadow_season <start-date>` daily (or scheduled) for ≥7 days → dry-run report → MVP criterion 3 | PARKED: user-paced (coordinates are the user's to supply; off-repo by privacy rail) |
 <!-- project-state:end:action-log -->
 
 ## Open Questions for User

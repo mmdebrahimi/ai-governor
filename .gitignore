@@ -26,3 +26,8 @@ docs/*_Bombardier.docx
 # aigov/answers.py refuses to read one from inside the tree; this is belt-and-braces.
 answers*.toml
 *answers*.toml
+
+# Season-two privacy rail: the live sensor-site config (coordinates) is OFF-REPO by design.
+# The repo records the site as a SHAPE only ("a reachable sensor site"). See
+# docs/idea-anchor-prompt-farm-season-two-2026-10-27.md + aigov/farm_site_config.py.
+local/

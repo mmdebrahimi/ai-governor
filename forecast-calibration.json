@@ -1,0 +1,43 @@
+{
+  "forecasts": [
+    {
+      "id": "f1",
+      "run_id": null,
+      "family": null,
+      "action": "Build free-source live ingestion (open-meteo -> F14 CSV contract) + tests",
+      "action_class": "edit-local-code",
+      "target_criterion": "test-exit-0 python -m pytest tests/test_farm_live_spine.py -q",
+      "predicted_flip": true,
+      "expected_progress": "high",
+      "ts": null,
+      "outcome": "hit",
+      "scored_ts": null
+    },
+    {
+      "id": "f2",
+      "run_id": null,
+      "family": null,
+      "action": "Derive + write recovery-budget doc from Blitecast accumulation math",
+      "action_class": "write-plan",
+      "target_criterion": "file-exists docs/farm_live_spine_recovery_budget.md",
+      "predicted_flip": true,
+      "expected_progress": "med",
+      "ts": null,
+      "outcome": "hit",
+      "scored_ts": null
+    },
+    {
+      "id": "f3",
+      "run_id": null,
+      "family": null,
+      "action": "Sensor-station spec doc with per-model API verification + prices -> money gate",
+      "action_class": "research",
+      "target_criterion": "file-exists docs/farm_sensor_station_spec.md",
+      "predicted_flip": true,
+      "expected_progress": "high",
+      "ts": null,
+      "outcome": "hit",
+      "scored_ts": null
+    }
+  ]
+}

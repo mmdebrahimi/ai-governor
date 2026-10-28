@@ -105,6 +105,7 @@ before F18's live season starts; that ordering is the discipline, not a dependen
 <!-- project-state:end:evidence -->
 
 ### Unknowns
+- Wallin band-edge handling (NEW 2026-10-27, found by F18's test fixtures): the integer-°F table rows leave gaps (53.6 °F falls between 45–53 and 54–59 and scores 0). Season one computed the same way (internally consistent); the F19 contract must resolve rounding vs half-open intervals against WSU TB65E / UMaine #2418 BEFORE the live season
 - Threshold choice for "the sensor materially narrowed the interval" (to be DERIVED in the contract from the ±3% RH recount methodology, not asserted)
 - Whether sim-twin drift needs its own fixture generator or falls out of F18's parallel-run log
 - ~~Exact functional form of the van Oijen LAI damage coupling~~ RESOLVED 2026-10-27: full thesis obtained (open-access WUR eDepot, doi 10.18174/206318); form extraction is now ordinary arm work

@@ -115,15 +115,15 @@ never an MVP criterion; the fallback if declined is candidate 3's forecast-only 
 <!-- project-state:end:evidence -->
 
 ### Unknowns
-- Which candidate station's API surface is actually usable (WeatherLink v2 / Ecowitt local HTTP / other)
-- Forecast-vs-actual handling in the cache: does the spine re-write yesterday's forecast rows with actuals, and how is that journaled?
-- The recovery budget's number (max unscoreable gap) — to be DERIVED from Blitecast's accumulation logic, not asserted
+- ~~Which candidate station's API surface is usable~~ RESOLVED 2026-10-27: Davis WLL local API documented (GitHub + PyPI client); Ecowitt local JSON exists but official doc thin; per-unit RH spec verification deferred to purchase time (spec doc)
+- ~~Forecast-vs-actual handling~~ RESOLVED 2026-10-27: forecast rows are NEVER cached (actuals-only policy, `end` < today enforced); free-source gaps backfill from ERA5 archive after its ~5-day lag; each run rewrites the full window from source (idempotent)
+- ~~Recovery budget numbers~~ RESOLVED 2026-10-27: derived from Wallin 3-h boundary spacing — ok ≤2 / degraded 3–12 / unscoreable >12 missing hours; daily-file omission >4 missing hours (docs/farm_live_spine_recovery_budget.md)
 
 ### Hypotheses (Active)
 | ID | Statement | Status | Last-tested |
 |---|---|---|---|
-| H1 | The F14 cache contract carries live+forecast data unchanged (no schema fork) | open | — |
-| H2 | A hobby-grade station materially narrows the season-one escalation interval vs reanalysis RH | open | — |
+| H1 | The F14 cache contract carries live+forecast data unchanged (no schema fork) | confirmed (narrowed: ACTUALS only — forecast rows policy-excluded from the cache; real-surface round-trip through PCSE + FarmObservation + Wallin green) | 2026-10-27 |
+| H2 | A hobby-grade station materially narrows the season-one escalation interval vs reanalysis RH | open (awaits stage 2 — and the spec doc shows ±5% hobby-class RH would WIDEN it; the bar is ≤±2.5%) | — |
 <!-- project-state:end:hypotheses -->
 
 ### Decisions Made
@@ -150,7 +150,7 @@ Free-source live spine green under tests, sensor spec+price parked at the money 
 declared — then (post-approval) station data flowing through the same contract with divergence logging.
 
 ### Progress proxy
-MVP criteria met: 0 / 3 (seeded 2026-10-27)
+MVP criteria met: 3 / 3 (measured 2026-10-27, run `2026-10-27-2339-advance-season-two-spine`: spine tests 14/14 green + both docs exist; full suite 514, 0 regressions)
 
 ### Candidate next actions
 | # | Action | Class | Expected progress | Expected info gain | Uncertainty | Cost |
@@ -178,6 +178,10 @@ MVP criteria met: 0 / 3 (seeded 2026-10-27)
 | # | Date | Action class | Description | Outcome |
 |---|---|---|---|---|
 | 1 | 2026-10-27 | propose | /project-init invoked (Soraya self-init, season-two decompose) | ledger created |
+| 2 | 2026-10-27 | edit-local-code | Off-repo site-config seam: aigov/farm_site_config.py (SHAPE key `livesite`, example-coords refusal, out-of-range refusal) + `local/` gitignored; live caches also routed OFF-REPO to local/weather/ (PCSE header carries coordinates) | privacy rail honored end-to-end [done:df524f57] |
+| 3 | 2026-10-27 | edit-local-code | Free-source live ingestion: aigov/farm_live_weather.py (open-meteo forecast+archive, actuals-only, null hours omitted+counted, Tetens VAP, FAO-56 wind, hourly→daily derivation) + tests/test_farm_live_spine.py 14/14 green; REAL-SURFACE verified: 336 live hours fetched for the public fixture locale, PCSE+FarmObservation+Wallin consumed them unchanged (yesterday's real severity = 2) | MVP criterion 1 MET; 2 header bugs found by running (PCSE splits on `;`), 1 fixture bug [done:579b1656] |
+| 4 | 2026-10-27 | write-plan | Recovery budget DERIVED from Wallin 3-h boundary spacing: ΔSV ≤ ceil(k/3) cap 4 → ok ≤2 / degraded 3–12 / unscoreable >12 missing hours; daily-file omission >4; sensor-gap backfill asymmetry recorded | docs/farm_live_spine_recovery_budget.md — MVP criterion 3 MET [done:1739bc73] |
+| 5 | 2026-10-27 | research | Sensor spec doc: 3 candidates (Davis VP2+WLL ±2–3% RH with documented local API; Ecowitt ±5% likely FAILS the RH bar, declined-with-revival; DIY SHT35 ±1.5% low-cost fallback); drafted recommendation = Davis primary, SHT35 if cap says no | docs/farm_sensor_station_spec.md PARKED AT MONEY GATE — MVP criterion 2 MET [done:f3a79cc8] |
 <!-- project-state:end:action-log -->
 
 ## Open Questions for User
