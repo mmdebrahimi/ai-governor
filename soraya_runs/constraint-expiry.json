@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "constraints": {
+    "van-oijen-coupling-paywall": {
+      "cid": "van-oijen-coupling-paywall",
+      "blocked": "Yield-denominated arm comparison (season-report v2): the dynamic green-LAI damage coupling (blight lesion coverage + accelerated senescence -> LAI reduction -> yield) was deferred because the exact functional form lives in van Oijen 1991/1992 full texts, which were paywalled at F16 run time (2026-10-27). Registered in prose at docs/farm_season_report_v1.md; JSON store created at lift time (same day).",
+      "rationale": "Independent-author rail: improvising the coupling in-repo would self-author the damage model the governed loop is scored against.",
+      "expiry_kind": "manual",
+      "expiry_arg": "full text of van Oijen 1991/1992 obtained",
+      "registered_at": "2026-10-28T03:21:54Z",
+      "last_checked": "",
+      "last_verdict": "",
+      "resolved": true
+    }
+  }
+}

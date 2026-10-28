@@ -107,6 +107,7 @@ before F18's live season starts; that ordering is the discipline, not a dependen
 ### Unknowns
 - Threshold choice for "the sensor materially narrowed the interval" (to be DERIVED in the contract from the ±3% RH recount methodology, not asserted)
 - Whether sim-twin drift needs its own fixture generator or falls out of F18's parallel-run log
+- ~~Exact functional form of the van Oijen LAI damage coupling~~ RESOLVED 2026-10-27: full thesis obtained (open-access WUR eDepot, doi 10.18174/206318); form extraction is now ordinary arm work
 
 ### Hypotheses (Active)
 | ID | Statement | Status | Last-tested |
@@ -165,6 +166,7 @@ MVP criteria met: 0 / 3 (seeded 2026-10-27)
 | # | Date | Action class | Description | Outcome |
 |---|---|---|---|---|
 | 1 | 2026-10-27 | propose | /project-init executed (Soraya self-init by hand, season-two decompose) | ledger created |
+| 2 | 2026-10-27 | research | `van-oijen-coupling-paywall` LIFTED: full van Oijen 1991 PhD thesis (108pp, contains the 1991 light-use + leaf-area-dynamics papers and the 1992 simulation paper as Ch.1/3/6) obtained OPEN-ACCESS from Wageningen eDepot (doi 10.18174/206318); constraint registered+resolved in soraya_runs/constraint-expiry.json with evidence; full text stays OFF-REPO (copyright) at a local path named in the store | The planned arm `van Oijen dynamic LAI damage coupling` (criterion: season-report-v2 yield-denominated comparison) is now UNBLOCKED — runnable in a future Soraya run |
 <!-- project-state:end:action-log -->
 
 ## Open Questions for User
