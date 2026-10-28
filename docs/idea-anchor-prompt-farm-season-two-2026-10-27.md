@@ -2,8 +2,8 @@
 
 Drafted 2026-10-27 by Soraya (run `2026-10-27-1700-advance-portfolio`), in the v3 house pattern:
 settled context stated as settled, the real tensions in front, forks open with DRAFTED positions for
-ratification. **This anchor is PARKED for user confirmation** (standing directive: idea-anchor stays
-user-confirmed). Nothing below is anchored until ratified.
+ratification. **RATIFIED by the user 2026-10-27** (verbatim: "ratify the anchor") — all seven forks
+stand at their drafted positions, including the 2026-10-27 no-farm revision (forks 3+4 virtual-shadow).
 
 > **PRIVACY — STANDING (inherited verbatim).** Public repo. Family composition, ages, names, capital
 > position, amounts, property holdings and specific locations NEVER enter this file or any other file

@@ -12,7 +12,10 @@
     "aigov-land-enterprise",
     "farm-twin-world",
     "farm-twin-decision-loop",
-    "farm-governed-season"
+    "farm-governed-season",
+    "farm-live-sensor-spine",
+    "farm-virtual-shadow-season",
+    "farm-season-two-report"
   ],
   "spent": [
     {
@@ -86,6 +89,24 @@
       "mode": "decompose",
       "project_id": "farm-governed-season",
       "justification": "Gate C - venture terminal, kill-condition holder"
+    },
+    {
+      "when": "2026-10-27",
+      "mode": "decompose",
+      "project_id": "farm-live-sensor-spine",
+      "justification": "Season-two Gate A - live data spine, owns the money action (decompose 2026-10-27, ratified anchor)"
+    },
+    {
+      "when": "2026-10-27",
+      "mode": "decompose",
+      "project_id": "farm-virtual-shadow-season",
+      "justification": "Season-two Gate B - live governed shadow loop"
+    },
+    {
+      "when": "2026-10-27",
+      "mode": "decompose",
+      "project_id": "farm-season-two-report",
+      "justification": "Season-two Gate C - frozen scoring contract + report + real-plot go/no-go"
     }
   ]
 }

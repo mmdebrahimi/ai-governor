@@ -115,7 +115,7 @@ explicitly NOT the terminal.
 ### Candidate next actions
 | # | Action | Class | Expected progress | Expected info gain | Uncertainty | Cost |
 |---|---|---|---|---|---|---|
-| 1 | None live — MVP met 2026-10-27; season-two scope is a NEW planning cycle (idea-anchor drafted, awaiting user confirmation) | stop | — | — | — | — |
+| 1 | None live — MVP met 2026-10-27; season-two scope is a NEW planning cycle (anchor RATIFIED 2026-10-27 → season two = F17/F18/F19) | stop | — | — | — | — |
 <!-- project-state:end:candidate-actions -->
 
 (Table closed 2026-10-27 after mvp-reached — the seed-time candidates were all completed and journaled in this ledger's action log; F16 has no live code candidates.)
